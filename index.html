@@ -13,11 +13,67 @@
         margin: 0;
         height: 100vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         background: linear-gradient(130deg,#0a1b24,#001014,#0f3527);
         font-family: "Inter", sans-serif;
         overflow: hidden;
+        user-select: none;
+    }
+
+    /* ⭐ SHARED GLASS STYLE */
+    .glassbox {
+        font-family: "Fredoka One", sans-serif;
+        padding: 12px 30px;
+        border-radius: 22px;
+        background: rgba(255,255,255,0.14);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(255,255,255,0.22);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        letter-spacing: 2px;
+        transition: 0.3s;
+        animation: drip 4s infinite ease-in-out;
+        position: absolute;
+        cursor: default;
+    }
+
+    /* ⭐ TITLE */
+    .title {
+        font-size: 34px;
+        color: white;
+        cursor: grab;
+        top: 40px;
+    }
+
+    .title:active {
+        cursor: grabbing;
+    }
+
+    /* ⭐ RANDOM TEXT UNDER LOGO */
+    .randomText {
+        font-size: 22px;
+        color: white;
+        top: 105px;
+        opacity: 0.85;
+    }
+
+    /* HOVER GLOW */
+    .title:hover,
+    .randomText:hover {
+        box-shadow:
+            0 0 20px rgba(0,255,170,0.7),
+            0 0 60px rgba(0,255,170,0.5);
+        border: 1px solid rgba(0,255,170,0.5);
+        color: #76ffc8;
+    }
+
+    /* LIQUID DRIP ANIMATION */
+    @keyframes drip {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(6px); }
+        100% { transform: translateY(0px); }
     }
 
     .carousel {
@@ -31,6 +87,7 @@
         box-shadow: 0 20px 50px rgba(0,0,0,0.55);
         transform-style: preserve-3d;
         perspective: 1000px;
+        margin-top: 120px;
     }
 
     .track {
@@ -72,7 +129,6 @@
         text-decoration: underline;
     }
 
-    /* arrows */
     .arrow {
         position: absolute;
         top: 50%;
@@ -89,7 +145,6 @@
     .left { left: -70px; }
     .right { right: -70px; }
 
-    /* arrow key hint */
     .keys {
         position: absolute;
         bottom: -65px;
@@ -102,7 +157,6 @@
         pointer-events: none;
     }
 
-    /* Dots */
     .dots {
         position: absolute;
         bottom: 10px;
@@ -127,21 +181,23 @@
 
 <body>
 
-<div class="carousel">
+<!-- ⭐ TExt foR the tile -->
+<div class="glassbox title" id="dragTitle">Typical Productions OS</div>
 
-    <!-- arrows -->
+<!-- ⭐ RANDOM TEXT GENERATOR UNDER LOGO -->
+<div class="glassbox randomText" id="randomText"></div>
+
+
+<div class="carousel">
     <div class="arrow left">⟵</div>
     <div class="arrow right">⟶</div>
 
-    <!-- arrow key hints -->
     <div class="keys">
         <span>⬅️</span>
         <span>➡️</span>
     </div>
 
     <div class="track">
-
-        <!-- SLIDES (you can add more) -->
         <div class="slide" style="background:rgba(255,255,255,0.04);">
             <h2>Home</h2>
             <a href="" target="_blank">Google</a>
@@ -162,15 +218,78 @@
             <a href="#">Cool Stuff</a>
             <a href="#">More</a>
         </div>
-
     </div>
-
     <div class="dots"></div>
-
 </div>
 
+
 <script>
-/*** SETUP ***/
+/*** title dragable code DONT TOCUH!!! ***/
+const drag = document.getElementById("dragTitle");
+let isDrag = false;
+let offsetX, offsetY;
+
+drag.addEventListener("mousedown", (e) => {
+    isDrag = true;
+    offsetX = e.clientX - drag.offsetLeft;
+    offsetY = e.clientY - drag.offsetTop;
+});
+
+document.addEventListener("mouseup", () => isDrag = false);
+
+document.addEventListener("mousemove", (e) => {
+    if(isDrag) {
+        drag.style.left = (e.clientX - offsetX) + "px";
+        drag.style.top = (e.clientY - offsetY) + "px";
+    }
+});
+
+
+/*** text genertor or something***/
+const randomText = document.getElementById("randomText");
+
+const texts = [
+    "Welcome back :)",
+    "Powered by omee",
+    "Stay funky 😎",
+    "Loading...",
+    "Generating cool stuff",
+    "wow ooze is still alive!",
+    "Typical Productions forever",
+    "Ooze may look better for now but i got the good stuff)",
+    "let me live my life",
+    "coded by a dumb dude",
+    "what is this diddy blud doing the the calculator",
+    "wow cool liquid glass system",
+    "Make sure to visit Ooze Reborn!",
+    "Arcadium Is DEAD",
+    "oooh wow chicken!",
+    "Me And Ooze Are Friends",
+    "👀",
+    "Lifes hard.. But im Harder-J"
+    "Einstein"
+    "ooooozeeeeeee"
+    "Typical?"
+    "Vissit Unblocked Chicken!"
+    "i suck at coding"
+    "Arcadium In The Big 25 🥀"
+    "ooze in the big 25 ❤️‍🩹🔋"
+    "WE are done"
+    "i dont think im making a big comeback"
+    "im adding random shyt"
+    "real eyes relize real lies"
+    
+];
+
+function changeText() {
+    randomText.textContent = texts[Math.floor(Math.random()*texts.length)];
+}
+
+changeText();
+setInterval(changeText, 3000);
+
+
+/*** CAROUSEL (unchanged) ***/
 const track = document.querySelector('.track');
 const slides = document.querySelectorAll('.slide');
 const left = document.querySelector('.left');
@@ -180,7 +299,6 @@ const dotsWrap = document.querySelector('.dots');
 let current = parseInt(localStorage.getItem("carouselIndex")) || 0;
 let width = 420;
 
-/*** Dots ***/
 slides.forEach((_, i) => {
     const d = document.createElement('div');
     d.classList.add('dot');
@@ -190,7 +308,6 @@ slides.forEach((_, i) => {
 
 const dots = document.querySelectorAll('.dot');
 
-/*** UPDATE UI ***/
 function update() {
     track.style.transform = `translateX(-${current * width}px)`;
     slides.forEach(s => s.classList.remove("active"));
@@ -202,7 +319,6 @@ function update() {
     localStorage.setItem("carouselIndex", current);
 }
 
-/*** NEXT + PREV (infinite) ***/
 function next() {
     current = (current + 1) % slides.length;
     update();
@@ -212,17 +328,14 @@ function prev() {
     update();
 }
 
-/*** BUTTONS ***/
 right.addEventListener('click', next);
 left.addEventListener('click', prev);
 
-/*** KEYBOARD ***/
 document.addEventListener('keydown', (e) => {
     if(e.key === "ArrowRight") next();
     if(e.key === "ArrowLeft") prev();
 });
 
-/*** MOUSE WHEEL horizontal ***/
 window.addEventListener("wheel", (e) => {
     if(Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
         if(e.deltaX > 0) next();
@@ -230,7 +343,6 @@ window.addEventListener("wheel", (e) => {
     }
 });
 
-/*** SWIPE ***/
 let startX;
 track.addEventListener("touchstart", e => startX = e.touches[0].clientX);
 track.addEventListener("touchend", e => {
@@ -239,7 +351,6 @@ track.addEventListener("touchend", e => {
     if(endX > startX + 40) prev();
 });
 
-/*** DOTS CLICK ***/
 dots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
         current = i;
@@ -247,10 +358,7 @@ dots.forEach((dot, i) => {
     });
 });
 
-/*** AUTOPLAY ***/
 setInterval(next, 5000);
-
-/*** INITIAL ***/
 update();
 </script>
 
