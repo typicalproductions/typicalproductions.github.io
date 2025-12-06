@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Subpage</title>
+    <!-- Google bubbly font -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        /* Body & overall style */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Fredoka One', sans-serif;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,255,0,0.05));
+            backdrop-filter: blur(15px);
+            color: #fff;
+        }
+
+        /* Header bar with buttons */
+        .iframe-header {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .iframe-header button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .iframe-header button:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        /* Iframe container */
+        .iframe-container {
+            flex: 1;
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-header">
+        <button id="reloadBtn">Reload</button>
+        <button id="fullscreenBtn">Full Screen</button>
+        <button id="openNewTabBtn">Open in New Tab</button>
+    </div>
+
+    <div class="iframe-container">
+        <iframe id="myIframe" src="https://example.com"></iframe>
+    </div>
+
+    <script>
+        const iframe = document.getElementById('myIframe');
+        const reloadBtn = document.getElementById('reloadBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const openNewTabBtn = document.getElementById('openNewTabBtn');
+
+        // Reload iframe
+        reloadBtn.addEventListener('click', () => {
+            iframe.src = iframe.src;
+        });
+
+        // Fullscreen toggle
+        fullscreenBtn.addEventListener('click', () => {
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Safari */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE11 */
+                iframe.msRequestFullscreen();
+            }
+        });
+
+        // Open in new tab
+        openNewTabBtn.addEventListener('click', () => {
+            window.open(iframe.src, '_blank');
+        });
+    </script>
+</body>
+</html>
