@@ -1,6 +1,261 @@
-    <div class="container">
-        <div class="centered-element">
-            <h1>Welcome to Cobalt</h1>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ultimate Liquid Glass Carousel</title>
+
+<!-- Google bubbly font -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(130deg,#0a1b24,#001014,#0f3527);
+        font-family: "Inter", sans-serif;
+        overflow: hidden;
+    }
+
+    .carousel {
+        position: relative;
+        width: 420px;
+        height: 260px;
+        overflow: hidden;
+        border-radius: 28px;
+        backdrop-filter: blur(22px);
+        background: rgba(255,255,255,0.14);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.55);
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+
+    .track {
+        display: flex;
+        height: 100%;
+        transition: transform 0.6s cubic-bezier(.19,1,.22,1);
+    }
+
+    .slide {
+        min-width: 420px;
+        height: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        border-radius: 28px;
+        color: white;
+        transform: scale(0.94);
+        transition: 0.3s;
+    }
+
+    .slide.active {
+        transform: scale(1);
+    }
+
+    .slide h2 {
+        font-family: "Fredoka One", sans-serif;
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+
+    a {
+        color: #76ffc8;
+        font-size: 18px;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* arrows */
+    .arrow {
+        position: absolute;
+        top: 50%;
+        font-size: 38px;
+        color: rgba(255,255,255,0.7);
+        transform: translateY(-50%);
+        cursor: pointer;
+        user-select: none;
+        transition: 0.2s;
+    }
+    .arrow:hover {
+        color: #76ffc8;
+    }
+    .left { left: -70px; }
+    .right { right: -70px; }
+
+    /* arrow key hint */
+    .keys {
+        position: absolute;
+        bottom: -65px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        font-size: 22px;
+        opacity: 0.35;
+        pointer-events: none;
+    }
+
+    /* Dots */
+    .dots {
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        gap: 7px;
+    }
+    .dot {
+        width: 12px;
+        height: 12px;
+        background: rgba(255,255,255,0.26);
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+    .dot.active {
+        background: #76ffc8;
+        transform: scale(1.3);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="carousel">
+
+    <!-- arrows -->
+    <div class="arrow left">⟵</div>
+    <div class="arrow right">⟶</div>
+
+    <!-- arrow key hints -->
+    <div class="keys">
+        <span>⬅️</span>
+        <span>➡️</span>
     </div>
 
+    <div class="track">
+
+        <!-- SLIDES (you can add more) -->
+        <div class="slide" style="background:rgba(255,255,255,0.04);">
+            <h2>Home</h2>
+            <a href="https://google.com" target="_blank">Google</a>
+            <a href="https://openai.com" target="_blank">OpenAI</a>
+        </div>
+
+        <div class="slide" style="background:rgba(255,255,255,0.08);">
+            <h2>Games</h2>
+            <a href="https://example.com">Game 1</a>
+            <a href="https://example.com">Game 2</a>
+        </div>
+
+        <div class="slide" style="background:rgba(255,255,255,0.06);">
+            <h2>Links</h2>
+            <a href="https://youtube.com">YouTube</a>
+            <a href="https://github.com">GitHub</a>
+        </div>
+
+        <div class="slide" style="background:rgba(255,255,255,0.05);">
+            <h2>Extras</h2>
+            <a href="#">Cool Stuff</a>
+            <a href="#">More</a>
+        </div>
+
+    </div>
+
+    <div class="dots"></div>
+
+</div>
+
+<script>
+/*** SETUP ***/
+const track = document.querySelector('.track');
+const slides = document.querySelectorAll('.slide');
+const left = document.querySelector('.left');
+const right = document.querySelector('.right');
+const dotsWrap = document.querySelector('.dots');
+
+let current = parseInt(localStorage.getItem("carouselIndex")) || 0;
+let width = 420;
+
+/*** Dots ***/
+slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.classList.add('dot');
+    if(i === current) d.classList.add('active');
+    dotsWrap.appendChild(d);
+});
+
+const dots = document.querySelectorAll('.dot');
+
+/*** UPDATE UI ***/
+function update() {
+    track.style.transform = `translateX(-${current * width}px)`;
+    slides.forEach(s => s.classList.remove("active"));
+    slides[current].classList.add("active");
+
+    dots.forEach(d => d.classList.remove("active"));
+    dots[current].classList.add("active");
+
+    localStorage.setItem("carouselIndex", current);
+}
+
+/*** NEXT + PREV (infinite) ***/
+function next() {
+    current = (current + 1) % slides.length;
+    update();
+}
+function prev() {
+    current = (current - 1 + slides.length) % slides.length;
+    update();
+}
+
+/*** BUTTONS ***/
+right.addEventListener('click', next);
+left.addEventListener('click', prev);
+
+/*** KEYBOARD ***/
+document.addEventListener('keydown', (e) => {
+    if(e.key === "ArrowRight") next();
+    if(e.key === "ArrowLeft") prev();
+});
+
+/*** MOUSE WHEEL horizontal ***/
+window.addEventListener("wheel", (e) => {
+    if(Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        if(e.deltaX > 0) next();
+        else prev();
+    }
+});
+
+/*** SWIPE ***/
+let startX;
+track.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+track.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    if(endX < startX - 40) next();
+    if(endX > startX + 40) prev();
+});
+
+/*** DOTS CLICK ***/
+dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+        current = i;
+        update();
+    });
+});
+
+/*** AUTOPLAY ***/
+setInterval(next, 5000);
+
+/*** INITIAL ***/
+update();
+</script>
+
+</body>
+</html>
