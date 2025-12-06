@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <!-- Favicon code below -->
+<link rel="icon" href="./download.png" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youtube</title>
+<!-- Google bubbly font -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+    /* Body & overall style */
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Fredoka One', sans-serif;
+        background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,25,0,0.7));
+        color: #fff;
+        overflow: hidden;
+    }
+
+    /* Header bar with buttons */
+    .iframe-header {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        padding: 12px 20px;
+        background: linear-gradient(145deg, rgba(0,255,0,0.1), rgba(0,150,0,0.05));
+        backdrop-filter: blur(25px);
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        border-radius: 0 0 25px 25px;
+        box-shadow: 0 0 30px rgba(0,255,0,0.1) inset;
+    }
+
+    /* Liquid glass buttons */
+    .iframe-header button {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 20px;
+        background: linear-gradient(145deg, rgba(0,255,0,0.15), rgba(0,200,0,0.05));
+        backdrop-filter: blur(20px);
+        color: #e0ffe0;
+        font-size: 14px;
+        cursor: pointer;
+        text-shadow: 0 0 2px #fff;
+        box-shadow: 0 4px 20px rgba(0,255,0,0.2);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .iframe-header button:hover {
+        background: linear-gradient(145deg, rgba(0,255,0,0.3), rgba(0,200,0,0.15));
+        box-shadow: 0 4px 25px rgba(0,255,0,0.4);
+        transform: scale(1.05);
+    }
+
+    /* Iframe container */
+    .iframe-container {
+        flex: 1;
+        position: relative;
+        padding: 20px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(145deg, rgba(0,255,0,0.05), rgba(0,150,0,0.02));
+        backdrop-filter: blur(25px);
+        box-shadow: 0 0 40px rgba(0,255,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    iframe:focus {
+        outline: none;
+        box-shadow: 0 0 50px rgba(0,255,0,0.2);
+    }
+</style>
+</head>
+<body>
+    <div class="iframe-header">
+        <button id="reloadBtn">Reload</button>
+        <button id="fullscreenBtn">Full Screen</button>
+        <button id="openNewTabBtn">Open in New Tab</button>
+    </div>
+
+    <div class="iframe-container">
+        <iframe id="myIframe" src="https://wmath.global.ssl.fastly.net/youtube"></iframe>
+    </div>
+
+    <script>
+        const iframe = document.getElementById('myIframe');
+        const reloadBtn = document.getElementById('reloadBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const openNewTabBtn = document.getElementById('openNewTabBtn');
+
+        // Reload iframe
+        reloadBtn.addEventListener('click', () => {
+            iframe.src = iframe.src;
+        });
+
+        // Fullscreen toggle
+        fullscreenBtn.addEventListener('click', () => {
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Safari */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE11 */
+                iframe.msRequestFullscreen();
+            }
+        });
+
+        // Open in new tab
+        openNewTabBtn.addEventListener('click', () => {
+            window.open(iframe.src, '_blank');
+        });
+    </script>
+</body>
+</html>
+<style>
+    .glass-home-btn {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        width: 70px;
+        height: 70px;
+        border-radius: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        text-decoration: none;
+        color: white;
+
+        /* Liquid glass */
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.22);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+        transition: 0.25s;
+    }
+
+    .glass-home-btn:hover {
+        background: rgba(255,255,255,0.28);
+        box-shadow: 0 10px 36px rgba(0,255,170,0.5);
+        transform: scale(1.05);
+    }
+</style>
+
+<a href="index.html" class="glass-home-btn">🏠</a>
