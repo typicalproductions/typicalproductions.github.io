@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Favicon code below -->
+    <link rel="icon" href="download.png" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Games</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  
+  body {
+    margin: 0;
+    background: #202020;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 20px 0;
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .box {
+    background: linear-gradient(135deg, #2b2b2b, #3a3a3a);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .box:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    background: linear-gradient(135deg, #3a3a3a, #4a4a4a);
+  }
+
+  .box img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .box-title {
+    padding: 8px 5px;
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(5px);
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 24px; }
+    .grid { gap: 10px; padding: 15px; }
+    .box img { height: 100px; }
+  }
+
+  .glass-home-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.22);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    transition: 0.25s;
+    z-index: 1000;
+  }
+
+  .glass-home-btn:hover {
+    background: rgba(255,255,255,0.28);
+    box-shadow: 0 10px 36px rgba(0,255,170,0.5);
+    transform: scale(1.05);
+  }
+
+  .search-container {
+    margin: 20px auto;
+    max-width: 400px;
+  }
+
+  .search-box {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 16px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  .search-box:focus {
+    outline: none;
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 0 20px rgba(78,205,196,0.3);
+  }
+
+  .search-box::placeholder {
+    color: rgba(255,255,255,0.6);
+  }
+</style>
+</head>
+<body>
+
+  <h1>Typical Games</h1>
+  
+  <div class="search-container">
+    <input type="text" class="search-box" placeholder="Search games..." id="searchBox">
+  </div>
+  
+  <div class="grid" id="gameGrid">
+
+    <!-- 🟢 Games Collection -->
+    
+<a class="box" href="https://loooooooooooool.global.ssl.fastly.net/versions/1.4.5/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="LOOOOOOOOOOOL">
+  <div class="box-title">OvO 1.4.5</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/261.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 261">
+  <div class="box-title">Simple Game 261</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/bitlife/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="BitLife">
+  <div class="box-title">BitLife</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/buck/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Buck Game">
+  <div class="box-title">BucketShot Roulette</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/tanuki-sunset/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Tanuki Sunset">
+  <div class="box-title">Tanuki Sunset</div>
+</a>
+
+<a class="box" href="https://global.global.ssl.fastly.net/stuff/selfhosted/undertale/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Undertale">
+  <div class="box-title">Undertale</div>
+</a>
+
+<a class="box" href="https://voidnetwork.global.ssl.fastly.net/reading/L2RvY3VtZW50cy9zcGFjZS13YXZlL2NvbnRlbnQuaHRtbA" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Space Wave">
+  <div class="box-title">Space Wave</div>
+</a>
+
+<a class="box" href="https://global.global.ssl.fastly.net/stuff/selfhosted/ragdoll-archers/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Ragdoll Archers">
+  <div class="box-title">Ragdoll Archers</div>
+</a>
+
+<a class="box" href="https://voidnetwork.global.ssl.fastly.net/reading/L2RvY3VtZW50cy9yYWdkb2xsLWhpdC1wb2tpL2NvbnRlbnQuaHRtbA" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Ragdoll Hit Poki">
+  <div class="box-title">Ragdoll Hit Poki</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/Nextbots/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Nextbots">
+  <div class="box-title">Nextbots</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/poppy-playtime-3/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Poppy Playtime 3">
+  <div class="box-title">Poppy Playtime 3</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/84.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 84">
+  <div class="box-title">Cube Field</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/AgentWalkerSkibidi/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Agent Walker Skibidi">
+  <div class="box-title">Agent Walker Skibidi</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/baldis-basics/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Baldi's Basics">
+  <div class="box-title">Baldi's Basics</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/funny-shooter/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Funny Shooter">
+  <div class="box-title">Funny Shooter</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/funny-shooter-2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Funny Shooter 2">
+  <div class="box-title">Funny Shooter 2</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/FUNNYBATTLE2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Funny Battle 2">
+  <div class="box-title">Funny Battle 2</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/horde-killer-you-vs-100/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Horde Killer">
+  <div class="box-title">Horde Killer</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/HERO5-KATANA/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Hero 5 Katana">
+  <div class="box-title">Hero 5 Katana</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/MINECRAFTSHOOTER/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Minecraft Shooter">
+  <div class="box-title">Minecraft Shooter</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/Sniper%20Fixed/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Sniper Fixed">
+  <div class="box-title">Sniper Fixed</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/SQUIDSHOOTER/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Squid Shooter">
+  <div class="box-title">Squid Shooter</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/timeshooter/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Time Shooter">
+  <div class="box-title">Time Shooter</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/Time%20Shooter%202/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Time Shooter 2">
+  <div class="box-title">Time Shooter 2</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/time-shooter-3/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Time Shooter 3">
+  <div class="box-title">Time Shooter 3</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/youvs100sk/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="You vs 100 Sk">
+  <div class="box-title">You vs 100 Skibidi Toilets</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/ZOMBIESHOOTER/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Zombie Shooter">
+  <div class="box-title">Zombie Shooter</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/ZOMBIESHOOTERWAVEOFZOMS/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Zombie Shooter Wave">
+  <div class="box-title">Zombie Shooter Wave</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/0.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 0">
+  <div class="box-title">Bow Masters</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbwK_YDMKEccZyVOz_fpe66G4Je4VyFPdT10OdaKpM699Utzbq41n2m6OXqAzpX0oqrLTA/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 1">
+  <div class="box-title">Grow A Garden</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbytsGAlf3lPg4Po7HvAheHvyJKxYRA4ZYPUGjjjMpZafajZs3F5pu7E5BekDXlNhRHUFw/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 2">
+  <div class="box-title">Google Script Game 2</div>
+</a>
+
+<a class="box" href="https://omemadethisohmygah.global.ssl.fastly.net/sites/default/files/public_games/41519/?gd_sdk_referrer_url=https%3A%2F%2Fwww.coolmathgames.com%2F0-pou" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Pou Game">
+  <div class="box-title">Pou Game</div>
+</a>
+
+<a class="box" href="https://breakiumarcadium.global.ssl.fastly.net/uv/service/hvtrs8%2F-wuw%2Cgpegndomt%2Copg-saelapims-257%3B3%3Deobgd%3Ftpug" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Breakium Arcade">
+  <div class="box-title">Breakium Arcade</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/baldis-basics/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Baldi's Basics 2">
+  <div class="box-title">Baldi's Basics 2</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/118.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 118">
+  <div class="box-title">Simple Game 118</div>
+</a>
+
+<a class="box" href="https://growagarden.global.ssl.fastly.net/basic-ruffle-player/html/squid_game_2_mini_games/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Squid Game 2">
+  <div class="box-title">Squid Game 2</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbydNb9Y8FIM3D0vcweKtYCYbjJcSXghedO6MN0aWbP5qIwamjjSkBDirvuMHR_6sc4/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 3">
+  <div class="box-title">Google Script Game 3</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbw5Z-Ryg_JfIIDYH7pzzPKXlr2tN0HCw-tT_ZvxBGDPsDDY41ewPVneVeLzelfpnBab/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 4">
+  <div class="box-title">Google Script Game 4</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/slope/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Slope">
+  <div class="box-title">Slope</div>
+</a>
+
+<a class="box" href="https://fall-io.web.app/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Fall.io">
+  <div class="box-title">Fall.io</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbxQuqMuGYqOJSyYwUL5vYn1E3xCTjM7DAQZnhnKyYVmhH_2mNQS7INnwJkwr7l7T9GC/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 5">
+  <div class="box-title">Google Script Game 5</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/264.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 264">
+  <div class="box-title">Simple Game 264</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbykKJe1dCicuRYeS9FsOEjy7D4EhPM1BK0iLDmy4pwp3SWctliv85r1-L8CkPeYryryhg/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 6">
+  <div class="box-title">Google Script Game 6</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbwN-fRMhnn-XH42I-ntRmSjua_dVyuuaFZ3dUEi5bAfXSjWHupafOKIh2xs69q_q2fmLQ/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 7">
+  <div class="box-title">Google Script Game 7</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbwi8Mdh2i4l60ePfJ3gVLqEKfJdPFdoBjoBIYMY-AqAg-bSUctwaWI_g3poBGuyvJEs/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 8">
+  <div class="box-title">Google Script Game 8</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbxquh8Ia2sXWIvggnJmQFsDR7oUuIfiLkx5ezbdvFk6Uu-KIR-l15U0d5SBPGtnVpdJ/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 9">
+  <div class="box-title">Google Script Game 9</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/dr.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="DR Game">
+  <div class="box-title">DR Game</div>
+</a>
+
+<a class="box" href="https://voidnetwork.global.ssl.fastly.net/reading/L2RvY3VtZW50cy9zdWJ3YXktc3VyZmVycy9jb250ZW50Lmh0bWw" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Subway Surfers">
+  <div class="box-title">Subway Surfers</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/260.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 260">
+  <div class="box-title">Simple Game 260</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/465.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 465">
+  <div class="box-title">Simple Game 465</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/166.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 166">
+  <div class="box-title">Simple Game 166</div>
+</a>
+
+<a class="box" href="https://lunar.global.ssl.fastly.net/assets/fonts/retro-highway/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Retro Highway">
+  <div class="box-title">Retro Highway</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/215.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 215">
+  <div class="box-title">Simple Game 215</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/9.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 9">
+  <div class="box-title">Simple Game 9</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/450.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 450">
+  <div class="box-title">Simple Game 450</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/468.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 468">
+  <div class="box-title">Simple Game 468</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/216.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 216">
+  <div class="box-title">Simple Game 216</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/195.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 195">
+  <div class="box-title">Simple Game 195</div>
+</a>
+
+<a class="box" href="https://voidnetwork.global.ssl.fastly.net/reading/L2RvY3VtZW50cy9zbG93cm9hZHMvY29udGVudC5odG1s" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Slow Roads">
+  <div class="box-title">Slow Roads</div>
+</a>
+
+<a class="box" href="https://voidnetwork.global.ssl.fastly.net/reading/L2RvY3VtZW50cy9jcm9zc3lyb2FkL2NvbnRlbnQuaHRtbA" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Crossy Road">
+  <div class="box-title">Crossy Road</div>
+</a>
+
+<a class="box" href="https://voidnetwork.global.ssl.fastly.net/reading/L2RvY3VtZW50cy9oYXBweWZpbGxlZGdsYXNzL2xhZ2dlZC5jb20vYXBpL3N0dWR5Mi9oYXBweS1nbGFzczYvY29udGVudC5odG1s" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Happy Glass">
+  <div class="box-title">Happy Glass</div>
+</a>
+
+<a class="box" href="https://voidnetwork.global.ssl.fastly.net/reading/L2RvY3VtZW50cy9tb25rZXltYXJ0L2NvbnRlbnQuaHRtbA" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Monkey Mart">
+  <div class="box-title">Monkey Mart</div>
+</a>
+
+<a class="box" href="https://voidnetwork.global.ssl.fastly.net/reading/L2RvY3VtZW50cy9pZGxlYnJlYWtvdXQvY29udGVudC5odG1s" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Idle Breakout">
+  <div class="box-title">Idle Breakout</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/461.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 461">
+  <div class="box-title">Simple Game 461</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/459.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 459">
+  <div class="box-title">Simple Game 459</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/301.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 301">
+  <div class="box-title">Simple Game 301</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/182.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 182">
+  <div class="box-title">Simple Game 182</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/183.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 183">
+  <div class="box-title">Simple Game 183</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/259.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 259">
+  <div class="box-title">Simple Game 259</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/81.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 81">
+  <div class="box-title">Simple Game 81</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/297.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 297">
+  <div class="box-title">Simple Game 297</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/181.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 181">
+  <div class="box-title">Simple Game 181</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/298.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 298">
+  <div class="box-title">Simple Game 298</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/299.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 299">
+  <div class="box-title">Simple Game 299</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/300.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 300">
+  <div class="box-title">Simple Game 300</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/331.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 331">
+  <div class="box-title">Simple Game 331</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/120.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 120">
+  <div class="box-title">Simple Game 120</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/385.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 385">
+  <div class="box-title">Simple Game 385</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/164.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 164">
+  <div class="box-title">Simple Game 164</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/256.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 256">
+  <div class="box-title">Simple Game 256</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/255.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 255">
+  <div class="box-title">Simple Game 255</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/109.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 109">
+  <div class="box-title">Simple Game 109</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/172.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 172">
+  <div class="box-title">Simple Game 172</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/126.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 126">
+  <div class="box-title">Simple Game 126</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/125.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 125">
+  <div class="box-title">Simple Game 125</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/90.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 90">
+  <div class="box-title">Simple Game 90</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/502.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 502">
+  <div class="box-title">Simple Game 502</div>
+</a>
+
+<a class="box" href="https://classroom.global.ssl.fastly.net/storage/fnf.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF">
+  <div class="box-title">FNF</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/499.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 499">
+  <div class="box-title">Simple Game 499</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/475.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 475">
+  <div class="box-title">Simple Game 475</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/484.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 484">
+  <div class="box-title">Simple Game 484</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/498.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 498">
+  <div class="box-title">Simple Game 498</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/509.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 509">
+  <div class="box-title">Simple Game 509</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/485.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 485">
+  <div class="box-title">Simple Game 485</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/476.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 476">
+  <div class="box-title">Simple Game 476</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/477.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 477">
+  <div class="box-title">Simple Game 477</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/489.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 489">
+  <div class="box-title">Simple Game 489</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/483.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 483">
+  <div class="box-title">Simple Game 483</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/514.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 514">
+  <div class="box-title">Simple Game 514</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/6.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 6">
+  <div class="box-title">Simple Game 6</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/167.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 167">
+  <div class="box-title">Simple Game 167</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/177.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 177">
+  <div class="box-title">Simple Game 177</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/176.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 176">
+  <div class="box-title">Simple Game 176</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/175.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 175">
+  <div class="box-title">Simple Game 175</div>
+</a>
+
+<a class="box" href="https://classroom.global.ssl.fastly.net/storage/infinite-craft/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Infinite Craft">
+  <div class="box-title">Infinite Craft</div>
+</a>
+
+<a class="box" href="https://cherieware.global.ssl.fastly.net/filesgx/ddlc" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="DDLC">
+  <div class="box-title">DDLC</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/381.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 381">
+  <div class="box-title">Simple Game 381</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/323.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 323">
+  <div class="box-title">Simple Game 323</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/151.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 151">
+  <div class="box-title">Simple Game 151</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/191.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 191">
+  <div class="box-title">Simple Game 191</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/41.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 41">
+  <div class="box-title">Simple Game 41</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/40.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 40">
+  <div class="box-title">Simple Game 40</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/39.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 39">
+  <div class="box-title">Simple Game 39</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/38.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 38">
+  <div class="box-title">Simple Game 38</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/204.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 204">
+  <div class="box-title">Simple Game 204</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/428.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 428">
+  <div class="box-title">Simple Game 428</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/190.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 190">
+  <div class="box-title">Simple Game 190</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/192.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 192">
+  <div class="box-title">Simple Game 192</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/185.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 185">
+  <div class="box-title">Simple Game 185</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/drive-mad/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Drive Mad">
+  <div class="box-title">Drive Mad</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/splashanddash/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Splash and Dash">
+  <div class="box-title">Splash and Dash</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/sprinter/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Sprinter">
+  <div class="box-title">Sprinter</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/roughdino/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Rough Dino">
+  <div class="box-title">Rough Dino</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/tboi/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="TBOI">
+  <div class="box-title">TBOI</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/nut-simulator/nutsimulator.github.io-main/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Nut Simulator">
+  <div class="box-title">Nut Simulator</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/retro-bowl-college/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Retro Bowl College">
+  <div class="box-title">Retro Bowl College</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/retro-bowl/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Retro Bowl">
+  <div class="box-title">Retro Bowl</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/super-liquid-soccer/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Super Liquid Soccer">
+  <div class="box-title">Super Liquid Soccer</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/poly-track/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Poly Track">
+  <div class="box-title">Poly Track</div>
+</a>
+
+<a class="box" href="https://linerider.global.ssl.fastly.net/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Line Rider">
+  <div class="box-title">Line Rider</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/soccer-skills-euro-cup/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Soccer Skills Euro Cup">
+  <div class="box-title">Soccer Skills Euro Cup</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/tiny-fishing/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Tiny Fishing">
+  <div class="box-title">Tiny Fishing</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/monster-tracks/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Monster Tracks">
+  <div class="box-title">Monster Tracks</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/gobattle/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Go Battle">
+  <div class="box-title">Go Battle</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/angry-birds/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Angry Birds">
+  <div class="box-title">Angry Birds</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/candy-crush/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Candy Crush">
+  <div class="box-title">Candy Crush</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/boxingrandom/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Boxing Random">
+  <div class="box-title">Boxing Random</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/volley-random/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Volley Random">
+  <div class="box-title">Volley Random</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/basket-random/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Basket Random">
+  <div class="box-title">Basket Random</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/soccer-random/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Soccer Random">
+  <div class="box-title">Soccer Random</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/drift-hunters/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Drift Hunters">
+  <div class="box-title">Drift Hunters</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/bobtherobber2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Bob the Robber 2">
+  <div class="box-title">Bob the Robber 2</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/super-tunnel-rush/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Super Tunnel Rush">
+  <div class="box-title">Super Tunnel Rush</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/bub/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="BUB">
+  <div class="box-title">BUB</div>
+</a>
+
+<a class="box" href="https://snorlaxscave.global.ssl.fastly.net/service/hvtrs8%2F-wuw%2Csvuobneeu%7Bs%2Ccmm-pna%7B" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Snorlax Cave">
+  <div class="box-title">Snorlax Cave</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/static/iframe.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Super Cool Thang">
+  <div class="box-title">Super Cool Thang</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/speed-king/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Speed King">
+  <div class="box-title">Speed King</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/misc/frame.html?link=policechase&title=Police%20Chase" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Police Chase">
+  <div class="box-title">Police Chase</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/donottakethiscathome/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Don't Take This Cat Home">
+  <div class="box-title">Don't Take This Cat Home</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/misc/frame.html?link=catpizza&title=Cat%20Pizza" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Cat Pizza">
+  <div class="box-title">Cat Pizza</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/misc/frame.html?link=bikeobby&title=Bike%20Obby" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Bike Obby">
+  <div class="box-title">Bike Obby</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/astrosurvivor/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Astro Survivor">
+  <div class="box-title">Astro Survivor</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/emulator/pokemon/black/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Pokemon Black">
+  <div class="box-title">Pokemon Black</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/emulator/pokemon/ruby/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Pokemon Ruby">
+  <div class="box-title">Pokemon Ruby</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/emulator/pokemon/florasky/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Pokemon Flora Sky">
+  <div class="box-title">Pokemon Flora Sky</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/emulator/pokemon/red/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Pokemon Red">
+  <div class="box-title">Pokemon Red</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/emulator/pokemon/emerald/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Pokemon Emerald">
+  <div class="box-title">Pokemon Emerald</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/emulator/pokemon/crystal/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Pokemon Crystal">
+  <div class="box-title">Pokemon Crystal</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/misc/frame.html?link=stacktris&title=Stacktrix" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Stacktrix">
+  <div class="box-title">Stacktrix</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/pokemon/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Pokemon">
+  <div class="box-title">Pokemon</div>
+</a>
+
+<a class="box" href="https://arcadiumpokemonshowdown.global.ssl.fastly.net/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Pokemon Showdown">
+  <div class="box-title">Pokemon Showdown</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/emulator/pokemon/ultraviolent/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Pokemon Ultra Violent">
+  <div class="box-title">Pokemon Ultra Violent</div>
+</a>
+
+<a class="box" href="https://red.global.ssl.fastly.net/misc/emulator/pokemon/sapphire/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Pokemon Sapphire">
+  <div class="box-title">Pokemon Sapphire</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/gladihoppers/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Gladihoppers">
+  <div class="box-title">Gladihoppers</div>
+</a>
+
+<a class="box" href="https://breakiumarcadium.global.ssl.fastly.net/uv/service/hvtrs8%2F-dmops%2Follkng.eaoe%2Ffklgs%2Ccpaxyeaoeq.aoo%2Fwnkt%7B%2Fwnkt%7B2222%2Ffomrq-mnnile%2Chvmn%3Ft%3D3.121" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Breakium Arcade 2">
+  <div class="box-title">Breakium Arcade 2</div>
+</a>
+
+<a class="box" href="https://cherieware.global.ssl.fastly.net/filesgx/OMORI" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="OMORI">
+  <div class="box-title">OMORI</div>
+</a>
+
+<a class="box" href="https://cherieware.global.ssl.fastly.net/filesgx/osu!" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Osu!">
+  <div class="box-title">Osu!</div>
+</a>
+
+<a class="box" href="https://cherieware.global.ssl.fastly.net/filesgx/snake-remake-html-main/natlol/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Snake Remake">
+  <div class="box-title">Snake Remake</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/fruitninja/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Fruit Ninja">
+  <div class="box-title">Fruit Ninja</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/pvz/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Plants vs Zombies">
+  <div class="box-title">Plants vs Zombies</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/tom2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Talking Tom 2">
+  <div class="box-title">Talking Tom 2</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbwnHhMofGNjZt4xEn7HZJTUBs2klhlPV7mk4-_LGHESeYIFmtQiGn0gr3VT52AZna0U/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 10">
+  <div class="box-title">Google Script Game 10</div>
+</a>
+
+<a class="box" href="https://holyunblocker.global.ssl.fastly.net/archive/g/friendlyfire/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Friendly Fire">
+  <div class="box-title">Friendly Fire</div>
+</a>
+
+<a class="box" href="https://breakiumarcadium.global.ssl.fastly.net/uv/service/hvtrs8%2F-kfava3.aoo%2F0004-0%3A%2Fjooe%2Fanole-" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Breakium Arcade 3">
+  <div class="box-title">Breakium Arcade 3</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/recoil/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Recoil">
+  <div class="box-title">Recoil</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/448.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 448">
+  <div class="box-title">Simple Game 448</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/304.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 304">
+  <div class="box-title">Simple Game 304</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/320.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 320">
+  <div class="box-title">Simple Game 320</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/430.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 430">
+  <div class="box-title">Simple Game 430</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/semag/drawclimber/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Draw Climber">
+  <div class="box-title">Draw Climber</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/310.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 310">
+  <div class="box-title">Simple Game 310</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/169.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 169">
+  <div class="box-title">Simple Game 169</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/168.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 168">
+  <div class="box-title">Simple Game 168</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/baldi-remaster/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Baldi Remaster">
+  <div class="box-title">Baldi Remaster</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/466.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 466">
+  <div class="box-title">Simple Game 466</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/389.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 389">
+  <div class="box-title">Simple Game 389</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/403.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 403">
+  <div class="box-title">Simple Game 403</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/279.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 279">
+  <div class="box-title">Simple Game 279</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/155.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 155">
+  <div class="box-title">Simple Game 155</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/156.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 156">
+  <div class="box-title">Simple Game 156</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/16.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 16">
+  <div class="box-title">Simple Game 16</div>
+</a>
+
+<a class="box" href="https://gamesbruh.global.ssl.fastly.net/Games11/magictiles/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Magic Tiles">
+  <div class="box-title">Magic Tiles</div>
+</a>
+
+<a class="box" href="https://gamesbruh.global.ssl.fastly.net/Games11/cat%20tennis/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Cat Tennis">
+  <div class="box-title">Cat Tennis</div>
+</a>
+
+<a class="box" href="https://gamesbruh.global.ssl.fastly.net/Games6/basketandball/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Basket and Ball">
+  <div class="box-title">Basket and Ball</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/557.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 557">
+  <div class="box-title">Simple Game 557</div>
+</a>
+
+<a class="box" href="https://omemadethisohmygah.global.ssl.fastly.net/sites/default/files/public_games/54410/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Public Game 54410">
+  <div class="box-title">Public Game 54410</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/577.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 577">
+  <div class="box-title">Simple Game 577</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-the-tricky-mod/game.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Tricky Mod">
+  <div class="box-title">FNF Tricky Mod</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-monika/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Monika">
+  <div class="box-title">FNF vs Monika</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-sky/game.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Sky">
+  <div class="box-title">FNF vs Sky</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-sonicexe/game.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Sonic EXE">
+  <div class="box-title">FNF vs Sonic EXE</div>
+</a>
+
+<a class="box" href="https://gamesbruh.global.ssl.fastly.net/sz-brawlers.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="SZ Brawlers">
+  <div class="box-title">SZ Brawlers</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-trollface-trollge/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Trollface">
+  <div class="box-title">FNF vs Trollface</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-sunday-remastered/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Sunday">
+  <div class="box-title">FNF vs Sunday</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-kapi/game.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Kapi">
+  <div class="box-title">FNF vs Kapi</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/friday-night-funkin-vs-matt/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Matt">
+  <div class="box-title">FNF vs Matt</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-impostor/game.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Impostor">
+  <div class="box-title">FNF vs Impostor</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-freddy-fazbear/game.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Freddy">
+  <div class="box-title">FNF vs Freddy</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-whitty/game.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Whitty">
+  <div class="box-title">FNF Whitty</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-suicide-mouse/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Suicide Mouse">
+  <div class="box-title">FNF vs Suicide Mouse</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-shaggy/game.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Shaggy">
+  <div class="box-title">FNF vs Shaggy</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-but-bad/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF But Bad">
+  <div class="box-title">FNF But Bad</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-accelerant-hank/game.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Hank">
+  <div class="box-title">FNF vs Hank</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-qt/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs QT">
+  <div class="box-title">FNF vs QT</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/ex/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Mods Ex">
+  <div class="box-title">FNF Mods Ex</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-chara/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Chara">
+  <div class="box-title">FNF vs Chara</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-squid-game/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Squid Game">
+  <div class="box-title">FNF Squid Game</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-sketchy-remastered/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Sketchy">
+  <div class="box-title">FNF vs Sketchy</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/cheese/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Cheese">
+  <div class="box-title">FNF Cheese</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/funk/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Funk">
+  <div class="box-title">FNF Funk</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/agoti/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Agoti">
+  <div class="box-title">FNF Agoti</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/nonsense/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Nonsense">
+  <div class="box-title">FNF Nonsense</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/zardy/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Zardy">
+  <div class="box-title">FNF Zardy</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/neo/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Neo">
+  <div class="box-title">FNF Neo</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/sans/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Sans">
+  <div class="box-title">FNF Sans</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/tord/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Tord">
+  <div class="box-title">FNF Tord</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/big-sister/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Big Sister">
+  <div class="box-title">FNF Big Sister</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/salmon/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Salmon">
+  <div class="box-title">FNF Salmon</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/522.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 522">
+  <div class="box-title">Simple Game 522</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/380.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 380">
+  <div class="box-title">Simple Game 380</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/563.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 563">
+  <div class="box-title">Simple Game 563</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/13.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 13">
+  <div class="box-title">Simple Game 13</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/378.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 378">
+  <div class="box-title">Simple Game 378</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/415.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 415">
+  <div class="box-title">Simple Game 415</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/524.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 524">
+  <div class="box-title">Simple Game 524</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/158.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 158">
+  <div class="box-title">Simple Game 158</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/593.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 593">
+  <div class="box-title">Simple Game 593</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/592.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 592">
+  <div class="box-title">Simple Game 592</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/569.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 569">
+  <div class="box-title">Simple Game 569</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/560.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 560">
+  <div class="box-title">Simple Game 560</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/565.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 565">
+  <div class="box-title">Simple Game 565</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/284.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 284">
+  <div class="box-title">Simple Game 284</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/416.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 416">
+  <div class="box-title">Simple Game 416</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/418.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 418">
+  <div class="box-title">Simple Game 418</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/417.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 417">
+  <div class="box-title">Simple Game 417</div>
+</a>
+
+<a class="box" href="https://fern.global.ssl.fastly.net/resources/hotline-miami/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Hotline Miami">
+  <div class="box-title">Hotline Miami</div>
+</a>
+
+<a class="box" href="https://fern.global.ssl.fastly.net/resources/coldfront/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Cold Front">
+  <div class="box-title">Cold Front</div>
+</a>
+
+<a class="box" href="https://fern.global.ssl.fastly.net/resources/deadseat/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Dead Seat">
+  <div class="box-title">Dead Seat</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/433.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 433">
+  <div class="box-title">Simple Game 433</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/554.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 554">
+  <div class="box-title">Simple Game 554</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/457.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 457">
+  <div class="box-title">Simple Game 457</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/eattherich/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Eat the Rich">
+  <div class="box-title">Eat the Rich</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/kindergarten3/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Kindergarten 3">
+  <div class="box-title">Kindergarten 3</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/kindergarten2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Kindergarten 2">
+  <div class="box-title">Kindergarten 2</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/kindergarten1/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Kindergarten 1">
+  <div class="box-title">Kindergarten 1</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/slender/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Slender">
+  <div class="box-title">Slender</div>
+</a>
+
+<a class="box" href="https://fern.global.ssl.fastly.net/resources/surf/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Surf">
+  <div class="box-title">Surf</div>
+</a>
+
+<a class="box" href="https://fern.global.ssl.fastly.net/resources/tomodachilife/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Tomodachi Life">
+  <div class="box-title">Tomodachi Life</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/paperio/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Paper.io">
+  <div class="box-title">Paper.io</div>
+</a>
+
+<a class="box" href="https://fern.global.ssl.fastly.net/resources/co09reup/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="CO09 Reup">
+  <div class="box-title">CO09 Reup</div>
+</a>
+
+<a class="box" href="https://fern.global.ssl.fastly.net/resources/co09flipside/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="CO09 Flipside">
+  <div class="box-title">CO09 Flipside</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/610.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 610">
+  <div class="box-title">Simple Game 610</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/488.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 488">
+  <div class="box-title">Simple Game 488</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/582.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 582">
+  <div class="box-title">Simple Game 582</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/496.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 496">
+  <div class="box-title">Simple Game 496</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/525.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 525">
+  <div class="box-title">Simple Game 525</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/558.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 558">
+  <div class="box-title">Simple Game 558</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/583.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 583">
+  <div class="box-title">Simple Game 583</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/497.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 497">
+  <div class="box-title">Simple Game 497</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/500.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 500">
+  <div class="box-title">Simple Game 500</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/480.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 480">
+  <div class="box-title">Simple Game 480</div>
+</a>
+
+<a class="box" href="https://omessimplegames.global.ssl.fastly.net/iframe/541.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Simple Game 541">
+  <div class="box-title">Simple Game 541</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/kickthatbuddy/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Kick the Buddy">
+  <div class="box-title">Kick the Buddy</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/superhot/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="SUPERHOT">
+  <div class="box-title">SUPERHOT</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/skiddy-taxi/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Skiddy Taxi">
+  <div class="box-title">Skiddy Taxi</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/animal-arena/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Animal Arena">
+  <div class="box-title">Animal Arena</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/chicken-merge-2/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Chicken Merge 2">
+  <div class="box-title">Chicken Merge 2</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/chicken-merge/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Chicken Merge">
+  <div class="box-title">Chicken Merge</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/burnout-extreme-drift-2/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Burnout Extreme Drift 2">
+  <div class="box-title">Burnout Extreme Drift 2</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/table-tennis-world-tour/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Table Tennis World Tour">
+  <div class="box-title">Table Tennis World Tour</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/bank-robbery-3/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Bank Robbery 3">
+  <div class="box-title">Bank Robbery 3</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/bank-robbery-2/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Bank Robbery 2">
+  <div class="box-title">Bank Robbery 2</div>
+</a>
+
+<a class="box" href="https://supercoolthang.global.ssl.fastly.net/public/assets/games/bank-robbery/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Bank Robbery">
+  <div class="box-title">Bank Robbery</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/ocarinaoftime/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Ocarina of Time">
+  <div class="box-title">Ocarina of Time</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbx-uaFWRwY1q4Gv7pRrd9PR3zbbmsKV5PTGPQZ11-u3EWCiD4xeM2V3_1JBvmJQNxSshw/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 11">
+  <div class="box-title">Google Script Game 11</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbwHG-nBpdYtwW3DS-0WTVa191rByTmy1hB6Nfnbu8210Qf0GJDlQTws79TL9exSrAA4Rw/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 12">
+  <div class="box-title">Google Script Game 12</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbxzSGHk_3h5kMq-nWnMw-klXqPCvXAWtnetko4sja__qk43JO5f5bBJXkyhkt3gFDsG/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 13">
+  <div class="box-title">Google Script Game 13</div>
+</a>
+
+<a class="box" href="https://strongdogbruh.global.ssl.fastly.net/strongdog5/html/clash%20royale/game/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Clash Royale">
+  <div class="box-title">Clash Royale</div>
+</a>
+
+<a class="box" href="https://strongdogbruh.global.ssl.fastly.net/strongdog5/html/Last%20Breath/game/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Last Breath">
+  <div class="box-title">Last Breath</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbwzSeRTcepa4gSddtkqyNQgNIxsXgbtpvOwBH_iHFqTPuI4LDTOREP_BcbCyO48fn6aew/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 14">
+  <div class="box-title">Google Script Game 14</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbxRR9j9VoEVe3ftwVkqAslFNtnJ1UUWj8hLc51en9qR8fsVz2gho9geBFjasY0IV8gJBQ/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 15">
+  <div class="box-title">Google Script Game 15</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbyOP-i1mjNpvwaB-VTpGwOuNw2P00c8TAeXR7_9ZjLhGA9C8wO-q3AYgRyYdlDPIKgX/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 16">
+  <div class="box-title">Google Script Game 16</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbydRKNRXuNyKIjoTMQ752kjgz5HGJpQ8j-cX-t2Ejum9YP_QVQ53Ar5YPywdob_XJk0/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 17">
+  <div class="box-title">Google Script Game 17</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbzUPEYWyiXAsI-wbbg-NbWW6ZAZF1FlSqACKLaEQMvPbnqP5zeGHck2VpwfJ9yoO3o7/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 18">
+  <div class="box-title">Google Script Game 18</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbyyEXD9_h6Vsie5eSBmDPCD1rAgPDa6O4kKxn9eyRMkzEsohm_7sMFRzs_h411gQEPx2w/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 19">
+  <div class="box-title">Google Script Game 19</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbyZYCjrlO5pzZ-0WzBPJPCh0nxTuU8yQFjAkdy3HjUgQnCWHzlleuDCnKL5cAKVcWe0/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 20">
+  <div class="box-title">Google Script Game 20</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbyyxTq2w1p-VZwEpYO6g8wSrQwsbR7ev4PZSwK_kSdSM46mzcgGCdtlblpMcwFoCO3u/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 21">
+  <div class="box-title">Google Script Game 21</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbzFp_zUQorLRSTRZPQs40GmrHhlumFCf-NdpMRqfxHcR7_PMdh7g8UvS1NDX_Ik49iBgA/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 22">
+  <div class="box-title">Google Script Game 22</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbyZSsAUJX8Rh5x8NFuWN0NYjOz25e613N82vqeADEMgEFW7Y0vTYBflTnNHZQFNFzWj2g/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 23">
+  <div class="box-title">Google Script Game 23</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbxUErJUc_ACvigcRFz3qfnoGUqikZVKUfKZekuAeEEfqCBKS-9WQF8XXJqyiH2kk85r/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 24">
+  <div class="box-title">Google Script Game 24</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbyWLPERO3vTCg0mGEfCZTpbiw9w1AABZKmkNEnzJyPOq9wczhjuuLnb35MpcXcCMeWAvQ/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 25">
+  <div class="box-title">Google Script Game 25</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbzgyRuNmEMsjP0tIWh6IhCcMaHLpczq7gCxfNZcyX2q_adu2bE_3vnOL5pWvGUl9v815w/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 26">
+  <div class="box-title">Google Script Game 26</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbxNB9nSu4vzfq7fJPViycA65TrPuWuNSwe2YIvzyAIFRMtQIkunzA6Ixm2QiVyE37LqsQ/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 27">
+  <div class="box-title">Google Script Game 27</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbyGbCbN5nPB5TUr52E5i_9LV_tSmFUNZKdmgUSaKMMBsoHkEnrS7HBPgftiRn0xbOEd/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 28">
+  <div class="box-title">Google Script Game 28</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbx3gCQI1WeQKUBJya7pn1_KoiqnENV_ah_64-TKmMwym15oLBa56oFHunXsWymnzQ6cyg/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 29">
+  <div class="box-title">Google Script Game 29</div>
+</a>
+
+<a class="box" href="https://scratch.mit.edu/projects/860151753/embed" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Scratch Game">
+  <div class="box-title">Scratch Game</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbwpQHXN2419GU1OjX9m-MoQwpIeM-ZSq7r2UE3NiqJ_GqPinDaFWAd_FJ_i0HZ_pxU/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 30">
+  <div class="box-title">Google Script Game 30</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbwyvxP-o1WNt_P4ND0dZ5nG3ytpAeIZsj3tN205-I_WkqGEuWPAS2yBcRWpX_tJ-BtY/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 31">
+  <div class="box-title">Google Script Game 31</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbwSQ0aXrXdz23Z0adlljZLtt6EGzD7max6U15OnUFBxhQmht6KK7l7RzsVo2wOdkoXR/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 32">
+  <div class="box-title">Google Script Game 32</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbxb8isaXXwqY7h3OqafbfonnaOEmyfyK8ZQoMvgT-HGwUSfpJoK5Aim1Ca3fvKvEqxj/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 33">
+  <div class="box-title">Google Script Game 33</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbwuxOM4-yunbRK8m1_Ckf2Z6I1P7diQKfnVYSJcXQazV2QgDb9GsNoXDyNhoYoMPW3q/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 34">
+  <div class="box-title">Google Script Game 34</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbzasksRLidvdmcfI_ov_UigFK4VcRgmiGU_zjBpdlz2lS9P3T9etW__18mSXOcAkVzq/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 35">
+  <div class="box-title">Google Script Game 35</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbyIBcQ1NVwe4TleMqjrrA5t8rHSHy4StuAw8wXoeFJJw8OnWU90IdhNDTANuADWFHgJ/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 36">
+  <div class="box-title">Google Script Game 36</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbzGxfKS5Uv4MC2N__iKoytC7F5HxVSH3GBPkkqKc0WLf7aIOFkZr3AMsN03VbEPKMGQ/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 37">
+  <div class="box-title">Google Script Game 37</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbwh3L6AlJoxcJOSPwKxWH4243dyHIq80FAiRmhnbgWgYEiGkq5umrLz0mHFxtEpHuRN/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 38">
+  <div class="box-title">Google Script Game 38</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbxaBuUWOfHfHlEeofRekYHt_eEw0UyZrwd4MqZN4b65n-8CL87ZRsCmB_pD7PjGwDJr/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 39">
+  <div class="box-title">Google Script Game 39</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/ducklife6/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Duck Life 6">
+  <div class="box-title">Duck Life 6</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/fireboywatergirl4/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Fireboy Watergirl 4">
+  <div class="box-title">Fireboy Watergirl 4</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/fireboywatergirl3/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Fireboy Watergirl 3">
+  <div class="box-title">Fireboy Watergirl 3</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/fireboywatergirl2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Fireboy Watergirl 2">
+  <div class="box-title">Fireboy Watergirl 2</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/fireboywatergirl/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Fireboy Watergirl">
+  <div class="box-title">Fireboy Watergirl</div>
+</a>
+
+<a class="box" href="https://script.google.com/macros/s/AKfycbzzzBlqpi-UH1EolZkm_TwyvFbgdV6fuWz_IjtPNgQ8ZhiPtGODuz0NvWvNlMUVWoeS/exec" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Google Script Game 40">
+  <div class="box-title">Google Script Game 40</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/ducklife5/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Duck Life 5">
+  <div class="box-title">Duck Life 5</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/ducklife4/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Duck Life 4">
+  <div class="box-title">Duck Life 4</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/ducklife3/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Duck Life 3">
+  <div class="box-title">Duck Life 3</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/ducklife2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Duck Life 2">
+  <div class="box-title">Duck Life 2</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/ducklife1/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Duck Life 1">
+  <div class="box-title">Duck Life 1</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/jellyrancher/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Jelly Rancher">
+  <div class="box-title">Jelly Rancher</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/btd5/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="BTD 5">
+  <div class="box-title">BTD 5</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/btd4/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="BTD 4">
+  <div class="box-title">BTD 4</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/btd3/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="BTD 3">
+  <div class="box-title">BTD 3</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/btd2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="BTD 2">
+  <div class="box-title">BTD 2</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/btd/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="BTD">
+  <div class="box-title">BTD</div>
+</a>
+
+<a class="box" href="https://global.global.ssl.fastly.net/stuff/selfhosted/mexiisamonkey/south.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Mexii is a Monkey">
+  <div class="box-title">Mexii is a Monkey</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/undertale-yellow/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Undertale Yellow">
+  <div class="box-title">Undertale Yellow</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/stackbounce/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Stack Bounce">
+  <div class="box-title">Stack Bounce</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/interactivebuddy/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Interactive Buddy">
+  <div class="box-title">Interactive Buddy</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/btd6/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="BTD 6">
+  <div class="box-title">BTD 6</div>
+</a>
+
+<a class="box" href="https://fnfio.global.ssl.fastly.net/2025/tora-monitor/1/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Tora Monitor">
+  <div class="box-title">FNF Tora Monitor</div>
+</a>
+
+<a class="box" href="https://fnfio.global.ssl.fastly.net/2025/velma/2/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Velma">
+  <div class="box-title">FNF Velma</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/bob/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Bob">
+  <div class="box-title">FNF Bob</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/volt/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Volt">
+  <div class="box-title">FNF Volt</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/tomato/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Tomato">
+  <div class="box-title">FNF Tomato</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/monika/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Monika">
+  <div class="box-title">FNF Monika</div>
+</a>
+
+<a class="box" href="https://arcadiummkdedededd.global.ssl.fastly.net/fnf-vs-huggy-wuggy/game.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF vs Huggy Wuggy">
+  <div class="box-title">FNF vs Huggy Wuggy</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/scp-096/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF SCP-096">
+  <div class="box-title">FNF SCP-096</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/roblox/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Roblox">
+  <div class="box-title">FNF Roblox</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/mashup/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Mashup">
+  <div class="box-title">FNF Mashup</div>
+</a>
+
+<a class="box" href="https://fnfmodsarcadium.global.ssl.fastly.net/cassandra/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="FNF Cassandra">
+  <div class="box-title">FNF Cassandra</div>
+</a>
+
+<a class="box" href="https://arcadeejnf.global.ssl.fastly.net/jellycar-worlds/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Jellycar Worlds">
+  <div class="box-title">Jellycar Worlds</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/stickmanclimb/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Stickman Climb">
+  <div class="box-title">Stickman Climb</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/sudo/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Sudo">
+  <div class="box-title">Sudo</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/territorialio/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Territorial.io">
+  <div class="box-title">Territorial.io</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/blocky-snakes/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Blocky Snakes">
+  <div class="box-title">Blocky Snakes</div>
+</a>
+
+<a class="box" href="https://arcadeejnf.global.ssl.fastly.net/eagle-ride/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Eagle Ride">
+  <div class="box-title">Eagle Ride</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/yume-nikki/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Yume Nikki">
+  <div class="box-title">Yume Nikki</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/yohoho/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="YoHoHo">
+  <div class="box-title">YoHoHo</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/stickmangolf/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Stickman Golf">
+  <div class="box-title">Stickman Golf</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/jelly-drift/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Jelly Drift">
+  <div class="box-title">Jelly Drift</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/jellytruck/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Jelly Truck">
+  <div class="box-title">Jelly Truck</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/underrun/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Underrun">
+  <div class="box-title">Underrun</div>
+</a>
+
+<a class="box" href="https://yandexgames.global.ssl.fastly.net/178486/u8wfii0nuraneu0itq80i2xyf8h9dtw8_brotli/index.html?sdk=%2Fsdk%2F_%2Fv2.97c96d6acac215f69e1d.js#origin=https%3A%2F%2Fyandex.com&app-id=178486&device-type=desktop" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Yandex Games">
+  <div class="box-title">Yandex Games</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/zombocalypse/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Zombocalypse">
+  <div class="box-title">Zombocalypse</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/fly3/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Learn to Fly 3">
+  <div class="box-title">Learn to Fly 3</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/learntofly2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Learn to Fly 2">
+  <div class="box-title">Learn to Fly 2</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/learntofly/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Learn to Fly">
+  <div class="box-title">Learn to Fly</div>
+</a>
+
+<a class="box" href="https://arcadeejnf.global.ssl.fastly.net/hero-telekinesis/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Hero Telekinesis">
+  <div class="box-title">Hero Telekinesis</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/heist/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Heist">
+  <div class="box-title">Heist</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/theimpossiblequiz2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Impossible Quiz 2">
+  <div class="box-title">Impossible Quiz 2</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/theimpossiblequiz/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Impossible Quiz">
+  <div class="box-title">Impossible Quiz</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/wipegame/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Wipe Game">
+  <div class="box-title">Wipe Game</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/basketball-io/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Basketball.io">
+  <div class="box-title">Basketball.io</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/shape/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Shape">
+  <div class="box-title">Shape</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/minion/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Minion">
+  <div class="box-title">Minion</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/bigfoot-hunting/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Bigfoot Hunting">
+  <div class="box-title">Bigfoot Hunting</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/Bob-The-Robber-4/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Bob the Robber 4">
+  <div class="box-title">Bob the Robber 4</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/boxingphysics2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Boxing Physics 2">
+  <div class="box-title">Boxing Physics 2</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/rooftopsnipers/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Rooftop Snipers">
+  <div class="box-title">Rooftop Snipers</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/greybox/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Grey Box">
+  <div class="box-title">Grey Box</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/merge-round-racers-main/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Merge Round Racers">
+  <div class="box-title">Merge Round Racers</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/CHICKENROYAL/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Chicken Royal">
+  <div class="box-title">Chicken Royal</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/pocket-pixel-3d/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Pocket Pixel 3D">
+  <div class="box-title">Pocket Pixel 3D</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/slope3/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Slope 3">
+  <div class="box-title">Slope 3</div>
+</a>
+
+<a class="box" href="https://classroom2.global.ssl.fastly.net/storage/kitchen-gun-game/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Kitchen Gun Game">
+  <div class="box-title">Kitchen Gun Game</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/townscaper/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Townscaper">
+  <div class="box-title">Townscaper</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/moabomoabom/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Moabomoabom">
+  <div class="box-title">Moabomoabom</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/miabomiabom/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Miabomiabom">
+  <div class="box-title">Miabomiabom</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/jetpackjoyride/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Jetpack Joyride">
+  <div class="box-title">Jetpack Joyride</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/talsei/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Talsei">
+  <div class="box-title">Talsei</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/tattletail/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Tattletail">
+  <div class="box-title">Tattletail</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/two/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Two">
+  <div class="box-title">Two</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/slope2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Slope 2">
+  <div class="box-title">Slope 2</div>
+</a>
+
+<a class="box" href="https://geames.global.ssl.fastly.net/files/games/h1/dino-game-v01b/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Dino Game">
+  <div class="box-title">Dino Game</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/vex5/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Vex 5">
+  <div class="box-title">Vex 5</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/vex4/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Vex 4">
+  <div class="box-title">Vex 4</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/vex3/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Vex 3">
+  <div class="box-title">Vex 3</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/vex2/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Vex 2">
+  <div class="box-title">Vex 2</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/vex/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Vex">
+  <div class="box-title">Vex</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/vex-x3m/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Vex X3M">
+  <div class="box-title">Vex X3M</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/vex-challenges/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Vex Challenges">
+  <div class="box-title">Vex Challenges</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/vex-8/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Vex 8">
+  <div class="box-title">Vex 8</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/vex7/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Vex 7">
+  <div class="box-title">Vex 7</div>
+</a>
+
+<a class="box" href="https://selenite1.global.ssl.fastly.net/resources/semag/vex6/index.html" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Vex 6">
+  <div class="box-title">Vex 6</div>
+</a>
+
+<a class="box" href="https://diddywithalowtaperfade.global.ssl.fastly.net/Vs-Gunter/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Vs Gunter">
+  <div class="box-title">Vs Gunter</div>
+</a>
+
+<a class="box" href="https://browhatisthis.global.ssl.fastly.net/Funkin-MrMeowzz/web/" target="_blank" rel="noopener noreferrer">
+  <img src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/game-controller.png" alt="Funkin Mr Meowzz">
+  <div class="box-title">Funkin Mr Meowzz</div>
+</a>
+
+    <!-- 🟩 More games can be added here -->
+    
+  </div>
+
+<a href="index.html" class="glass-home-btn">🏠</a>
+
+<script>
+// Search functionality
+document.getElementById('searchBox').addEventListener('input', function(e) {
+  const searchTerm = e.target.value.toLowerCase();
+  const games = document.querySelectorAll('.box');
+  
+  games.forEach(game => {
+    const title = game.querySelector('.box-title').textContent.toLowerCase();
+    if (title.includes(searchTerm)) {
+      game.style.display = 'block';
+    } else {
+      game.style.display = 'none';
+    }
+  });
+});
+</script>
+
+</body>
+</html>
