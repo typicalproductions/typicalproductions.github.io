@@ -3,9 +3,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Name</title>
+
 <iframe src="https://example.com" 
-        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 9999;">
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 1;">
 </iframe>
+
+<a href="index.html" class="glass-home-btn">🏠</a>
+
 <style>
     .glass-home-btn {
         position: fixed;
@@ -28,6 +32,9 @@
         border: 1px solid rgba(255,255,255,0.22);
         box-shadow: 0 8px 28px rgba(0,0,0,0.35);
         transition: 0.25s;
+
+        /* Make sure it appears above iframe */
+        z-index: 9999;
     }
 
     .glass-home-btn:hover {
@@ -36,6 +43,7 @@
         transform: scale(1.05);
     }
 </style>
+
 
 <a href="index.html" class="glass-home-btn">🏠</a>
 
