@@ -1,594 +1,842 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-              <!-- Favicon code below -->
-<link rel="icon" href="./download.png" type="image/x-icon">
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Typical Productions OS</title>
-<!-- SETTINGS BUTTON AND PANEL -->
-<div class="glassbox" id="settingsBtn" style="position: fixed; top: 20px; right: 20px; cursor: pointer; font-size: 20px; z-index: 999;">⚙️</div>
+    <!-- Favicon code below -->
+    <link rel="icon" href="./download.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typical Productions OS</title>
+    
+    <!-- Enhanced Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    
+    <!-- SETTINGS BUTTON AND PANEL -->
+    <div class="glassbox" id="settingsBtn" style="position: fixed; top: 20px; right: 20px; cursor: pointer; font-size: 20px; z-index: 999;">⚙️</div>
 
-<div class="glassbox" id="settingsPanel" style="position: fixed; top: 60px; right: 20px; width: 300px; padding: 20px; display: none; flex-direction: column; gap: 12px; z-index: 999; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); background: rgba(0,255,128,0.14); border:1px solid rgba(0,255,128,0.22); box-shadow: 0 10px 30px rgba(0,0,0,0.45); border-radius: 22px;">
-    <h3 style="margin:0; font-size: 18px; color:white;">Settings</h3>
+    <div class="glassbox" id="settingsPanel" style="position: fixed; top: 60px; right: 20px; width: 300px; padding: 20px; display: none; flex-direction: column; gap: 12px; z-index: 999; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); background: rgba(0,255,128,0.14); border:1px solid rgba(0,255,128,0.22); box-shadow: 0 10px 30px rgba(0,0,0,0.45); border-radius: 22px;">
+        <h3 style="margin:0; font-size: 18px; color:white;">Settings</h3>
 
-    <!-- Theme selector -->
-    <label for="themeSelect" style="color:white;">Color Theme:</label>
-    <select id="themeSelect">
-        <option value="dark">Dark</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-        <option value="red">Red</option>
-        <option value="orange">Orange</option>
-        <option value="yellow">Yellow</option>
-        <option value="indigo">Indigo</option>
-        <option value="violet">Violet</option>
-        <option value="pink">Pink</option>
-        <option value="cyan">Cyan</option>
-        <option value="magenta">Magenta</option>
-        <option value="lime">Lime</option>
-        <option value="turquoise">Turquoise</option>
-    </select>
+        <!-- Theme selector -->
+        <label for="themeSelect" style="color:white;">Color Theme:</label>
+        <select id="themeSelect">
+            <option value="dark">Dark</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="orange">Orange</option>
+            <option value="yellow">Yellow</option>
+            <option value="indigo">Indigo</option>
+            <option value="violet">Violet</option>
+            <option value="pink">Pink</option>
+            <option value="cyan">Cyan</option>
+            <option value="magenta">Magenta</option>
+            <option value="lime">Lime</option>
+            <option value="turquoise">Turquoise</option>
+        </select>
 
-    <!-- Favicon -->
-    <label for="faviconInput" style="color:white;">Favicon URL:</label>
-    <input type="text" id="faviconInput" placeholder="Enter favicon URL" style="width: 100%;">
+        <!-- Favicon -->
+        <label for="faviconInput" style="color:white;">Favicon URL:</label>
+        <input type="text" id="faviconInput" placeholder="Enter favicon URL" style="width: 100%;">
 
-    <!-- Font selector -->
-    <label for="fontSelect" style="color:white;">Text Font:</label>
-    <select id="fontSelect" style="width:100%;">
-        <option value="Fredoka One">Fredoka One</option>
-        <option value="Arial">Arial</option>
-        <option value="Verdana">Verdana</option>
-        <option value="Courier New">Courier New</option>
-        <option value="Comic Sans MS">Comic Sans</option>
-        <option value="Roboto">Roboto</option>
-        <option value="Poppins">Poppins</option>
-        <option value="Montserrat">Montserrat</option>
-        <option value="Oswald">Oswald</option>
-        <option value="Lato">Lato</option>
-        <option value="Raleway">Raleway</option>
-        <option value="Playfair Display">Playfair Display</option>
-        <option value="Merriweather">Merriweather</option>
-        <option value="Ubuntu">Ubuntu</option>
-        <option value="Quicksand">Quicksand</option>
-        <option value="Nunito">Nunito</option>
-        <option value="Pacifico">Pacifico</option>
-        <option value="Caveat">Caveat</option>
-        <option value="Indie Flower">Indie Flower</option>
-        <option value="Kaushan Script">Kaushan Script</option>
-        <option value="Bebas Neue">Bebas Neue</option>
-        <option value="Dancing Script">Dancing Script</option>
-        <option value="Shadows Into Light">Shadows Into Light</option>
-        <option value="PT Sans">PT Sans</option>
-        <option value="PT Serif">PT Serif</option>
-        <option value="Arvo">Arvo</option>
-        <option value="Fira Sans">Fira Sans</option>
-        <option value="Signika">Signika</option>
-        <option value="Baloo 2">Baloo 2</option>
-        <option value="Comfortaa">Comfortaa</option>
-    </select>
+        <!-- Font selector -->
+        <label for="fontSelect" style="color:white;">Text Font:</label>
+        <select id="fontSelect" style="width:100%;">
+            <option value="Fredoka One">Fredoka One</option>
+            <option value="Orbitron">Orbitron</option>
+            <option value="Exo 2">Exo 2</option>
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Comic Sans MS">Comic Sans</option>
+            <option value="Roboto">Roboto</option>
+            <option value="Poppins">Poppins</option>
+            <option value="Montserrat">Montserrat</option>
+            <option value="Oswald">Oswald</option>
+            <option value="Lato">Lato</option>
+            <option value="Raleway">Raleway</option>
+            <option value="Playfair Display">Playfair Display</option>
+            <option value="Merriweather">Merriweather</option>
+            <option value="Ubuntu">Ubuntu</option>
+            <option value="Quicksand">Quicksand</option>
+            <option value="Nunito">Nunito</option>
+            <option value="Pacifico">Pacifico</option>
+            <option value="Caveat">Caveat</option>
+            <option value="Indie Flower">Indie Flower</option>
+            <option value="Kaushan Script">Kaushan Script</option>
+            <option value="Bebas Neue">Bebas Neue</option>
+            <option value="Dancing Script">Dancing Script</option>
+            <option value="Shadows Into Light">Shadows Into Light</option>
+            <option value="PT Sans">PT Sans</option>
+            <option value="PT Serif">PT Serif</option>
+            <option value="Arvo">Arvo</option>
+            <option value="Fira Sans">Fira Sans</option>
+            <option value="Signika">Signika</option>
+            <option value="Baloo 2">Baloo 2</option>
+            <option value="Comfortaa">Comfortaa</option>
+        </select>
 
-    <!-- Text color selector -->
-    <label for="textColorSelect" style="color:white;">Text Color:</label>
-    <select id="textColorSelect" style="width:100%;">
-        <option value="default">Original</option>
-        <option value="red">Red</option>
-        <option value="orange">Orange</option>
-        <option value="yellow">Yellow</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-        <option value="indigo">Indigo</option>
-        <option value="violet">Violet</option>
-        <option value="pink">Pink</option>
-        <option value="cyan">Cyan</option>
-        <option value="magenta">Magenta</option>
-        <option value="lime">Lime</option>
-        <option value="turquoise">Turquoise</option>
-        <option value="white">White</option>
-        <option value="black">Black</option>
-    </select>
+        <!-- Text color selector -->
+        <label for="textColorSelect" style="color:white;">Text Color:</label>
+        <select id="textColorSelect" style="width:100%;">
+            <option value="default">Original</option>
+            <option value="red">Red</option>
+            <option value="orange">Orange</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="indigo">Indigo</option>
+            <option value="violet">Violet</option>
+            <option value="pink">Pink</option>
+            <option value="cyan">Cyan</option>
+            <option value="magenta">Magenta</option>
+            <option value="lime">Lime</option>
+            <option value="turquoise">Turquoise</option>
+            <option value="white">White</option>
+            <option value="black">Black</option>
+        </select>
 
-    <!-- Open in blank -->
-    <button id="openBlankBtn" style="padding:5px 10px; cursor:pointer;">Open in New Tab</button>
-</div>
+        <!-- Open in blank -->
+        <button id="openBlankBtn" style="padding:5px 10px; cursor:pointer;">Open in New Tab</button>
+    </div>
 
-<script>
-// --- SETTINGS PANEL TOGGLE ---
-const settingsBtn = document.getElementById('settingsBtn');
-const settingsPanel = document.getElementById('settingsPanel');
-settingsBtn.addEventListener('click', () => {
-    settingsPanel.style.display = settingsPanel.style.display === "flex" ? "none" : "flex";
-});
+    <style>
+        /* Enhanced OS-like UI Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-// Elements
-const themeSelect = document.getElementById('themeSelect');
-const faviconInput = document.getElementById('faviconInput');
-const fontSelect = document.getElementById('fontSelect');
-const textColorSelect = document.getElementById('textColorSelect');
-const openBlankBtn = document.getElementById('openBlankBtn');
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(130deg,#0a1b24,#001014,#0f3527);
+            font-family: "Exo 2", sans-serif;
+            overflow: hidden;
+            user-select: none;
+            position: relative;
+        }
 
-// --- APPLY FUNCTIONS ---
-function applyTheme(theme) {
-    const themes = {
-        dark: "linear-gradient(130deg,#0a1b24,#001014,#0f3527)",
-        green: "linear-gradient(130deg,#0f3527,#1a5032,#3aa76f)",
-        blue: "linear-gradient(130deg,#0a1b24,#002244,#004488)",
-        red: "linear-gradient(130deg,#4c0000,#8b0000,#ff0000)",
-        orange: "linear-gradient(130deg,#7a3e00,#ff6600,#ff9933)",
-        yellow: "linear-gradient(130deg,#666600,#ffff00,#ffff99)",
-        indigo: "linear-gradient(130deg,#1a0033,#330066,#6600cc)",
-        violet: "linear-gradient(130deg,#330033,#660066,#cc00cc)",
-        pink: "linear-gradient(130deg,#660033,#ff3399,#ff66cc)",
-        cyan: "linear-gradient(130deg,#003333,#009999,#00cccc)",
-        magenta: "linear-gradient(130deg,#660066,#cc00cc,#ff33ff)",
-        lime: "linear-gradient(130deg,#336600,#66cc00,#99ff33)",
-        turquoise: "linear-gradient(130deg,#003333,#006666,#00cccc)"
-    };
-    document.body.style.background = themes[theme] || themes.dark;
-}
+        /* Interactive particle orbs */
+        .particle-orbs {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
 
-function applyFavicon(url) {
-    let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-    link.type = 'image/x-icon';
-    link.rel = 'icon';
-    link.href = url;
-    document.getElementsByTagName('head')[0].appendChild(link);
-}
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 255, 170, 0.8) 0%, rgba(0, 255, 170, 0.2) 50%, transparent 100%);
+            box-shadow: 
+                0 0 20px rgba(0, 255, 170, 0.6),
+                inset 0 0 20px rgba(255, 255, 255, 0.2);
+            animation: float 20s infinite ease-in-out;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-function applyFont(font) {
-    document.querySelectorAll('.title, .randomText, .slide h2, .slide a').forEach(el => {
-        el.style.fontFamily = font + ', sans-serif';
-    });
-}
+        .orb:hover {
+            transform: scale(1.5);
+            box-shadow: 
+                0 0 40px rgba(0, 255, 170, 1),
+                inset 0 0 30px rgba(255, 255, 255, 0.4);
+            animation-play-state: paused;
+        }
 
-function applyTextColor(color) {
-    document.querySelectorAll('.title, .randomText, .slide h2, .slide a').forEach(el => {
-        el.style.color = (color === "default") ? "" : color;
-    });
-}
+        .orb:active {
+            transform: scale(0.8);
+            background: radial-gradient(circle, rgba(255, 100, 100, 0.8) 0%, rgba(255, 100, 100, 0.2) 50%, transparent 100%);
+            box-shadow: 
+                0 0 30px rgba(255, 100, 100, 0.8),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
 
-// --- LOAD SETTINGS ---
-function loadSettings() {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    const savedFont = localStorage.getItem('font') || 'Fredoka One';
-    const savedFavicon = localStorage.getItem('favicon') || './download.png';
-    const savedTextColor = localStorage.getItem('textColor') || 'default';
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-50px) translateX(30px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(-20px) translateX(-30px) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-80px) translateX(20px) rotate(270deg);
+            }
+        }
 
-    themeSelect.value = savedTheme;
-    fontSelect.value = savedFont;
-    faviconInput.value = savedFavicon;
-    textColorSelect.value = savedTextColor;
+        /* Enhanced glassmorphism */
+        .glassbox {
+            font-family: "Orbitron", monospace;
+            padding: 12px 30px;
+            border-radius: 22px;
+            background: rgba(255,255,255,0.14);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255,255,255,0.22);
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.45),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            animation: drip 4s infinite ease-in-out;
+            position: absolute;
+            cursor: default;
+            z-index: 10;
+        }
 
-    applyTheme(savedTheme);
-    applyFont(savedFont);
-    applyFavicon(savedFavicon);
-    applyTextColor(savedTextColor);
-}
+        /* Auto-fit button container */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 15px;
+            width: 100%;
+            max-width: 400px;
+            padding: 0 20px;
+        }
 
-// --- EVENT LISTENERS ---
-themeSelect.addEventListener('change', () => {
-    const theme = themeSelect.value;
-    applyTheme(theme);
-    localStorage.setItem('theme', theme);
-});
+        /* OS Button Styles */
+        .os-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            margin: 4px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border: 2px solid rgba(0, 255, 170, 0.3);
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            font-family: "Orbitron", monospace;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 
+                0 4px 15px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+            min-width: 120px;
+            text-align: center;
+            flex: 1 1 auto;
+            max-width: 160px;
+        }
 
-faviconInput.addEventListener('change', () => {
-    const url = faviconInput.value;
-    applyFavicon(url);
-    localStorage.setItem('favicon', url);
-});
+        .os-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 170, 0.4), transparent);
+            transition: left 0.5s;
+        }
 
-fontSelect.addEventListener('change', () => {
-    const font = fontSelect.value;
-    applyFont(font);
-    localStorage.setItem('font', font);
-});
+        .os-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 
+                0 6px 20px rgba(0, 255, 170, 0.4),
+                0 0 30px rgba(0, 255, 170, 0.3),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+            border-color: rgba(0, 255, 170, 0.8);
+            background: linear-gradient(135deg, rgba(0, 255, 170, 0.2), rgba(0, 255, 170, 0.1));
+        }
 
-textColorSelect.addEventListener('change', () => {
-    const color = textColorSelect.value;
-    applyTextColor(color);
-    localStorage.setItem('textColor', color);
-});
+        .os-button:hover:before {
+            left: 100%;
+        }
 
-openBlankBtn.addEventListener('click', () => {
-    window.open(window.location.href, "_blank");
-});
+        .os-button:active {
+            transform: translateY(0) scale(0.95);
+            box-shadow: 
+                0 2px 10px rgba(0, 255, 170, 0.3),
+                inset 0 1px 0 rgba(255,255,255,0.1);
+        }
 
-// Ensure text color stays applied even for dynamically added elements
-const observer = new MutationObserver(() => {
-    applyTextColor(textColorSelect.value);
-});
-observer.observe(document.body, { childList: true, subtree: true });
+        /* Enhanced title */
+        .title {
+            font-size: 38px;
+            font-weight: 900;
+            color: white;
+            cursor: grab;
+            top: 40px;
+            text-shadow: 
+                0 0 20px rgba(0, 255, 170, 0.5),
+                0 0 40px rgba(0, 255, 170, 0.3);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
 
-// Load saved settings on page load
-loadSettings();
-</script>
+        @keyframes titleGlow {
+            0% {
+                text-shadow: 
+                    0 0 20px rgba(0, 255, 170, 0.5),
+                    0 0 40px rgba(0, 255, 170, 0.3);
+            }
+            100% {
+                text-shadow: 
+                    0 0 30px rgba(0, 255, 170, 0.8),
+                    0 0 60px rgba(0, 255, 170, 0.5);
+            }
+        }
 
-<!-- Google bubbly font -->
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        .title:active {
+            cursor: grabbing;
+        }
 
-<style>
-    body {
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(130deg,#0a1b24,#001014,#0f3527);
-        font-family: "Inter", sans-serif;
-        overflow: hidden;
-        user-select: none;
-    }
+        /* Enhanced random text */
+        .randomText {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            top: 105px;
+            opacity: 0.85;
+            font-family: "Exo 2", sans-serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
 
-    /* ⭐ SHARED GLASS STYLE */
-    .glassbox {
-        font-family: "Fredoka One", sans-serif;
-        padding: 12px 30px;
-        border-radius: 22px;
-        background: rgba(255,255,255,0.14);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        border: 1px solid rgba(255,255,255,0.22);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-        letter-spacing: 2px;
-        transition: 0.3s;
-        animation: drip 4s infinite ease-in-out;
-        position: absolute;
-        cursor: default;
-    }
+        /* HOVER EFFECTS */
+        .title:hover,
+        .randomText:hover {
+            box-shadow:
+                0 0 30px rgba(0,255,170,0.8),
+                0 0 60px rgba(0,255,170,0.5);
+            border: 1px solid rgba(0,255,170,0.8);
+            color: #76ffc8;
+            transform: scale(1.05);
+        }
 
-    /* ⭐ TITLE */
-    .title {
-        font-size: 34px;
-        color: white;
-        cursor: grab;
-        top: 40px;
-    }
+        /* LIQUID DRIP ANIMATION */
+        @keyframes drip {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(6px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
 
-    .title:active {
-        cursor: grabbing;
-    }
+        /* Enhanced carousel */
+        .carousel {
+            position: relative;
+            width: 520px;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 28px;
+            backdrop-filter: blur(22px);
+            background: rgba(255,255,255,0.14);
+            box-shadow: 
+                0 20px 50px rgba(0,0,0,0.55),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            margin-top: 120px;
+            border: 2px solid rgba(0, 255, 170, 0.2);
+            z-index: 10;
+        }
 
-    /* ⭐ RANDOM TEXT UNDER LOGO */
-    .randomText {
-        font-size: 22px;
-        color: white;
-        top: 105px;
-        opacity: 0.85;
-    }
+        .track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(.19,1,.22,1);
+        }
 
-    /* HOVER GLOW */
-    .title:hover,
-    .randomText:hover {
-        box-shadow:
-            0 0 20px rgba(0,255,170,0.7),
-            0 0 60px rgba(0,255,170,0.5);
-        border: 1px solid rgba(0,255,170,0.5);
-        color: #76ffc8;
-    }
+        .slide {
+            min-width: 520px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            border-radius: 28px;
+            color: white;
+            transform: scale(0.94);
+            transition: 0.3s;
+            padding: 30px;
+        }
 
-    /* LIQUID DRIP ANIMATION */
-    @keyframes drip {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(6px); }
-        100% { transform: translateY(0px); }
-    }
+        .slide.active {
+            transform: scale(1);
+        }
 
-    .carousel {
-        position: relative;
-        width: 420px;
-        height: 260px;
-        overflow: hidden;
-        border-radius: 28px;
-        backdrop-filter: blur(22px);
-        background: rgba(255,255,255,0.14);
-        box-shadow: 0 20px 50px rgba(0,0,0,0.55);
-        transform-style: preserve-3d;
-        perspective: 1000px;
-        margin-top: 120px;
-    }
+        .slide h2 {
+            font-family: "Orbitron", monospace;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
+        }
 
-    .track {
-        display: flex;
-        height: 100%;
-        transition: transform 0.6s cubic-bezier(.19,1,.22,1);
-    }
+        /* Enhanced navigation arrows */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 42px;
+            color: rgba(255,255,255,0.7);
+            transform: translateY(-50%);
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(0, 255, 170, 0.3);
+        }
 
-    .slide {
-        min-width: 420px;
-        height: 260px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 14px;
-        border-radius: 28px;
-        color: white;
-        transform: scale(0.94);
-        transition: 0.3s;
-    }
+        .arrow:hover {
+            color: #76ffc8;
+            background: rgba(0, 255, 170, 0.2);
+            border-color: rgba(0, 255, 170, 0.8);
+            box-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
+            transform: translateY(-50%) scale(1.1);
+        }
 
-    .slide.active {
-        transform: scale(1);
-    }
+        .left { left: -80px; }
+        .right { right: -80px; }
 
-    .slide h2 {
-        font-family: "Fredoka One", sans-serif;
-        font-size: 28px;
-        letter-spacing: 1px;
-    }
+        .keys {
+            position: absolute;
+            bottom: -65px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 22px;
+            opacity: 0.35;
+            pointer-events: none;
+        }
 
-    a {
-        color: #76ffc8;
-        font-size: 18px;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
+        /* Enhanced dots */
+        .dots {
+            position: absolute;
+            bottom: 15px;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 10px;
+        }
 
-    .arrow {
-        position: absolute;
-        top: 50%;
-        font-size: 38px;
-        color: rgba(255,255,255,0.7);
-        transform: translateY(-50%);
-        cursor: pointer;
-        user-select: none;
-        transition: 0.2s;
-    }
-    .arrow:hover {
-        color: #76ffc8;
-    }
-    .left { left: -70px; }
-    .right { right: -70px; }
+        .dot {
+            width: 14px;
+            height: 14px;
+            background: rgba(255,255,255,0.26);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
 
-    .keys {
-        position: absolute;
-        bottom: -65px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        font-size: 22px;
-        opacity: 0.35;
-        pointer-events: none;
-    }
+        .dot.active {
+            background: #76ffc8;
+            transform: scale(1.4);
+            border-color: rgba(0, 255, 170, 0.8);
+            box-shadow: 0 0 15px rgba(0, 255, 170, 0.6);
+        }
 
-    .dots {
-        position: absolute;
-        bottom: 10px;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        gap: 7px;
-    }
-    .dot {
-        width: 12px;
-        height: 12px;
-        background: rgba(255,255,255,0.26);
-        border-radius: 50%;
-        transition: 0.3s;
-    }
-    .dot.active {
-        background: #76ffc8;
-        transform: scale(1.3);
-    }
-</style>
+        .dot:hover {
+            background: rgba(0, 255, 170, 0.5);
+            transform: scale(1.2);
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Interactive particle orbs -->
+    <div class="particle-orbs" id="particleOrbs"></div>
 
-<!-- ⭐ TExt foR the tile -->
-<div class="glassbox title" id="dragTitle">Typical Productions OS</div>
+    <!-- ⭐ TExt foR the tile -->
+    <div class="glassbox title" id="dragTitle">Typical Productions OS</div>
 
-<!-- ⭐ RANDOM TEXT GENERATOR UNDER LOGO -->
-<div class="glassbox randomText" id="randomText"></div>
+    <!-- ⭐ RANDOM TEXT GENERATOR UNDER LOGO -->
+    <div class="glassbox randomText" id="randomText"></div>
 
+    <div class="carousel">
+        <div class="arrow left">⟵</div>
+        <div class="arrow right">⟶</div>
 
-<div class="carousel">
-    <div class="arrow left">⟵</div>
-    <div class="arrow right">⟶</div>
+        <div class="keys">
+            <span>⬅️</span>
+            <span>➡️</span>
+        </div>
 
-    <div class="keys">
-        <span>⬅️</span>
-        <span>➡️</span>
+        <div class="track">
+            <div class="slide" style="background:rgba(255,255,255,0.04);">
+                <h2>Home</h2>
+                <div class="button-container">
+                    <a href="https://ooze34cribreborn.global.ssl.fastly.net" target="_blank" class="os-button">Ooze Crib</a>
+                    <a href="https://chickengames.my.canva.site" target="_blank" class="os-button">Chicken Games</a>
+                    <a href="https://batmanscave.my.canva.site" target="_blank" class="os-button">Batman HQ</a>
+                    <a href="https://arcadiumweb.my.canva.site" target="_blank" class="os-button">Arcadium</a>
+                </div>
+            </div>
+
+            <div class="slide" style="background:rgba(255,255,255,0.08);">
+                <h2>Games</h2>
+                <div class="button-container">
+                    <a href="games.html" class="os-button">All Games</a>
+                </div>
+            </div>
+
+            <div class="slide" style="background:rgba(255,255,255,0.06);">
+                <h2>Proxies</h2>
+                <div class="button-container">
+                    <a href="proxies.html" class="os-button">Proxy Vault</a>
+                </div>
+            </div>
+
+            <div class="slide" style="background:rgba(255,255,255,0.05);">
+                <h2>Websites</h2>
+                <div class="button-container">
+                    <a href="websites.html" class="os-button">Websites</a>
+                    <a href="gamesites.html" class="os-button">Game Websites</a>
+                </div>
+            </div>
+
+            <div class="slide" style="background:rgba(255,255,255,0.05);">
+                <h2>Chat</h2>
+                <div class="button-container">
+                    <a href="comment.html" class="os-button">Comment Chaos</a>
+                    <a href="whiteboard.html" class="os-button">Whiteboard Madness</a>
+                </div>
+            </div>
+
+            <div class="slide" style="background:rgba(255,255,255,0.05);">
+                <h2>Soundboards</h2>
+                <div class="button-container">
+                    <a href="soundboard.html" class="os-button">Soundboard</a>
+                </div>
+            </div>
+
+            <div class="slide" style="background:rgba(255,255,255,0.05);">
+                <h2>More</h2>
+                <div class="button-container">
+                    <a href="chatgpt.html" class="os-button">ChatGPT</a>
+                    <a href="abt.html" class="os-button">About:Blank Opener</a>
+                </div>
+            </div>
+
+            <div class="slide" style="background:rgba(255,255,255,0.05);">
+                <h2>Hacks</h2>
+                <div class="button-container">
+                    <a href="blookethacks.html" class="os-button">Blooket Hacks</a>
+                    <a href="ExtHang3r.html" class="os-button">ExtHang3r</a>
+                    <a href="ytu.html" class="os-button">Youtube Unblocker</a>
+                </div>
+            </div>
+        </div>
+        <div class="dots"></div>
     </div>
 
-    <div class="track">
-        <div class="slide" style="background:rgba(255,255,255,0.04);">
-            <h2>Home</h2>
-            <a href="https://ooze34cribreborn.global.ssl.fastly.net" target="https://ooze34cribreborn.global.ssl.fastly.net/">Ooze Crib</a>
-            <a href="https://chickengames.my.canva.site" target="https://chickengames.my.canva.site/">Chicken Games</a>
-            <a href="https://batmanscave.my.canva.site" target="https://batmanscave.my.canva.site/">Batman HQ</a>
-            <a href="https://arcadiumweb.my.canva.site" target="https://arcadiumweb.my.canva.site/">Arcadium</a>
-        </div>
+    <script>
+        // Create interactive particle orbs
+        function createParticleOrbs() {
+            const orbsContainer = document.getElementById('particleOrbs');
+            const orbCount = 15;
+            
+            for (let i = 0; i < orbCount; i++) {
+                const orb = document.createElement('div');
+                orb.className = 'orb';
+                
+                // Random size between 20px and 60px
+                const size = Math.random() * 40 + 20;
+                orb.style.width = size + 'px';
+                orb.style.height = size + 'px';
+                
+                // Random position
+                orb.style.left = Math.random() * 100 + '%';
+                orb.style.top = Math.random() * 100 + '%';
+                
+                // Random animation duration
+                orb.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                orb.style.animationDelay = Math.random() * 5 + 's';
+                
+                // Add click interaction
+                orb.addEventListener('click', function() {
+                    this.style.animation = 'none';
+                    this.style.background = 'radial-gradient(circle, rgba(255, 100, 100, 0.8) 0%, rgba(255, 100, 100, 0.2) 50%, transparent 100%)';
+                    this.style.boxShadow = '0 0 50px rgba(255, 100, 100, 1), inset 0 0 30px rgba(255, 255, 255, 0.4)';
+                    
+                    setTimeout(() => {
+                        this.style.animation = 'float 20s infinite ease-in-out';
+                        this.style.background = 'radial-gradient(circle, rgba(0, 255, 170, 0.8) 0%, rgba(0, 255, 170, 0.2) 50%, transparent 100%)';
+                        this.style.boxShadow = '0 0 20px rgba(0, 255, 170, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2)';
+                    }, 1000);
+                });
+                
+                // Add hover sound effect (visual feedback)
+                orb.addEventListener('mouseenter', function() {
+                    this.style.filter = 'brightness(1.5)';
+                });
+                
+                orb.addEventListener('mouseleave', function() {
+                    this.style.filter = 'brightness(1)';
+                });
+                
+                orbsContainer.appendChild(orb);
+            }
+        }
+        createParticleOrbs();
 
-        <div class="slide" style="background:rgba(255,255,255,0.08);">
-            <h2>Games</h2>
-            <a href="games.html">All Games</a>
-        </div>
+        // --- SETTINGS PANEL TOGGLE ---
+        const settingsBtn = document.getElementById('settingsBtn');
+        const settingsPanel = document.getElementById('settingsPanel');
+        settingsBtn.addEventListener('click', () => {
+            settingsPanel.style.display = settingsPanel.style.display === "flex" ? "none" : "flex";
+        });
 
-        <div class="slide" style="background:rgba(255,255,255,0.06);">
-            <h2>Proxies</h2>
-            <a href="proxies.html">Proxy Vault</a>
-        </div>
+        // Elements
+        const themeSelect = document.getElementById('themeSelect');
+        const faviconInput = document.getElementById('faviconInput');
+        const fontSelect = document.getElementById('fontSelect');
+        const textColorSelect = document.getElementById('textColorSelect');
+        const openBlankBtn = document.getElementById('openBlankBtn');
 
-        <div class="slide" style="background:rgba(255,255,255,0.05);">
-            <h2>Websites</h2>
-            <a href="websites.html">Websites</a>
-            <a href="gamesites.html">Game Websites</a>
-        </div>
+        // --- APPLY FUNCTIONS ---
+        function applyTheme(theme) {
+            const themes = {
+                dark: "linear-gradient(130deg,#0a1b24,#001014,#0f3527)",
+                green: "linear-gradient(130deg,#0f3527,#1a5032,#3aa76f)",
+                blue: "linear-gradient(130deg,#0a1b24,#002244,#004488)",
+                red: "linear-gradient(130deg,#4c0000,#8b0000,#ff0000)",
+                orange: "linear-gradient(130deg,#7a3e00,#ff6600,#ff9933)",
+                yellow: "linear-gradient(130deg,#666600,#ffff00,#ffff99)",
+                indigo: "linear-gradient(130deg,#1a0033,#330066,#6600cc)",
+                violet: "linear-gradient(130deg,#330033,#660066,#cc00cc)",
+                pink: "linear-gradient(130deg,#660033,#ff3399,#ff66cc)",
+                cyan: "linear-gradient(130deg,#003333,#009999,#00cccc)",
+                magenta: "linear-gradient(130deg,#660066,#cc00cc,#ff33ff)",
+                lime: "linear-gradient(130deg,#336600,#66cc00,#99ff33)",
+                turquoise: "linear-gradient(130deg,#003333,#006666,#00cccc)"
+            };
+            document.body.style.background = themes[theme] || themes.dark;
+        }
 
-         <div class="slide" style="background:rgba(255,255,255,0.05);">
-            <h2>Chat</h2>
-            <a href="comment.html">Comment Chaos</a>
-            <a href="whiteboard.html">Whiteboard Madness</a>
-        </div>
+        function applyFavicon(url) {
+            let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+            link.type = 'image/x-icon';
+            link.rel = 'icon';
+            link.href = url;
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
 
-        <div class="slide" style="background:rgba(255,255,255,0.05);">
-            <h2>Soundboards</h2>
-            <a href="soundboard.html">Soundboard</a>
-        </div>
+        function applyFont(font) {
+            document.querySelectorAll('.title, .randomText, .slide h2, .os-button').forEach(el => {
+                el.style.fontFamily = font + ', sans-serif';
+            });
+        }
 
-        <div class="slide" style="background:rgba(255,255,255,0.05);">
-            <h2>More</h2>
-            <a href="chatgpt.html">ChatGPT</a>
-            <a href="abt.html">About:Blank Opener</a>
-        </div>
+        function applyTextColor(color) {
+            document.querySelectorAll('.title, .randomText, .slide h2, .os-button').forEach(el => {
+                el.style.color = (color === "default") ? "" : color;
+            });
+        }
 
-         <div class="slide" style="background:rgba(255,255,255,0.05);">
-            <h2>Hacks</h2>
-            <a href="blookethacks.html">Blooket Hacks</a>
-            <a href="ExtHang3r.html">ExtHang3r</a>
-            <a href="ytu.html">Youtube Unblocker</a>
-        </div>
-    </div>
-    <div class="dots"></div>
-</div>
+        // --- LOAD SETTINGS ---
+        function loadSettings() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const savedFont = localStorage.getItem('font') || 'Fredoka One';
+            const savedFavicon = localStorage.getItem('favicon') || './download.png';
+            const savedTextColor = localStorage.getItem('textColor') || 'default';
 
+            themeSelect.value = savedTheme;
+            fontSelect.value = savedFont;
+            faviconInput.value = savedFavicon;
+            textColorSelect.value = savedTextColor;
 
-<script>
-/*** title dragable code DONT TOCUH!!! ***/
-const drag = document.getElementById("dragTitle");
-let isDrag = false;
-let offsetX, offsetY;
+            applyTheme(savedTheme);
+            applyFont(savedFont);
+            applyFavicon(savedFavicon);
+            applyTextColor(savedTextColor);
+        }
 
-drag.addEventListener("mousedown", (e) => {
-    isDrag = true;
-    offsetX = e.clientX - drag.offsetLeft;
-    offsetY = e.clientY - drag.offsetTop;
-});
+        // --- EVENT LISTENERS ---
+        themeSelect.addEventListener('change', () => {
+            const theme = themeSelect.value;
+            applyTheme(theme);
+            localStorage.setItem('theme', theme);
+        });
 
-document.addEventListener("mouseup", () => isDrag = false);
+        faviconInput.addEventListener('change', () => {
+            const url = faviconInput.value;
+            applyFavicon(url);
+            localStorage.setItem('favicon', url);
+        });
 
-document.addEventListener("mousemove", (e) => {
-    if(isDrag) {
-        drag.style.left = (e.clientX - offsetX) + "px";
-        drag.style.top = (e.clientY - offsetY) + "px";
-    }
-});
+        fontSelect.addEventListener('change', () => {
+            const font = fontSelect.value;
+            applyFont(font);
+            localStorage.setItem('font', font);
+        });
 
+        textColorSelect.addEventListener('change', () => {
+            const color = textColorSelect.value;
+            applyTextColor(color);
+            localStorage.setItem('textColor', color);
+        });
 
-/*** text genertor or something***/
-const randomText = document.getElementById("randomText");
+        openBlankBtn.addEventListener('click', () => {
+            window.open(window.location.href, "_blank");
+        });
 
-const texts = [
-    "Welcome back :)",
-    "Powered by omee",
-    "Stay A Hater",
-    "Loading...",
-    "Generating cool stuff",
-    "wow ooze is still alive!",
-    "Typical Productions forever",
-    "Ooze may look better for now but i got the good stuff",
-    "let me live my life",
-    "coded by a dumb dude",
-    "what is this diddy blud doing the the calculator",
-    "wow cool liquid glass system",
-    "Make sure to visit Ooze Reborn!",
-    "Arcadium Is DEAD",
-    "oooh wow chicken!",
-    "Me And Ooze Are Friends",
-    "👀",
-    "Lifes hard.. But im Harder-J",
-    "Einstein",
-    "ooooozeeeeeee",
-    "Typical?",
-    "Vissit Unblocked Chicken!",
-    "i suck at coding",
-    "Arcadium In The Big 25 🥀",
-    "ooze in the big 25 ❤️‍🩹🔋",
-    "WE are done",
-    "i dont think im making a big comeback",
-    "im adding random shyt",
-    "real eyes relize real lies",
-    "gamble all you want",
-    "OK BRO TS WAS NOT THE WIND",
-];
+        // Ensure text color stays applied even for dynamically added elements
+        const observer = new MutationObserver(() => {
+            applyTextColor(textColorSelect.value);
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
 
-function changeText() {
-    randomText.textContent = texts[Math.floor(Math.random()*texts.length)];
-}
+        // Load saved settings on page load
+        loadSettings();
 
-changeText();
-setInterval(changeText, 5000);
+        /*** title dragable code DONT TOCUH!!! ***/
+        const drag = document.getElementById("dragTitle");
+        let isDrag = false;
+        let offsetX, offsetY;
 
+        drag.addEventListener("mousedown", (e) => {
+            isDrag = true;
+            offsetX = e.clientX - drag.offsetLeft;
+            offsetY = e.clientY - drag.offsetTop;
+        });
 
-/*** CAROUSEL (unchanged) ***/
-const track = document.querySelector('.track');
-const slides = document.querySelectorAll('.slide');
-const left = document.querySelector('.left');
-const right = document.querySelector('.right');
-const dotsWrap = document.querySelector('.dots');
+        document.addEventListener("mouseup", () => isDrag = false);
 
-let current = parseInt(localStorage.getItem("carouselIndex")) || 0;
-let width = 420;
+        document.addEventListener("mousemove", (e) => {
+            if(isDrag) {
+                drag.style.left = (e.clientX - offsetX) + "px";
+                drag.style.top = (e.clientY - offsetY) + "px";
+            }
+        });
 
-slides.forEach((_, i) => {
-    const d = document.createElement('div');
-    d.classList.add('dot');
-    if(i === current) d.classList.add('active');
-    dotsWrap.appendChild(d);
-});
+        /*** text genertor or something***/
+        const randomText = document.getElementById("randomText");
 
-const dots = document.querySelectorAll('.dot');
+        const texts = [
+            "Welcome back :)",
+            "Powered by omee",
+            "Stay A Hater",
+            "Loading...",
+            "Generating cool stuff",
+            "wow ooze is still alive!",
+            "Typical Productions forever",
+            "Ooze may look better for now but i got the good stuff",
+            "let me live my life",
+            "coded by a dumb dude",
+            "what is this diddy blud doing the the calculator",
+            "wow cool liquid glass system",
+            "Make sure to visit Ooze Reborn!",
+            "Arcadium Is DEAD",
+            "oooh wow chicken!",
+            "Me And Ooze Are Friends",
+            "👀",
+            "Lifes hard.. But im Harder-J",
+            "Einstein",
+            "ooooozeeeeeee",
+            "Typical?",
+            "Vissit Unblocked Chicken!",
+            "i suck at coding",
+            "Arcadium In The Big 25 🥀",
+            "ooze in the big 25 ❤️‍🩹🔋",
+            "WE are done",
+            "i dont think im making a big comeback",
+            "im adding random shyt",
+            "real eyes relize real lies",
+            "gamble all you want",
+            "OK BRO TS WAS NOT THE WIND",
+        ];
 
-function update() {
-    track.style.transform = `translateX(-${current * width}px)`;
-    slides.forEach(s => s.classList.remove("active"));
-    slides[current].classList.add("active");
+        function changeText() {
+            randomText.textContent = texts[Math.floor(Math.random()*texts.length)];
+        }
 
-    dots.forEach(d => d.classList.remove("active"));
-    dots[current].classList.add("active");
+        changeText();
+        setInterval(changeText, 5000);
 
-    localStorage.setItem("carouselIndex", current);
-}
+        /*** CAROUSEL (unchanged) ***/
+        const track = document.querySelector('.track');
+        const slides = document.querySelectorAll('.slide');
+        const left = document.querySelector('.left');
+        const right = document.querySelector('.right');
+        const dotsWrap = document.querySelector('.dots');
 
-function next() {
-    current = (current + 1) % slides.length;
-    update();
-}
-function prev() {
-    current = (current - 1 + slides.length) % slides.length;
-    update();
-}
+        let current = parseInt(localStorage.getItem("carouselIndex")) || 0;
+        let width = 520;
 
-right.addEventListener('click', next);
-left.addEventListener('click', prev);
+        slides.forEach((_, i) => {
+            const d = document.createElement('div');
+            d.classList.add('dot');
+            if(i === current) d.classList.add('active');
+            dotsWrap.appendChild(d);
+        });
 
-document.addEventListener('keydown', (e) => {
-    if(e.key === "ArrowRight") next();
-    if(e.key === "ArrowLeft") prev();
-});
+        const dots = document.querySelectorAll('.dot');
 
-window.addEventListener("wheel", (e) => {
-    if(Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-        if(e.deltaX > 0) next();
-        else prev();
-    }
-});
+        function update() {
+            track.style.transform = `translateX(-${current * width}px)`;
+            slides.forEach(s => s.classList.remove("active"));
+            slides[current].classList.add("active");
 
-let startX;
-track.addEventListener("touchstart", e => startX = e.touches[0].clientX);
-track.addEventListener("touchend", e => {
-    let endX = e.changedTouches[0].clientX;
-    if(endX < startX - 40) next();
-    if(endX > startX + 40) prev();
-});
+            dots.forEach(d => d.classList.remove("active"));
+            dots[current].classList.add("active");
 
-dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-        current = i;
+            localStorage.setItem("carouselIndex", current);
+        }
+
+        function next() {
+            current = (current + 1) % slides.length;
+            update();
+        }
+        function prev() {
+            current = (current - 1 + slides.length) % slides.length;
+            update();
+        }
+
+        right.addEventListener('click', next);
+        left.addEventListener('click', prev);
+
+        document.addEventListener('keydown', (e) => {
+            if(e.key === "ArrowRight") next();
+            if(e.key === "ArrowLeft") prev();
+        });
+
+        window.addEventListener("wheel", (e) => {
+            if(Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+                if(e.deltaX > 0) next();
+                else prev();
+            }
+        });
+
+        let startX;
+        track.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+        track.addEventListener("touchend", e => {
+            let endX = e.changedTouches[0].clientX;
+            if(endX < startX - 40) next();
+            if(endX > startX + 40) prev();
+        });
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+                current = i;
+                update();
+            });
+        });
+
+        setInterval(next,9999999999999);
         update();
-    });
-});
-
-setInterval(next,9999999999999);
-update();
-</script>
-
+    </script>
 </body>
 </html>
