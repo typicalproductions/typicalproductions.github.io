@@ -12,22 +12,6 @@
     Typical Proxy
 </a>
 
-<!-- Container for loading content -->
-<div id="contentContainer" style="margin-top:60px; padding:20px;"></div>
-
-<script>
-document.getElementById("topLeftBtn").addEventListener("click", function(e){
-    e.preventDefault(); // Prevent default link behavior
-
-    fetch('proxy.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('contentContainer').innerHTML = data;
-        })
-        .catch(err => console.error('Error loading content:', err));
-});
-</script>
-
     <!-- Enhanced Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
     
