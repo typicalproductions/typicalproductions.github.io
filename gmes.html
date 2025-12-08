@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+              <!-- Favicon code below -->
+<link rel="icon" href="./download.png" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gmes Library</title>
+  <!-- SETTINGS BUTTON AND PANEL -->
+<div class="glassbox" id="settingsBtn" style="position: fixed; top: 20px; left: 20px; cursor: pointer; font-size: 20px; z-index: 999;">⚙️</div>
+
+<div class="glassbox" id="settingsPanel" style="position: fixed; top: 60px; left: 20px; width: 300px; padding: 20px; display: none; flex-direction: column; gap: 12px; z-index: 999; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); background: rgba(0,255,128,0.14); border:1px solid rgba(0,255,128,0.22); box-shadow: 0 10px 30px rgba(0,0,0,0.45); border-radius: 22px;">
+    <h3 style="margin:0; font-size: 18px; color:white;">Settings</h3>
+
+    <!-- Theme selector -->
+    <label for="themeSelect" style="color:white;">Color Theme:</label>
+    <select id="themeSelect">
+        <option value="dark">Dark</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="indigo">Indigo</option>
+        <option value="violet">Violet</option>
+        <option value="pink">Pink</option>
+        <option value="cyan">Cyan</option>
+        <option value="magenta">Magenta</option>
+        <option value="lime">Lime</option>
+        <option value="turquoise">Turquoise</option>
+    </select>
+
+    <!-- Favicon -->
+    <label for="faviconInput" style="color:white;">Favicon URL:</label>
+    <input type="text" id="faviconInput" placeholder="Enter favicon URL" style="width: 100%;">
+
+    <!-- Font selector -->
+    <label for="fontSelect" style="color:white;">Text Font:</label>
+    <select id="fontSelect" style="width:100%;">
+        <option value="Fredoka One">Fredoka One</option>
+        <option value="Arial">Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Comic Sans MS">Comic Sans</option>
+        <option value="Roboto">Roboto</option>
+        <option value="Poppins">Poppins</option>
+        <option value="Montserrat">Montserrat</option>
+        <option value="Oswald">Oswald</option>
+        <option value="Lato">Lato</option>
+        <option value="Raleway">Raleway</option>
+        <option value="Playfair Display">Playfair Display</option>
+        <option value="Merriweather">Merriweather</option>
+        <option value="Ubuntu">Ubuntu</option>
+        <option value="Quicksand">Quicksand</option>
+        <option value="Nunito">Nunito</option>
+        <option value="Pacifico">Pacifico</option>
+        <option value="Caveat">Caveat</option>
+        <option value="Indie Flower">Indie Flower</option>
+        <option value="Kaushan Script">Kaushan Script</option>
+        <option value="Bebas Neue">Bebas Neue</option>
+        <option value="Dancing Script">Dancing Script</option>
+        <option value="Shadows Into Light">Shadows Into Light</option>
+        <option value="PT Sans">PT Sans</option>
+        <option value="PT Serif">PT Serif</option>
+        <option value="Arvo">Arvo</option>
+        <option value="Fira Sans">Fira Sans</option>
+        <option value="Signika">Signika</option>
+        <option value="Baloo 2">Baloo 2</option>
+        <option value="Comfortaa">Comfortaa</option>
+    </select>
+
+    <!-- Text color selector -->
+    <label for="textColorSelect" style="color:white;">Text Color:</label>
+    <select id="textColorSelect" style="width:100%;">
+        <option value="default">Original</option>
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="indigo">Indigo</option>
+        <option value="violet">Violet</option>
+        <option value="pink">Pink</option>
+        <option value="cyan">Cyan</option>
+        <option value="magenta">Magenta</option>
+        <option value="lime">Lime</option>
+        <option value="turquoise">Turquoise</option>
+        <option value="white">White</option>
+        <option value="black">Black</option>
+    </select>
+
+    <!-- Open in blank -->
+    <button id="openBlankBtn" style="padding:5px 10px; cursor:pointer;">Open in New Tab</button>
+</div>
+
+<script>
+// --- SETTINGS PANEL TOGGLE ---
+const settingsBtn = document.getElementById('settingsBtn');
+const settingsPanel = document.getElementById('settingsPanel');
+settingsBtn.addEventListener('click', () => {
+    settingsPanel.style.display = settingsPanel.style.display === "flex" ? "none" : "flex";
+});
+
+// Elements
+const themeSelect = document.getElementById('themeSelect');
+const faviconInput = document.getElementById('faviconInput');
+const fontSelect = document.getElementById('fontSelect');
+const textColorSelect = document.getElementById('textColorSelect');
+const openBlankBtn = document.getElementById('openBlankBtn');
+
+// --- APPLY FUNCTIONS ---
+function applyTheme(theme) {
+    const themes = {
+        dark: "linear-gradient(130deg,#0a1b24,#001014,#0f3527)",
+        green: "linear-gradient(130deg,#0f3527,#1a5032,#3aa76f)",
+        blue: "linear-gradient(130deg,#0a1b24,#002244,#004488)",
+        red: "linear-gradient(130deg,#4c0000,#8b0000,#ff0000)",
+        orange: "linear-gradient(130deg,#7a3e00,#ff6600,#ff9933)",
+        yellow: "linear-gradient(130deg,#666600,#ffff00,#ffff99)",
+        indigo: "linear-gradient(130deg,#1a0033,#330066,#6600cc)",
+        violet: "linear-gradient(130deg,#330033,#660066,#cc00cc)",
+        pink: "linear-gradient(130deg,#660033,#ff3399,#ff66cc)",
+        cyan: "linear-gradient(130deg,#003333,#009999,#00cccc)",
+        magenta: "linear-gradient(130deg,#660066,#cc00cc,#ff33ff)",
+        lime: "linear-gradient(130deg,#336600,#66cc00,#99ff33)",
+        turquoise: "linear-gradient(130deg,#003333,#006666,#00cccc)"
+    };
+    document.body.style.background = themes[theme] || themes.dark;
+}
+
+function applyFavicon(url) {
+    let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'icon';
+    link.href = url;
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+
+function applyFont(font) {
+    document.querySelectorAll('.title, .randomText, .slide h2, .slide a').forEach(el => {
+        el.style.fontFamily = font + ', sans-serif';
+    });
+}
+
+function applyTextColor(color) {
+    document.querySelectorAll('.title, .randomText, .slide h2, .slide a').forEach(el => {
+        el.style.color = (color === "default") ? "" : color;
+    });
+}
+
+// --- LOAD SETTINGS ---
+function loadSettings() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedFont = localStorage.getItem('font') || 'Fredoka One';
+    const savedFavicon = localStorage.getItem('favicon') || './download.png';
+    const savedTextColor = localStorage.getItem('textColor') || 'default';
+
+    themeSelect.value = savedTheme;
+    fontSelect.value = savedFont;
+    faviconInput.value = savedFavicon;
+    textColorSelect.value = savedTextColor;
+
+    applyTheme(savedTheme);
+    applyFont(savedFont);
+    applyFavicon(savedFavicon);
+    applyTextColor(savedTextColor);
+}
+
+// --- EVENT LISTENERS ---
+themeSelect.addEventListener('change', () => {
+    const theme = themeSelect.value;
+    applyTheme(theme);
+    localStorage.setItem('theme', theme);
+});
+
+faviconInput.addEventListener('change', () => {
+    const url = faviconInput.value;
+    applyFavicon(url);
+    localStorage.setItem('favicon', url);
+});
+
+fontSelect.addEventListener('change', () => {
+    const font = fontSelect.value;
+    applyFont(font);
+    localStorage.setItem('font', font);
+});
+
+textColorSelect.addEventListener('change', () => {
+    const color = textColorSelect.value;
+    applyTextColor(color);
+    localStorage.setItem('textColor', color);
+});
+
+openBlankBtn.addEventListener('click', () => {
+    window.open(window.location.href, "_blank");
+});
+
+// Ensure text color stays applied even for dynamically added elements
+const observer = new MutationObserver(() => {
+    applyTextColor(textColorSelect.value);
+});
+observer.observe(document.body, { childList: true, subtree: true });
+
+// Load saved settings on page load
+loadSettings();
+</script>
+<!-- Google bubbly font -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+    /* Body & overall style */
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Fredoka One', sans-serif;
+        background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,25,0,0.7));
+        color: #fff;
+        overflow: hidden;
+    }
+
+    /* Header bar with buttons */
+    .iframe-header {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        padding: 12px 20px;
+        background: linear-gradient(145deg, rgba(0,255,0,0.1), rgba(0,150,0,0.05));
+        backdrop-filter: blur(25px);
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        border-radius: 0 0 25px 25px;
+        box-shadow: 0 0 30px rgba(0,255,0,0.1) inset;
+    }
+
+    /* Liquid glass buttons */
+    .iframe-header button {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 20px;
+        background: linear-gradient(145deg, rgba(0,255,0,0.15), rgba(0,200,0,0.05));
+        backdrop-filter: blur(20px);
+        color: #e0ffe0;
+        font-size: 14px;
+        cursor: pointer;
+        text-shadow: 0 0 2px #fff;
+        box-shadow: 0 4px 20px rgba(0,255,0,0.2);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .iframe-header button:hover {
+        background: linear-gradient(145deg, rgba(0,255,0,0.3), rgba(0,200,0,0.15));
+        box-shadow: 0 4px 25px rgba(0,255,0,0.4);
+        transform: scale(1.05);
+    }
+
+    /* Iframe container */
+    .iframe-container {
+        flex: 1;
+        position: relative;
+        padding: 20px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(145deg, rgba(0,255,0,0.05), rgba(0,150,0,0.02));
+        backdrop-filter: blur(25px);
+        box-shadow: 0 0 40px rgba(0,255,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    iframe:focus {
+        outline: none;
+        box-shadow: 0 0 50px rgba(0,255,0,0.2);
+    }
+</style>
+</head>
+<body>
+    <div class="iframe-header">
+        <button id="reloadBtn">Reload</button>
+        <button id="fullscreenBtn">Full Screen</button>
+        <button id="openNewTabBtn">Open in New Tab</button>
+    </div>
+
+    <div class="iframe-container">
+        <iframe id="myIframe" src="https://wmath.global.ssl.fastly.net/game"></iframe>
+    </div>
+
+    <script>
+        const iframe = document.getElementById('myIframe');
+        const reloadBtn = document.getElementById('reloadBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const openNewTabBtn = document.getElementById('openNewTabBtn');
+
+        // Reload iframe
+        reloadBtn.addEventListener('click', () => {
+            iframe.src = iframe.src;
+        });
+
+        // Fullscreen toggle
+        fullscreenBtn.addEventListener('click', () => {
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Safari */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE11 */
+                iframe.msRequestFullscreen();
+            }
+        });
+
+        // Open in new tab
+        openNewTabBtn.addEventListener('click', () => {
+            window.open(iframe.src, '_blank');
+        });
+    </script>
+</body>
+</html>
+<style>
+    .glass-home-btn {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        width: 70px;
+        height: 70px;
+        border-radius: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        text-decoration: none;
+        color: white;
+
+        /* Liquid glass */
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.22);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+        transition: 0.25s;
+    }
+
+    .glass-home-btn:hover {
+        background: rgba(255,255,255,0.28);
+        box-shadow: 0 10px 36px rgba(0,255,170,0.5);
+        transform: scale(1.05);
+    }
+</style>
+
+<a href="index.html" class="glass-home-btn">🏠</a>
