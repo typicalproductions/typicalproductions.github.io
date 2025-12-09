@@ -7,55 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Typical Productions OS</title>
 
-<!-- Top-left hyperlink button -->
-<button id="openBlankBtn" style="padding:6px 12px; cursor:pointer;">
-    Open In About:Blank
-</button>
-
-<script>
-function openInBlank() {
-  const url = "https://typicalproductionsos.global.ssl.fastly.net/"; // ← put your link here
-
-  const win = window.open("about:blank", "_blank");
-
-  if (!win) {
-    alert("Popup blocked! Allow popups for this site.");
-    return;
-  }
-
-  win.document.write(`
-    <html>
-      <head>
-        <style>
-          html, body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            height: 100%;
-            width: 100%;
-          }
-          iframe {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            border: none;
-          }
-        </style>
-      </head>
-      <body>
-        <iframe src="${url}"></iframe>
-      </body>
-    </html>
-  `);
-
-  win.document.close();
-}
-
-document.getElementById("openBlankBtn").addEventListener("click", openInBlank);
-</script>
-
     <!-- Enhanced Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
     
