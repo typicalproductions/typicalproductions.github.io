@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Typical Productions OS</title>
 
+<!-- Top-left hyperlink button -->
+<a href="proxy.html" class="glassbox" id="topLeftBtn" style="top: 20px; left: 20px; position: fixed; font-size: 16px; padding: 10px 20px; z-index: 999; text-decoration:none; color:white; cursor:pointer;">
+    Typical Proxy
+</a>
+
     <!-- Enhanced Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
     
@@ -96,15 +101,8 @@
         </select>
 
         <!-- Open in blank -->
-        <button id="openBlankBtn" style="padding:5px 10px; cursor:pointer;">
-    Open in New Tab
-      </button>
-         <script>
-document.getElementById("openBlankBtn").addEventListener("click", function () {
-    let win = window.open("about:blank");
-    win.location = "https://typicalproductionsos.global.ssl.fastly.net/";
-});
-</script>
+        <button id="openBlankBtn" style="padding:5px 10px; cursor:pointer;">Open in New Tab</button>
+    </div>
 
     <style>
         /* Enhanced OS-like UI Styles */
