@@ -1,115 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Favicon code below -->
-    <link rel="icon" href="./download.png" type="image/x-icon">
+    <link rel="icon" href="./download.png" type="image/x-icon" id="favicon">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Typical Productions OS</title>
-
-<!-- Top-left hyperlink button -->
-<a href="proxy.html" class="glassbox" id="topLeftBtn" style="top: 20px; left: 20px; position: fixed; font-size: 16px; padding: 10px 20px; z-index: 999; text-decoration:none; color:white; cursor:pointer;">
-    Typical Proxy
-</a>
-
-    <!-- Enhanced Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
     
-    <!-- SETTINGS BUTTON AND PANEL -->
-    <div class="glassbox" id="settingsBtn" style="position: fixed; top: 20px; right: 20px; cursor: pointer; font-size: 20px; z-index: 999;">⚙️</div>
-
-    <div class="glassbox" id="settingsPanel" style="position: fixed; top: 60px; right: 20px; width: 300px; padding: 20px; display: none; flex-direction: column; gap: 12px; z-index: 999; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); background: rgba(0,255,128,0.14); border:1px solid rgba(0,255,128,0.22); box-shadow: 0 10px 30px rgba(0,0,0,0.45); border-radius: 22px;">
-        <h3 style="margin:0; font-size: 18px; color:white;">Settings</h3>
-
-        <!-- Theme selector -->
-        <label for="themeSelect" style="color:white;">Color Theme:</label>
-        <select id="themeSelect">
-            <option value="dark">Dark</option>
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
-            <option value="red">Red</option>
-            <option value="orange">Orange</option>
-            <option value="yellow">Yellow</option>
-            <option value="indigo">Indigo</option>
-            <option value="violet">Violet</option>
-            <option value="pink">Pink</option>
-            <option value="cyan">Cyan</option>
-            <option value="magenta">Magenta</option>
-            <option value="lime">Lime</option>
-            <option value="turquoise">Turquoise</option>
-        </select>
-
-        <!-- Favicon -->
-        <label for="faviconInput" style="color:white;">Favicon URL:</label>
-        <input type="text" id="faviconInput" placeholder="Enter favicon URL" style="width: 100%;">
-
-        <!-- Font selector -->
-        <label for="fontSelect" style="color:white;">Text Font:</label>
-        <select id="fontSelect" style="width:100%;">
-            <option value="Fredoka One">Fredoka One</option>
-            <option value="Orbitron">Orbitron</option>
-            <option value="Exo 2">Exo 2</option>
-            <option value="Arial">Arial</option>
-            <option value="Verdana">Verdana</option>
-            <option value="Courier New">Courier New</option>
-            <option value="Comic Sans MS">Comic Sans</option>
-            <option value="Roboto">Roboto</option>
-            <option value="Poppins">Poppins</option>
-            <option value="Montserrat">Montserrat</option>
-            <option value="Oswald">Oswald</option>
-            <option value="Lato">Lato</option>
-            <option value="Raleway">Raleway</option>
-            <option value="Playfair Display">Playfair Display</option>
-            <option value="Merriweather">Merriweather</option>
-            <option value="Ubuntu">Ubuntu</option>
-            <option value="Quicksand">Quicksand</option>
-            <option value="Nunito">Nunito</option>
-            <option value="Pacifico">Pacifico</option>
-            <option value="Caveat">Caveat</option>
-            <option value="Indie Flower">Indie Flower</option>
-            <option value="Kaushan Script">Kaushan Script</option>
-            <option value="Bebas Neue">Bebas Neue</option>
-            <option value="Dancing Script">Dancing Script</option>
-            <option value="Shadows Into Light">Shadows Into Light</option>
-            <option value="PT Sans">PT Sans</option>
-            <option value="PT Serif">PT Serif</option>
-            <option value="Arvo">Arvo</option>
-            <option value="Fira Sans">Fira Sans</option>
-            <option value="Signika">Signika</option>
-            <option value="Baloo 2">Baloo 2</option>
-            <option value="Comfortaa">Comfortaa</option>
-        </select>
-
-        <!-- Text color selector -->
-        <label for="textColorSelect" style="color:white;">Text Color:</label>
-        <select id="textColorSelect" style="width:100%;">
-            <option value="default">Original</option>
-            <option value="red">Red</option>
-            <option value="orange">Orange</option>
-            <option value="yellow">Yellow</option>
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
-            <option value="indigo">Indigo</option>
-            <option value="violet">Violet</option>
-            <option value="pink">Pink</option>
-            <option value="cyan">Cyan</option>
-            <option value="magenta">Magenta</option>
-            <option value="lime">Lime</option>
-            <option value="turquoise">Turquoise</option>
-            <option value="white">White</option>
-            <option value="black">Black</option>
-        </select>
-
-        <!-- Open in blank -->
-        <button id="openBlankBtn" style="padding:5px 10px; cursor:pointer;">Open in New Tab</button>
-    </div>
-
+    <!-- Enhanced Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600;800;900&family=Nunito:wght@400;700;900&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Chewy&family=Luckiest+Guy&family=Baloo+2:wght@400;700;800&family=Modak&family=Rampart+One&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Enhanced OS-like UI Styles */
+        /* LIQUID GLASS THEME */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            cursor: none;
         }
 
         body {
@@ -119,608 +26,1957 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(130deg,#0a1b24,#001014,#0f3527);
-            font-family: "Exo 2", sans-serif;
+            background: linear-gradient(135deg, 
+                #0a0a1a 0%, 
+                #1a1a2e 25%, 
+                #16213e 50%, 
+                #0f3460 75%, 
+                #1e3d6f 100%);
+            font-family: "Poppins", sans-serif;
             overflow: hidden;
             user-select: none;
             position: relative;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Interactive particle orbs */
-        .particle-orbs {
+        /* Liquid Glass Overlay */
+        .liquid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                rgba(255, 255, 255, 0.03) 0%,
+                rgba(255, 255, 255, 0.01) 50%,
+                rgba(255, 255, 255, 0.03) 100%);
+            pointer-events: none;
+            z-index: 1;
+            animation: liquidFlow 20s infinite linear;
+        }
+
+        @keyframes liquidFlow {
+            0% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-10px) translateX(10px); }
+            50% { transform: translateY(-20px) translateX(-10px); }
+            75% { transform: translateY(-10px) translateX(10px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        /* Professional Custom Cursor Effects */
+        .cursor {
+            position: fixed;
+            width: 32px;
+            height: 32px;
+            pointer-events: none;
+            z-index: 999999;
+            mix-blend-mode: difference;
+            transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+        }
+
+        .cursor-follower {
+            position: fixed;
+            width: 64px;
+            height: 64px;
+            border: 2px solid rgba(100, 200, 255, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999998;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(4px);
+            box-shadow: 
+                inset 0 0 20px rgba(100, 200, 255, 0.1),
+                0 0 40px rgba(100, 200, 255, 0.2);
+        }
+
+        /* Enhanced Cursor Types */
+        .cursor-dot .cursor-inner {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 
+                0 0 20px rgba(100, 200, 255, 0.8),
+                inset 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .cursor-cross .cursor-inner {
+            width: 24px;
+            height: 24px;
+            position: relative;
+        }
+
+        .cursor-cross .cursor-inner:before,
+        .cursor-cross .cursor-inner:after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 2px;
+            box-shadow: 0 0 15px rgba(100, 200, 255, 0.8);
+        }
+
+        .cursor-cross .cursor-inner:before {
+            width: 24px;
+            height: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .cursor-cross .cursor-inner:after {
+            width: 2px;
+            height: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cursor-square .cursor-inner {
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 4px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            box-shadow: 
+                0 0 20px rgba(100, 200, 255, 0.8),
+                inset 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .cursor-triangle .cursor-inner {
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 20px solid rgba(255, 255, 255, 0.95);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: drop-shadow(0 0 15px rgba(100, 200, 255, 0.8));
+        }
+
+        .cursor-heart .cursor-inner {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background: rgba(255, 100, 150, 0.95);
+            box-shadow: 0 0 20px rgba(255, 100, 150, 0.8);
+        }
+
+        .cursor-heart .cursor-inner:before,
+        .cursor-heart .cursor-inner:after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(255, 100, 150, 0.95);
+            position: absolute;
+            box-shadow: 0 0 20px rgba(255, 100, 150, 0.8);
+        }
+
+        .cursor-heart .cursor-inner:before {
+            top: -10px;
+            left: 0;
+        }
+
+        .cursor-heart .cursor-inner:after {
+            top: 0;
+            left: -10px;
+        }
+
+        /* NEW Cursor Styles */
+        .cursor-ring .cursor-inner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(100, 200, 255, 0.95);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 25px rgba(100, 200, 255, 0.8);
+            animation: ringPulse 2s infinite ease-in-out;
+        }
+
+        .cursor-ring .cursor-outer {
+            width: 30px;
+            height: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: ringRotate 4s infinite linear;
+        }
+
+        .cursor-diamond .cursor-inner {
+            width: 20px;
+            height: 20px;
+            background: rgba(100, 255, 200, 0.95);
+            transform: translate(-50%, -50%) rotate(45deg);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            box-shadow: 0 0 25px rgba(100, 255, 200, 0.8);
+        }
+
+        .cursor-star .cursor-inner {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: gold;
+            font-size: 24px;
+            text-shadow: 0 0 20px gold;
+            line-height: 1;
+        }
+
+        .cursor-arrow .cursor-inner {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 20px solid rgba(255, 200, 100, 0.95);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+            filter: drop-shadow(0 0 15px rgba(255, 200, 100, 0.8));
+            animation: arrowBob 1s infinite ease-in-out;
+        }
+
+        .cursor-spiral .cursor-inner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(200, 100, 255, 0.95);
+            border-radius: 50%;
+            border-top-color: transparent;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: spin 1s infinite linear;
+        }
+
+        .cursor-comet .cursor-inner {
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, 
+                rgba(100, 255, 255, 0.95) 0%,
+                rgba(100, 255, 255, 0.3) 50%,
+                transparent 100%);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(2px);
+            animation: cometPulse 2s infinite ease-in-out;
+        }
+
+        @keyframes ringPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+        }
+
+        @keyframes ringRotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes arrowBob {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg) translateY(0); }
+            50% { transform: translate(-50%, -50%) rotate(0deg) translateY(-5px); }
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes cometPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+            50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
+        }
+
+        .cursor-dot .cursor-outer {
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(100, 200, 255, 0.5);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+        }
+
+        /* OPTIMIZED Liquid Particles */
+        .liquid-particles {
             position: absolute;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            z-index: 1;
+            z-index: 2;
+            pointer-events: none;
+            transform: translate3d(0, 0, 0);
         }
 
-        .orb {
+        .liquid-particle {
             position: absolute;
+            background: radial-gradient(circle, 
+                rgba(255, 255, 255, 0.15) 0%,
+                rgba(100, 200, 255, 0.08) 50%,
+                transparent 70%);
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 255, 170, 0.8) 0%, rgba(0, 255, 170, 0.2) 50%, transparent 100%);
-            box-shadow: 
-                0 0 20px rgba(0, 255, 170, 0.6),
-                inset 0 0 20px rgba(255, 255, 255, 0.2);
-            animation: float 20s infinite ease-in-out;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .orb:hover {
-            transform: scale(1.5);
-            box-shadow: 
-                0 0 40px rgba(0, 255, 170, 1),
-                inset 0 0 30px rgba(255, 255, 255, 0.4);
-            animation-play-state: paused;
-        }
-
-        .orb:active {
-            transform: scale(0.8);
-            background: radial-gradient(circle, rgba(255, 100, 100, 0.8) 0%, rgba(255, 100, 100, 0.2) 50%, transparent 100%);
-            box-shadow: 
-                0 0 30px rgba(255, 100, 100, 0.8),
-                inset 0 0 20px rgba(255, 255, 255, 0.3);
+            filter: blur(6px);
+            animation: float 30s infinite linear;
+            pointer-events: none;
+            will-change: transform, opacity;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            opacity: 0.4;
         }
 
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0) rotate(0deg);
+            0% {
+                transform: translate3d(0, 100vh, 0) rotate(0deg);
+                opacity: 0;
             }
-            25% {
-                transform: translateY(-50px) translateX(30px) rotate(90deg);
+            10% {
+                opacity: 0.6;
             }
-            50% {
-                transform: translateY(-20px) translateX(-30px) rotate(180deg);
+            90% {
+                opacity: 0.6;
             }
-            75% {
-                transform: translateY(-80px) translateX(20px) rotate(270deg);
+            100% {
+                transform: translate3d(100px, -100px, 0) rotate(360deg);
+                opacity: 0;
             }
         }
 
-        /* Enhanced glassmorphism */
-        .glassbox {
-            font-family: "Orbitron", monospace;
-            padding: 12px 30px;
-            border-radius: 22px;
-            background: rgba(255,255,255,0.14);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid rgba(255,255,255,0.22);
+        /* Liquid Glass Containers */
+        .liquid-glass {
+            font-family: "Poppins", sans-serif;
+            padding: 20px 40px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(40px) saturate(200%);
+            -webkit-backdrop-filter: blur(40px) saturate(200%);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             box-shadow: 
-                0 10px 30px rgba(0,0,0,0.45),
-                inset 0 1px 0 rgba(255,255,255,0.2);
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            animation: drip 4s infinite ease-in-out;
+                0 20px 60px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                0 0 40px rgba(100, 200, 255, 0.2);
+            letter-spacing: 1px;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: liquidFloat 6s infinite ease-in-out;
             position: absolute;
-            cursor: default;
-            z-index: 10;
+            cursor: none;
+            z-index: 100;
+            color: white;
         }
 
-        /* Auto-fit button container */
-        .button-container {
+        @keyframes liquidFloat {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+                border-radius: 24px;
+            }
+            25% { 
+                transform: translateY(-10px) rotate(0.5deg); 
+                border-radius: 26px 24px 24px 26px;
+            }
+            50% { 
+                transform: translateY(-5px) rotate(-0.5deg); 
+                border-radius: 24px 26px 26px 24px;
+            }
+            75% { 
+                transform: translateY(-8px) rotate(0.3deg); 
+                border-radius: 26px 24px 26px 24px;
+            }
+        }
+
+        /* FIXED: Title - Won't disappear with text styles */
+        .title {
+            font-size: 52px;
+            font-weight: 900;
+            cursor: grab;
+            top: 40px;
+            text-shadow: 
+                0 2px 20px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(100, 200, 255, 0.5),
+                0 0 60px rgba(100, 200, 255, 0.3);
+            background: linear-gradient(135deg, 
+                #ffffff 0%, 
+                #a8d0ff 25%, 
+                #64c8ff 50%, 
+                #a8d0ff 75%, 
+                #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-family: 'Chewy', cursive;
+            letter-spacing: 2px;
+            opacity: 1 !important;
+            visibility: visible !important;
+            white-space: nowrap;
+            position: absolute;
+        }
+
+        .title:hover {
+            transform: scale(1.05);
+            text-shadow: 
+                0 2px 30px rgba(0, 0, 0, 0.6),
+                0 0 60px rgba(100, 200, 255, 0.7),
+                0 0 80px rgba(100, 200, 255, 0.5);
+            background: linear-gradient(135deg, 
+                #ffffff 0%, 
+                #64c8ff 25%, 
+                #ffffff 50%, 
+                #64c8ff 75%, 
+                #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Random Text */
+        .randomText {
+            font-size: 22px;
+            top: 120px;
+            font-family: 'Bubblegum Sans', cursive;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #a8d0ff;
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            opacity: 1 !important;
+            visibility: visible !important;
+            white-space: nowrap;
+            position: absolute;
+        }
+
+        /* Enhanced Text Style Classes - FIXED for title */
+        .text-bubbly {
+            font-family: 'Chewy', cursive !important;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+            letter-spacing: 1.5px !important;
+        }
+
+        .text-liquid {
+            font-family: 'Luckiest Guy', cursive !important;
+            animation: liquidFloat 4s infinite ease-in-out !important;
+            letter-spacing: 2px !important;
+        }
+
+        .text-glow {
+            font-family: 'Modak', cursive !important;
+            text-shadow: 
+                0 0 20px rgba(255, 255, 255, 0.8),
+                0 0 40px rgba(100, 200, 255, 0.6),
+                0 0 60px rgba(100, 200, 255, 0.4) !important;
+            font-weight: 400 !important;
+            letter-spacing: 1px !important;
+        }
+
+        .text-neon {
+            font-family: 'Rampart One', cursive !important;
+            text-shadow: 
+                0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 30px #ff00de,
+                0 0 40px #ff00de,
+                0 0 50px #ff00de,
+                0 0 60px #ff00de,
+                0 0 70px #ff00de !important;
+            animation: neonPulse 1.5s infinite alternate !important;
+        }
+
+        @keyframes neonPulse {
+            from {
+                text-shadow: 
+                    0 0 10px #fff,
+                    0 0 20px #fff,
+                    0 0 30px #ff00de,
+                    0 0 40px #ff00de;
+            }
+            to {
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 15px #ff00de,
+                    0 0 20px #ff00de;
+            }
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, 
+                #ff6b6b, #feca57, #48dbfb, #ff9ff3,
+                #54a0ff, #5f27cd, #00d2d3) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            background-size: 400% 400% !important;
+            animation: gradientShift 8s ease infinite !important;
+            font-family: 'Baloo 2', cursive !important;
+            font-weight: 800 !important;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* FIXED Liquid Carousel with better button layout */
+        .liquid-carousel {
+            position: relative;
+            width: 720px; /* Increased width for better button layout */
+            height: 380px; /* Increased height for better spacing */
+            overflow: hidden;
+            border-radius: 32px;
+            backdrop-filter: blur(50px) saturate(200%);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                0 0 0 2px rgba(255, 255, 255, 0.1),
+                0 0 60px rgba(100, 200, 255, 0.3);
+            margin-top: 140px;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            z-index: 200;
+            animation: carouselFloat 8s infinite ease-in-out;
+        }
+
+        @keyframes carouselFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(0.3deg); }
+            66% { transform: translateY(-5px) rotate(-0.3deg); }
+        }
+
+        .track {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            margin-top: 15px;
-            width: 100%;
-            max-width: 400px;
-            padding: 0 20px;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* OS Button Styles */
-        .os-button {
+        .slide {
+            min-width: 720px;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Changed from center to flex-start */
+            align-items: center;
+            border-radius: 32px;
+            transform: scale(0.95);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            overflow: visible; /* Changed from hidden to visible */
+        }
+
+        .slide.active {
+            transform: scale(1);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                inset 0 0 40px rgba(255, 255, 255, 0.1),
+                0 0 40px rgba(100, 200, 255, 0.2);
+        }
+
+        .slide h2 {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 42px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            background: linear-gradient(135deg, 
+                #ffffff 0%, 
+                #a8d0ff 50%, 
+                #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+        }
+
+        /* FIXED: Liquid Navigation Arrows */
+        .liquid-arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-50%);
+            cursor: none;
+            user-select: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 50%;
+            backdrop-filter: blur(25px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 15px 50px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                0 0 30px rgba(100, 200, 255, 0.4);
+            z-index: 1000;
+        }
+
+        .liquid-arrow:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 
+                0 25px 70px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(100, 200, 255, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        .left { 
+            left: -70px;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .right { 
+            right: -70px;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        /* FIXED: Button Container with responsive grid */
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns for better layout */
+            gap: 15px;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 640px;
+            padding: 0 20px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        /* FIXED: Liquid Glass Buttons - Better fitting */
+        .liquid-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 20px;
-            margin: 4px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-            border: 2px solid rgba(0, 255, 170, 0.3);
-            border-radius: 12px;
+            padding: 14px 20px; /* Reduced padding for better fit */
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
             color: white;
             text-decoration: none;
-            font-family: "Orbitron", monospace;
-            font-weight: 600;
-            font-size: 13px;
+            font-family: 'Chewy', cursive;
+            font-weight: 400;
+            font-size: 14px; /* Reduced font size */
             letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: relative;
             overflow: hidden;
-            cursor: pointer;
+            cursor: none;
+            backdrop-filter: blur(20px);
             box-shadow: 
-                0 4px 15px rgba(0,0,0,0.3),
-                inset 0 1px 0 rgba(255,255,255,0.2);
-            min-width: 120px;
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            width: 180px; /* Fixed width */
+            height: 60px; /* Fixed height */
             text-align: center;
-            flex: 1 1 auto;
-            max-width: 160px;
+            z-index: 100;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .os-button:before {
+        .liquid-btn::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 170, 0.4), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+            transition: left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .os-button:hover {
-            transform: translateY(-2px) scale(1.05);
+        .liquid-btn:hover {
+            transform: translateY(-6px) scale(1.05);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
             box-shadow: 
-                0 6px 20px rgba(0, 255, 170, 0.4),
-                0 0 30px rgba(0, 255, 170, 0.3),
-                inset 0 1px 0 rgba(255,255,255,0.3);
-            border-color: rgba(0, 255, 170, 0.8);
-            background: linear-gradient(135deg, rgba(0, 255, 170, 0.2), rgba(0, 255, 170, 0.1));
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 80px rgba(100, 200, 255, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
         }
 
-        .os-button:hover:before {
+        .liquid-btn:hover::before {
             left: 100%;
         }
 
-        .os-button:active {
-            transform: translateY(0) scale(0.95);
+        .liquid-btn:active {
+            transform: translateY(0) scale(0.98);
             box-shadow: 
-                0 2px 10px rgba(0, 255, 170, 0.3),
-                inset 0 1px 0 rgba(255,255,255,0.1);
+                0 4px 20px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
-        /* Enhanced title */
-        .title {
-            font-size: 38px;
-            font-weight: 900;
+        /* Enhanced Top Navigation Buttons */
+        .top-nav-btn {
+            position: fixed;
+            padding: 16px 32px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: none;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(25px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
             color: white;
-            cursor: grab;
-            top: 40px;
-            text-shadow: 
-                0 0 20px rgba(0, 255, 170, 0.5),
-                0 0 40px rgba(0, 255, 170, 0.3);
-            animation: titleGlow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes titleGlow {
-            0% {
-                text-shadow: 
-                    0 0 20px rgba(0, 255, 170, 0.5),
-                    0 0 40px rgba(0, 255, 170, 0.3);
-            }
-            100% {
-                text-shadow: 
-                    0 0 30px rgba(0, 255, 170, 0.8),
-                    0 0 60px rgba(0, 255, 170, 0.5);
-            }
-        }
-
-        .title:active {
-            cursor: grabbing;
-        }
-
-        /* Enhanced random text */
-        .randomText {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.8);
-            top: 105px;
-            opacity: 0.85;
-            font-family: "Exo 2", sans-serif;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        /* HOVER EFFECTS */
-        .title:hover,
-        .randomText:hover {
-            box-shadow:
-                0 0 30px rgba(0,255,170,0.8),
-                0 0 60px rgba(0,255,170,0.5);
-            border: 1px solid rgba(0,255,170,0.8);
-            color: #76ffc8;
-            transform: scale(1.05);
-        }
-
-        /* LIQUID DRIP ANIMATION */
-        @keyframes drip {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(6px) rotate(1deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
-        }
-
-        /* Enhanced carousel */
-        .carousel {
-            position: relative;
-            width: 520px;
-            height: 350px;
-            overflow: hidden;
-            border-radius: 28px;
-            backdrop-filter: blur(22px);
-            background: rgba(255,255,255,0.14);
             box-shadow: 
-                0 20px 50px rgba(0,0,0,0.55),
-                inset 0 1px 0 rgba(255,255,255,0.2);
-            transform-style: preserve-3d;
-            perspective: 1000px;
-            margin-top: 120px;
-            border: 2px solid rgba(0, 255, 170, 0.2);
-            z-index: 10;
+                0 12px 45px rgba(0, 0, 0, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25),
+                0 0 30px rgba(100, 200, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            top: 25px;
+            font-family: 'Chewy', cursive;
+            letter-spacing: 1.5px;
         }
 
-        .track {
+        #aboutBlankBtn {
+            left: 25px;
+        }
+
+        #settingsBtn {
+            right: 25px;
+        }
+
+        .top-nav-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 
+                0 25px 70px rgba(0, 0, 0, 0.45),
+                0 0 50px rgba(100, 200, 255, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            transform: scale(1.12) translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ENHANCED Liquid Settings Panel */
+        #settingsPanel {
+            position: fixed;
+            top: 90px;
+            right: 25px;
+            width: 450px;
+            padding: 35px;
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 10000;
+            backdrop-filter: blur(50px) saturate(220%);
+            -webkit-backdrop-filter: blur(50px) saturate(220%);
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.12) 0%, 
+                rgba(255, 255, 255, 0.08) 100%);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 50px 100px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                0 0 0 2px rgba(255, 255, 255, 0.2),
+                0 0 80px rgba(100, 200, 255, 0.4);
+            border-radius: 28px;
+            color: white;
+            animation: settingsAppear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes settingsAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        #settingsPanel h3 {
+            margin: 0 0 25px 0;
+            font-size: 28px;
+            color: white;
+            text-align: center;
+            font-family: 'Luckiest Guy', cursive;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #ffffff, #a8d0ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .settings-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .settings-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #a8d0ff;
+            font-weight: 600;
+            font-family: 'Chewy', cursive;
+            font-size: 18px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1.2px;
             display: flex;
-            height: 100%;
-            transition: transform 0.6s cubic-bezier(.19,1,.22,1);
+            align-items: center;
+            gap: 8px;
         }
 
-        .slide {
-            min-width: 520px;
-            height: 350px;
+        .settings-group label i {
+            font-size: 20px;
+        }
+
+        .settings-group select,
+        .settings-group input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .settings-group select:focus,
+        .settings-group input:focus {
+            outline: none;
+            border-color: rgba(100, 200, 255, 0.8);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 
+                0 0 40px rgba(100, 200, 255, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .settings-group-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .settings-btn {
+            padding: 14px 24px;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.15), 
+                rgba(255, 255,255, 0.08));
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 14px;
+            color: white;
+            font-family: 'Chewy', cursive;
+            font-size: 16px;
+            cursor: none;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-align: center;
+            margin-top: 5px;
+            backdrop-filter: blur(15px);
+            letter-spacing: 1.5px;
+            box-shadow: 
+                0 8px 30px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .settings-btn:hover {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.25), 
+                rgba(255, 255, 255, 0.15));
+            border-color: rgba(100, 200, 255, 0.8);
+            transform: translateY(-3px);
+            box-shadow: 
+                0 15px 50px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(100, 200, 255, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .settings-btn-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        /* Color Preview Grid */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            cursor: none;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .color-option:hover {
+            transform: scale(1.15);
+            border-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+        }
+
+        .color-option.active {
+            transform: scale(1.1);
+            border-color: white;
+            box-shadow: 
+                0 0 30px rgba(255, 255, 255, 0.8),
+                inset 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* FIXED: Liquid Dots */
+        .liquid-dots {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 20px;
+            z-index: 300;
+        }
+
+        .liquid-dot {
+            width: 22px;
+            height: 22px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: none;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 6px 20px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .liquid-dot.active {
+            background: rgba(100, 200, 255, 0.9);
+            transform: scale(1.6);
+            border-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 
+                0 0 40px rgba(100, 200, 255, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .liquid-dot:hover {
+            background: rgba(100, 200, 255, 0.6);
+            transform: scale(1.4);
+            box-shadow: 
+                0 0 35px rgba(100, 200, 255, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        /* 12-HOUR CLOCK & Battery Display */
+        .system-info {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            border-radius: 28px;
+            gap: 12px;
+            z-index: 999;
+        }
+
+        .clock-display {
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
             color: white;
-            transform: scale(0.94);
-            transition: 0.3s;
-            padding: 30px;
-        }
-
-        .slide.active {
-            transform: scale(1);
-        }
-
-        .slide h2 {
-            font-family: "Orbitron", monospace;
-            font-size: 32px;
+            font-family: 'Orbitron', monospace;
+            font-size: 20px;
             font-weight: 700;
             letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 0 30px rgba(100, 200, 255, 0.3);
+            text-align: center;
+            min-width: 200px;
         }
 
-        /* Enhanced navigation arrows */
-        .arrow {
-            position: absolute;
-            top: 50%;
-            font-size: 42px;
-            color: rgba(255,255,255,0.7);
-            transform: translateY(-50%);
-            cursor: pointer;
-            user-select: none;
-            transition: all 0.3s ease;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 15px;
-            border-radius: 50%;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(0, 255, 170, 0.3);
-        }
-
-        .arrow:hover {
-            color: #76ffc8;
-            background: rgba(0, 255, 170, 0.2);
-            border-color: rgba(0, 255, 170, 0.8);
-            box-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .left { left: -80px; }
-        .right { right: -80px; }
-
-        .keys {
-            position: absolute;
-            bottom: -65px;
-            width: 100%;
+        .battery-display {
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+            color: white;
+            font-family: 'Orbitron', monospace;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 0 30px rgba(100, 200, 255, 0.3);
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            font-size: 22px;
-            opacity: 0.35;
+            align-items: center;
+            gap: 15px;
+            min-width: 180px;
+        }
+
+        .battery-icon {
+            font-size: 24px;
+            position: relative;
+            width: 40px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 4px;
+            padding: 2px;
+        }
+
+        .battery-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff00, #a8ff00, #ffff00, #ffaa00, #ff5500, #ff0000);
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+
+        .battery-tip {
+            position: absolute;
+            right: -6px;
+            top: 5px;
+            width: 4px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 0 2px 2px 0;
+        }
+
+        .battery-percentage {
+            flex: 1;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Liquid Ripple Effect */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, 
+                rgba(255, 255, 255, 0.4) 0%, 
+                rgba(100, 200, 255, 0.2) 50%, 
+                transparent 70%);
+            transform: scale(0);
+            animation: ripple 0.6s ease-out;
             pointer-events: none;
+            z-index: 9999;
         }
 
-        /* Enhanced dots */
-        .dots {
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Liquid Glow Effects */
+        .liquid-glow {
             position: absolute;
-            bottom: 15px;
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .dot {
-            width: 14px;
-            height: 14px;
-            background: rgba(255,255,255,0.26);
             border-radius: 50%;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 2px solid transparent;
+            background: radial-gradient(circle, 
+                rgba(100, 200, 255, 0.2) 0%, 
+                rgba(100, 200, 255, 0.1) 50%, 
+                transparent 70%);
+            filter: blur(20px);
+            animation: glowPulse 3s infinite ease-in-out;
+            pointer-events: none;
+            will-change: transform, opacity;
+            transform: translate3d(0, 0, 0);
         }
 
-        .dot.active {
-            background: #76ffc8;
-            transform: scale(1.4);
-            border-color: rgba(0, 255, 170, 0.8);
-            box-shadow: 0 0 15px rgba(0, 255, 170, 0.6);
-        }
-
-        .dot:hover {
-            background: rgba(0, 255, 170, 0.5);
-            transform: scale(1.2);
+        @keyframes glowPulse {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.15); opacity: 0.6; }
         }
     </style>
 </head>
 
 <body>
-    <!-- Interactive particle orbs -->
-    <div class="particle-orbs" id="particleOrbs"></div>
+    <!-- Liquid Glass Overlay -->
+    <div class="liquid-overlay"></div>
 
-    <!-- ⭐ TExt foR the tile -->
-    <div class="glassbox title" id="dragTitle">Typical Productions OS</div>
+    <!-- Professional Cursor System -->
+    <div class="cursor cursor-dot" id="mainCursor">
+        <div class="cursor-outer"></div>
+        <div class="cursor-inner"></div>
+    </div>
+    <div class="cursor-follower" id="cursorFollower"></div>
 
-    <!-- ⭐ RANDOM TEXT GENERATOR UNDER LOGO -->
-    <div class="glassbox randomText" id="randomText"></div>
+    <!-- OPTIMIZED Liquid Particles -->
+    <div class="liquid-particles" id="liquidParticles"></div>
 
-    <div class="carousel">
-        <div class="arrow left">⟵</div>
-        <div class="arrow right">⟶</div>
+    <!-- FIXED: Title - Won't disappear -->
+    <div class="liquid-glass title" id="dragTitle">Typical Productions OS</div>
 
-        <div class="keys">
-            <span>⬅️</span>
-            <span>➡️</span>
+    <!-- Random Text -->
+    <div class="liquid-glass randomText" id="randomText"></div>
+
+    <!-- Top Navigation -->
+    <button class="top-nav-btn" id="aboutBlankBtn">🌐 Open in Blank</button>
+    <button class="top-nav-btn" id="settingsBtn">⚙️ Settings</button>
+
+    <!-- System Info (12-Hour Clock & Battery) -->
+    <div class="system-info">
+        <div class="clock-display" id="clockDisplay">00:00:00 AM</div>
+        <div class="battery-display">
+            <div class="battery-icon">
+                <div class="battery-fill" id="batteryFill"></div>
+                <div class="battery-tip"></div>
+            </div>
+            <div class="battery-percentage" id="batteryPercentage">100%</div>
         </div>
+    </div>
+
+    <!-- Enhanced Liquid Settings Panel -->
+    <div id="settingsPanel">
+        <h3>⚙️ Liquid Settings</h3>
+        
+        <div class="settings-group">
+            <label><span>🎨</span> Theme Color:</label>
+            <select id="themeSelect">
+                <option value="blue">Deep Ocean Blue</option>
+                <option value="purple">Mystic Purple</option>
+                <option value="green">Emerald Green</option>
+                <option value="red">Crimson Red</option>
+                <option value="cyan">Arctic Cyan</option>
+                <option value="pink">Neon Pink</option>
+                <option value="orange">Sunset Orange</option>
+                <option value="gold">Royal Gold</option>
+                <option value="midnight">Midnight Black</option>
+                <option value="aurora">Aurora Borealis</option>
+            </select>
+            
+            <div class="color-grid" id="colorGrid">
+                <!-- Color options will be generated here -->
+            </div>
+        </div>
+
+        <div class="settings-group-grid">
+            <div class="settings-group">
+                <label><span>🔤</span> Text Style:</label>
+                <select id="textStyleSelect">
+                    <option value="bubbly">Bubbly</option>
+                    <option value="liquid">Liquid</option>
+                    <option value="glow">Glowing</option>
+                    <option value="neon">Neon</option>
+                    <option value="gradient">Rainbow Gradient</option>
+                </select>
+            </div>
+
+            <div class="settings-group">
+                <label><span>🎯</span> Cursor Style:</label>
+                <select id="cursorSelect">
+                    <option value="dot">Liquid Dot</option>
+                    <option value="ring">Animated Ring</option>
+                    <option value="cross">Elegant Cross</option>
+                    <option value="square">Crystal Square</option>
+                    <option value="triangle">Glass Triangle</option>
+                    <option value="heart">Liquid Heart</option>
+                    <option value="diamond">Emerald Diamond</option>
+                    <option value="star">Golden Star</option>
+                    <option value="arrow">Floating Arrow</option>
+                    <option value="spiral">Spinning Spiral</option>
+                    <option value="comet">Pulsing Comet</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="settings-group-grid">
+            <div class="settings-group">
+                <label><span>💎</span> Glass Intensity:</label>
+                <input type="range" id="glassIntensitySlider" min="1" max="10" value="5">
+                <div id="glassIntensityDisplay" style="text-align: center; margin-top: 5px; font-size: 14px;">Medium</div>
+            </div>
+
+            <div class="settings-group">
+                <label><span>📏</span> Text Size:</label>
+                <input type="range" id="textSizeSlider" min="14" max="32" value="22">
+                <div id="textSizeDisplay" style="text-align: center; margin-top: 5px; font-size: 14px;">Medium</div>
+            </div>
+        </div>
+
+        <div class="settings-group">
+            <label><span>⚡</span> Animation Speed:</label>
+            <select id="animationSpeedSelect">
+                <option value="slow">Slow & Smooth</option>
+                <option value="normal">Normal</option>
+                <option value="fast">Fast & Energetic</option>
+            </select>
+        </div>
+
+        <div class="settings-group-grid">
+            <div class="settings-group">
+                <label><span>🖼️</span> Favicon URL:</label>
+                <input type="text" id="faviconInput" placeholder="Enter favicon URL">
+            </div>
+
+            <div class="settings-group">
+                <label><span>📝</span> Page Title:</label>
+                <input type="text" id="pageTitleInput" placeholder="Typical Productions OS">
+            </div>
+        </div>
+
+        <div class="settings-btn-grid">
+            <button class="settings-btn" id="updateFaviconBtn">Update Favicon</button>
+            <button class="settings-btn" id="updateTitleBtn">Update Title</button>
+            <button class="settings-btn" id="applyTextSizeBtn">Apply Size</button>
+            <button class="settings-btn" id="resetSettingsBtn">Reset All</button>
+        </div>
+
+        <button class="settings-btn" id="closeSettingsBtn" style="margin-top: 10px;">Close Settings</button>
+    </div>
+
+    <!-- FIXED: Liquid Carousel with better button layout -->
+    <div class="liquid-carousel">
+        <div class="liquid-arrow left">⟵</div>
+        <div class="liquid-arrow right">⟶</div>
 
         <div class="track">
-            <div class="slide" style="background:rgba(255,255,255,0.04);">
+            <div class="slide active">
                 <h2>Home</h2>
                 <div class="button-container">
-                    <a href="https://ooze34cribreborn.global.ssl.fastly.net" target="_blank" class="os-button">Ooze Crib</a>
-                    <a href="https://chickengames.my.canva.site" target="_blank" class="os-button">Chicken Games</a>
-                    <a href="https://batmanscave.my.canva.site" target="_blank" class="os-button">Batman HQ</a>
-                    <a href="https://arcadiumweb.my.canva.site" target="_blank" class="os-button">Arcadium</a>
+                    <a href="https://ooze34cribreborn.global.ssl.fastly.net" target="_blank" class="liquid-btn">Ooze Crib</a>
+                    <a href="https://chickengames.my.canva.site" target="_blank" class="liquid-btn">Chicken Games</a>
+                    <a href="https://batmanscave.my.canva.site" target="_blank" class="liquid-btn">Batman HQ</a>
+                    <a href="https://arcadiumweb.my.canva.site" target="_blank" class="liquid-btn">Arcadium</a>
                 </div>
             </div>
 
-            <div class="slide" style="background:rgba(255,255,255,0.08);">
+            <div class="slide">
                 <h2>Games</h2>
                 <div class="button-container">
-                    <a href="games.html" class="os-button">Typical Games</a>
-                    <a href="gngames.html" class="os-button">Gn Games</a>
-                    <a href="selenite.html" class="os-button">Selenite Games</a>
-                    <a href="gameescape.html" class="os-button">Gaming Escape</a>
-                    <a href="retrogames.html" class="os-button">Retro Games</a>
-                    <a href="gmes.html" class="os-button">Game Library</a>
-
+                    <a href="games.html" class="liquid-btn">Typical Games</a>
+                    <a href="gngames.html" class="liquid-btn">Gn Games</a>
+                    <a href="selenite.html" class="liquid-btn">Selenite Games</a>
+                    <a href="gameescape.html" class="liquid-btn">Gaming Escape</a>
+                    <a href="retrogames.html" class="liquid-btn">Retro Games</a>
+                    <a href="gmes.html" class="liquid-btn">Game Library</a>
                 </div>
             </div>
 
-            <div class="slide" style="background:rgba(255,255,255,0.06);">
+            <div class="slide">
                 <h2>Proxies</h2>
                 <div class="button-container">
-                    <a href="proxies.html" class="os-button">Proxy Vault</a>
+                    <a href="proxies.html" class="liquid-btn">Proxy Vault</a>
+                    <a href="proxy.html" class="liquid-btn">Typical Proxy</a>
                 </div>
             </div>
 
-            <div class="slide" style="background:rgba(255,255,255,0.05);">
+            <div class="slide">
                 <h2>Websites</h2>
                 <div class="button-container">
-                    <a href="websites.html" class="os-button">Websites</a>
-                    <a href="gamesites.html" class="os-button">Game Websites</a>
+                    <a href="websites.html" class="liquid-btn">Websites</a>
+                    <a href="gamesites.html" class="liquid-btn">Game Websites</a>
                 </div>
             </div>
 
-            <div class="slide" style="background:rgba(255,255,255,0.05);">
-                <h2>Chat</h2>
-                <div class="button-container">
-                    <a href="comment.html" class="os-button">Comment Chaos</a>
-                    <a href="whiteboard.html" class="os-button">Whiteboard Madness</a>
-                </div>
-            </div>
-
-            <div class="slide" style="background:rgba(255,255,255,0.05);">
-                <h2>Soundboards</h2>
-                <div class="button-container">
-                    <a href="soundboard.html" class="os-button">Soundboard</a>
-                </div>
-            </div>
-
-            <div class="slide" style="background:rgba(255,255,255,0.05);">
+            <div class="slide">
                 <h2>More</h2>
                 <div class="button-container">
-                    <a href="chatgpt.html" class="os-button">ChatGPT</a>
-                    <a href="abt.html" class="os-button">About:Blank Opener</a>
-                </div>
-            </div>
-
-            <div class="slide" style="background:rgba(255,255,255,0.05);">
-                <h2>Hacks</h2>
-                <div class="button-container">
-                    <a href="https://blooketmod.global.ssl.fastly.net" class="os-button">Blooket Hacks</a>
-                    <a href="ExtHang3r.html" class="os-button">ExtHang3r</a>
-                    <a href="gimkit.html" class="os-button">GimKit Hacks</a>
-                </div>
-            </div>
-
-            <div class="slide" style="background:rgba(255,255,255,0.05);">
-                <h2>Streaming</h2>
-                <div class="button-container">
-                    <a href="streaming.html" class="os-button">Some Stuff Streaming</a>
+                    <a href="chatgpt.html" class="liquid-btn">ChatGPT</a>
+                    <a href="abt.html" class="liquid-btn">About:Blank</a>
                 </div>
             </div>
         </div>
-        <div class="dots"></div>
+        <div class="liquid-dots"></div>
     </div>
 
     <script>
-        // Create interactive particle orbs
-        function createParticleOrbs() {
-            const orbsContainer = document.getElementById('particleOrbs');
-            const orbCount = 15;
-            
-            for (let i = 0; i < orbCount; i++) {
-                const orb = document.createElement('div');
-                orb.className = 'orb';
+        // ========== ENHANCED LIQUID GLASS SETTINGS ==========
+        let settings = {
+            theme: 'blue',
+            textStyle: 'bubbly',
+            cursorStyle: 'dot',
+            favicon: './download.png',
+            pageTitle: 'Typical Productions OS',
+            glassIntensity: 5,
+            textSize: 22,
+            animationSpeed: 'normal'
+        };
+
+        // Color themes with improved gradients
+        const colorThemes = {
+            'blue': 'linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #1e3d6f 100%)',
+            'purple': 'linear-gradient(135deg, #1a0a2e 0%, #2e1a3e 25%, #3e1650 50%, #500f60 75%, #6f1e7f 100%)',
+            'green': 'linear-gradient(135deg, #0a1a1a 0%, #1a2e2e 25%, #163e32 50%, #0f6044 75%, #1e6f5e 100%)',
+            'red': 'linear-gradient(135deg, #1a0a0a 0%, #2e1a1a 25%, #3e1616 50%, #600f0f 75%, #6f1e1e 100%)',
+            'cyan': 'linear-gradient(135deg, #0a1a2e 0%, #1a2e3e 25%, #163e50 50%, #0f6075 75%, #1e6f8f 100%)',
+            'pink': 'linear-gradient(135deg, #2e0a1a 0%, #3e1a2e 25%, #50163e 50%, #750f60 75%, #8f1e6f 100%)',
+            'orange': 'linear-gradient(135deg, #2e1a0a 0%, #3e2e1a 25%, #503e16 50%, #75600f 75%, #8f6f1e 100%)',
+            'gold': 'linear-gradient(135deg, #2e2e0a 0%, #3e3e1a 25%, #505016 50%, #75750f 75%, #8f8f1e 100%)',
+            'midnight': 'linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #1a1a1a 50%, #2a2a2a 75%, #3a3a3a 100%)',
+            'aurora': 'linear-gradient(135deg, #0a1a2e 0%, #1a3e5a 25%, #2a5a7a 50%, #3a7a9a 75%, #4a9aba 100%)'
+        };
+
+        // Color preview data
+        const colorOptions = [
+            {value: 'blue', color: '#1e3d6f'},
+            {value: 'purple', color: '#6f1e7f'},
+            {value: 'green', color: '#1e6f5e'},
+            {value: 'red', color: '#6f1e1e'},
+            {value: 'cyan', color: '#1e6f8f'},
+            {value: 'pink', color: '#8f1e6f'},
+            {value: 'orange', color: '#8f6f1e'},
+            {value: 'gold', color: '#8f8f1e'},
+            {value: 'midnight', color: '#1a1a1a'},
+            {value: 'aurora', color: '#2a5a7a'}
+        ];
+
+        // Load saved settings
+        function loadSettings() {
+            const saved = localStorage.getItem('tpLiquidSettings');
+            if (saved) {
+                settings = JSON.parse(saved);
+                applyTheme(settings.theme);
+                applyTextStyle(settings.textStyle);
+                applyCursor(settings.cursorStyle);
+                applyFavicon(settings.favicon);
+                applyGlassIntensity(settings.glassIntensity);
+                applyTextSize(settings.textSize);
+                applyAnimationSpeed(settings.animationSpeed);
+                document.title = settings.pageTitle;
                 
-                // Random size between 20px and 60px
-                const size = Math.random() * 40 + 20;
-                orb.style.width = size + 'px';
-                orb.style.height = size + 'px';
+                // Update UI elements
+                document.getElementById('themeSelect').value = settings.theme;
+                document.getElementById('textStyleSelect').value = settings.textStyle;
+                document.getElementById('cursorSelect').value = settings.cursorStyle;
+                document.getElementById('glassIntensitySlider').value = settings.glassIntensity;
+                document.getElementById('textSizeSlider').value = settings.textSize;
+                document.getElementById('animationSpeedSelect').value = settings.animationSpeed;
+                document.getElementById('pageTitleInput').value = settings.pageTitle;
+                document.getElementById('faviconInput').value = settings.favicon;
                 
-                // Random position
-                orb.style.left = Math.random() * 100 + '%';
-                orb.style.top = Math.random() * 100 + '%';
+                updateIntensityDisplay(settings.glassIntensity);
+                updateTextSizeDisplay(settings.textSize);
                 
-                // Random animation duration
-                orb.style.animationDuration = (Math.random() * 10 + 15) + 's';
-                orb.style.animationDelay = Math.random() * 5 + 's';
-                
-                // Add click interaction
-                orb.addEventListener('click', function() {
-                    this.style.animation = 'none';
-                    this.style.background = 'radial-gradient(circle, rgba(255, 100, 100, 0.8) 0%, rgba(255, 100, 100, 0.2) 50%, transparent 100%)';
-                    this.style.boxShadow = '0 0 50px rgba(255, 100, 100, 1), inset 0 0 30px rgba(255, 255, 255, 0.4)';
-                    
-                    setTimeout(() => {
-                        this.style.animation = 'float 20s infinite ease-in-out';
-                        this.style.background = 'radial-gradient(circle, rgba(0, 255, 170, 0.8) 0%, rgba(0, 255, 170, 0.2) 50%, transparent 100%)';
-                        this.style.boxShadow = '0 0 20px rgba(0, 255, 170, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2)';
-                    }, 1000);
-                });
-                
-                // Add hover sound effect (visual feedback)
-                orb.addEventListener('mouseenter', function() {
-                    this.style.filter = 'brightness(1.5)';
-                });
-                
-                orb.addEventListener('mouseleave', function() {
-                    this.style.filter = 'brightness(1)';
-                });
-                
-                orbsContainer.appendChild(orb);
+                // Generate color grid
+                generateColorGrid();
             }
         }
-        createParticleOrbs();
 
-        // --- SETTINGS PANEL TOGGLE ---
+        // Generate color preview grid
+        function generateColorGrid() {
+            const grid = document.getElementById('colorGrid');
+            grid.innerHTML = '';
+            
+            colorOptions.forEach(color => {
+                const colorEl = document.createElement('div');
+                colorEl.className = 'color-option';
+                colorEl.style.background = colorThemes[color.value].split('gradient')[0] || color.color;
+                colorEl.dataset.theme = color.value;
+                
+                if (color.value === settings.theme) {
+                    colorEl.classList.add('active');
+                }
+                
+                colorEl.addEventListener('click', () => {
+                    document.querySelectorAll('.color-option').forEach(c => c.classList.remove('active'));
+                    colorEl.classList.add('active');
+                    applyTheme(color.value);
+                    document.getElementById('themeSelect').value = color.value;
+                });
+                
+                grid.appendChild(colorEl);
+            });
+        }
+
+        // Save settings
+        function saveSettings() {
+            localStorage.setItem('tpLiquidSettings', JSON.stringify(settings));
+        }
+
+        // Apply theme
+        function applyTheme(theme) {
+            document.body.style.background = colorThemes[theme] || colorThemes['blue'];
+            settings.theme = theme;
+            saveSettings();
+        }
+
+        // FIXED: Apply text style - won't make title disappear
+        function applyTextStyle(style) {
+            // Apply to all elements except title and randomText
+            const elements = document.querySelectorAll('.slide h2, .liquid-btn, .top-nav-btn, .settings-btn, #settingsPanel h3');
+            
+            // Remove all text style classes
+            elements.forEach(el => {
+                el.classList.remove('text-bubbly', 'text-liquid', 'text-glow', 'text-neon', 'text-gradient');
+            });
+            
+            // Apply new style class
+            const styleClass = 'text-' + style;
+            elements.forEach(el => {
+                el.classList.add(styleClass);
+            });
+            
+            // Apply to title and randomText separately to avoid issues
+            const title = document.querySelector('.title');
+            const randomText = document.querySelector('.randomText');
+            
+            // Reset and reapply with proper handling
+            title.classList.remove('text-bubbly', 'text-liquid', 'text-glow', 'text-neon', 'text-gradient');
+            randomText.classList.remove('text-bubbly', 'text-liquid', 'text-glow', 'text-neon', 'text-gradient');
+            
+            title.classList.add(styleClass);
+            randomText.classList.add(styleClass);
+            
+            // Ensure visibility
+            title.style.opacity = '1';
+            title.style.visibility = 'visible';
+            randomText.style.opacity = '1';
+            randomText.style.visibility = 'visible';
+            
+            settings.textStyle = style;
+            saveSettings();
+        }
+
+        // Apply cursor effect
+        function applyCursor(type) {
+            const cursor = document.getElementById('mainCursor');
+            cursor.className = 'cursor';
+            
+            // Remove any existing cursor-outer elements first
+            const existingOuter = cursor.querySelector('.cursor-outer');
+            if (existingOuter) {
+                cursor.removeChild(existingOuter);
+            }
+            
+            // Remove any existing cursor-inner elements
+            const existingInner = cursor.querySelector('.cursor-inner');
+            if (existingInner) {
+                cursor.removeChild(existingInner);
+            }
+            
+            // Create new cursor-inner
+            const inner = document.createElement('div');
+            inner.className = 'cursor-inner';
+            
+            // Add star emoji for star cursor
+            if (type === 'star') {
+                inner.innerHTML = '★';
+            }
+            
+            cursor.appendChild(inner);
+            
+            // Add new cursor-outer for styles that need it
+            if (type === 'dot' || type === 'ring') {
+                const outer = document.createElement('div');
+                outer.className = 'cursor-outer';
+                cursor.appendChild(outer);
+            }
+            
+            // Apply the specific cursor class
+            cursor.classList.add('cursor-' + type);
+            
+            settings.cursorStyle = type;
+            saveSettings();
+        }
+
+        // Apply glass intensity
+        function applyGlassIntensity(intensity) {
+            const glassElements = document.querySelectorAll('.liquid-glass, .liquid-carousel, .top-nav-btn, #settingsPanel, .clock-display, .battery-display');
+            
+            glassElements.forEach(el => {
+                const baseOpacity = 0.1;
+                const intensityFactor = intensity / 10;
+                const newOpacity = baseOpacity + (intensityFactor * 0.15);
+                
+                el.style.background = `rgba(255, 255, 255, ${newOpacity})`;
+                el.style.boxShadow = el.style.boxShadow.replace(/rgba\(100, 200, 255, [^)]+\)/g, `rgba(100, 200, 255, ${0.2 + intensityFactor * 0.3})`);
+            });
+            
+            settings.glassIntensity = intensity;
+            saveSettings();
+        }
+
+        // Apply text size
+        function applyTextSize(size) {
+            const textElements = document.querySelectorAll('.randomText, .liquid-btn, .settings-btn, .top-nav-btn');
+            
+            textElements.forEach(el => {
+                el.style.fontSize = `${size}px`;
+            });
+            
+            settings.textSize = size;
+            saveSettings();
+        }
+
+        // Apply animation speed
+        function applyAnimationSpeed(speed) {
+            const animations = document.querySelectorAll('.liquid-glass, .liquid-carousel, .liquid-particle');
+            let speedMultiplier = 1;
+            
+            switch(speed) {
+                case 'slow':
+                    speedMultiplier = 1.5;
+                    break;
+                case 'fast':
+                    speedMultiplier = 0.5;
+                    break;
+            }
+            
+            animations.forEach(el => {
+                const style = getComputedStyle(el);
+                if (style.animationDuration) {
+                    const currentDuration = parseFloat(style.animationDuration);
+                    el.style.animationDuration = `${currentDuration * speedMultiplier}s`;
+                }
+            });
+            
+            settings.animationSpeed = speed;
+            saveSettings();
+        }
+
+        // Apply favicon
+        function applyFavicon(url) {
+            const favicon = document.getElementById('favicon');
+            favicon.href = url;
+            settings.favicon = url;
+            saveSettings();
+        }
+
+        // Update intensity display
+        function updateIntensityDisplay(value) {
+            const display = document.getElementById('glassIntensityDisplay');
+            const intensityLabels = ['Very Low', 'Low', 'Medium Low', 'Medium', 'Medium High', 'High', 'Very High', 'Extreme', 'Ultra', 'Maximum'];
+            display.textContent = intensityLabels[value - 1] || 'Medium';
+        }
+
+        // Update text size display
+        function updateTextSizeDisplay(value) {
+            const display = document.getElementById('textSizeDisplay');
+            if (value <= 18) display.textContent = 'Small';
+            else if (value <= 24) display.textContent = 'Medium';
+            else if (value <= 28) display.textContent = 'Large';
+            else display.textContent = 'Extra Large';
+        }
+
+        // ========== 12-HOUR CLOCK ==========
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            // Convert to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Convert 0 to 12
+            
+            document.getElementById('clockDisplay').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
+        }
+
+        // ========== BATTERY DISPLAY ==========
+        function updateBattery() {
+            if (navigator.getBattery) {
+                navigator.getBattery().then(battery => {
+                    updateBatteryInfo(battery);
+                    
+                    battery.addEventListener('levelchange', () => {
+                        updateBatteryInfo(battery);
+                    });
+                    
+                    battery.addEventListener('chargingchange', () => {
+                        updateBatteryInfo(battery);
+                    });
+                });
+            } else {
+                // Fallback for browsers that don't support Battery API
+                const level = Math.floor(Math.random() * 30) + 70; // Random between 70-100%
+                updateBatteryDisplay(level, false);
+            }
+        }
+
+        function updateBatteryInfo(battery) {
+            const level = Math.round(battery.level * 100);
+            const isCharging = battery.charging;
+            updateBatteryDisplay(level, isCharging);
+        }
+
+        function updateBatteryDisplay(level, isCharging) {
+            const batteryFill = document.getElementById('batteryFill');
+            const batteryPercentage = document.getElementById('batteryPercentage');
+            
+            // Update fill width
+            batteryFill.style.width = `${level}%`;
+            
+            // Update color based on level
+            let fillColor = '#00ff00'; // Green
+            if (level <= 20) fillColor = '#ff0000'; // Red
+            else if (level <= 50) fillColor = '#ffaa00'; // Orange
+            else if (level <= 80) fillColor = '#ffff00'; // Yellow
+            
+            batteryFill.style.background = fillColor;
+            
+            // Update percentage text
+            batteryPercentage.textContent = `${level}%`;
+            
+            // Add charging indicator
+            if (isCharging) {
+                batteryPercentage.textContent += ' ⚡';
+            }
+        }
+
+        // ========== PROFESSIONAL CURSOR SYSTEM ==========
+        const cursor = document.getElementById('mainCursor');
+        const follower = document.getElementById('cursorFollower');
+        let mouseX = 0;
+        let mouseY = 0;
+
+        // Smooth mouse tracking
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+            
+            const followerX = parseFloat(follower.style.left || mouseX);
+            const followerY = parseFloat(follower.style.top || mouseY);
+            
+            follower.style.left = followerX + (mouseX - followerX) * 0.1 + 'px';
+            follower.style.top = followerY + (mouseY - followerY) * 0.1 + 'px';
+        });
+
+        // Interactive elements hover effect
+        const interactiveElements = document.querySelectorAll('a, button, .liquid-arrow, .liquid-dot, .top-nav-btn, .liquid-btn, .title, .randomText, .settings-btn, .color-option');
+
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(1.5)';
+                follower.style.transform = 'scale(1.3)';
+                follower.style.background = 'rgba(100, 200, 255, 0.2)';
+                follower.style.borderColor = 'rgba(100, 200, 255, 0.5)';
+            });
+
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                follower.style.transform = 'scale(1)';
+                follower.style.background = 'rgba(100, 200, 255, 0.1)';
+                follower.style.borderColor = 'rgba(100, 200, 255, 0.3)';
+            });
+        });
+
+        // Ripple effect on click
+        function createRippleEffect(x, y) {
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            document.body.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+        }
+
+        document.addEventListener('click', (e) => {
+            createRippleEffect(e.clientX, e.clientY);
+        });
+
+        // ========== SETTINGS PANEL ==========
         const settingsBtn = document.getElementById('settingsBtn');
         const settingsPanel = document.getElementById('settingsPanel');
-        settingsBtn.addEventListener('click', () => {
-            settingsPanel.style.display = settingsPanel.style.display === "flex" ? "none" : "flex";
+        const closeSettingsBtn = document.getElementById('closeSettingsBtn');
+
+        settingsBtn.addEventListener('click', (e) => {
+            settingsPanel.style.display = settingsPanel.style.display === 'flex' ? 'none' : 'flex';
+            createRippleEffect(e.clientX, e.clientY);
+            generateColorGrid();
         });
 
-        // Elements
-        const themeSelect = document.getElementById('themeSelect');
-        const faviconInput = document.getElementById('faviconInput');
-        const fontSelect = document.getElementById('fontSelect');
-        const textColorSelect = document.getElementById('textColorSelect');
-        const openBlankBtn = document.getElementById('openBlankBtn');
+        closeSettingsBtn.addEventListener('click', () => {
+            settingsPanel.style.display = 'none';
+        });
 
-        // --- APPLY FUNCTIONS ---
-        function applyTheme(theme) {
-            const themes = {
-                dark: "linear-gradient(130deg,#0a1b24,#001014,#0f3527)",
-                green: "linear-gradient(130deg,#0f3527,#1a5032,#3aa76f)",
-                blue: "linear-gradient(130deg,#0a1b24,#002244,#004488)",
-                red: "linear-gradient(130deg,#4c0000,#8b0000,#ff0000)",
-                orange: "linear-gradient(130deg,#7a3e00,#ff6600,#ff9933)",
-                yellow: "linear-gradient(130deg,#666600,#ffff00,#ffff99)",
-                indigo: "linear-gradient(130deg,#1a0033,#330066,#6600cc)",
-                violet: "linear-gradient(130deg,#330033,#660066,#cc00cc)",
-                pink: "linear-gradient(130deg,#660033,#ff3399,#ff66cc)",
-                cyan: "linear-gradient(130deg,#003333,#009999,#00cccc)",
-                magenta: "linear-gradient(130deg,#660066,#cc00cc,#ff33ff)",
-                lime: "linear-gradient(130deg,#336600,#66cc00,#99ff33)",
-                turquoise: "linear-gradient(130deg,#003333,#006666,#00cccc)"
-            };
-            document.body.style.background = themes[theme] || themes.dark;
-        }
-
-        function applyFavicon(url) {
-            let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-            link.type = 'image/x-icon';
-            link.rel = 'icon';
-            link.href = url;
-            document.getElementsByTagName('head')[0].appendChild(link);
-        }
-
-        function applyFont(font) {
-            document.querySelectorAll('.title, .randomText, .slide h2, .os-button').forEach(el => {
-                el.style.fontFamily = font + ', sans-serif';
+        // Theme selection
+        document.getElementById('themeSelect').addEventListener('change', (e) => {
+            applyTheme(e.target.value);
+            // Update active color in grid
+            document.querySelectorAll('.color-option').forEach(c => {
+                c.classList.toggle('active', c.dataset.theme === e.target.value);
             });
+        });
+
+        // Text style selection
+        document.getElementById('textStyleSelect').addEventListener('change', (e) => {
+            applyTextStyle(e.target.value);
+        });
+
+        // Cursor selection
+        document.getElementById('cursorSelect').addEventListener('change', (e) => {
+            applyCursor(e.target.value);
+        });
+
+        // Glass intensity slider
+        const glassIntensitySlider = document.getElementById('glassIntensitySlider');
+        glassIntensitySlider.addEventListener('input', (e) => {
+            const value = parseInt(e.target.value);
+            updateIntensityDisplay(value);
+            applyGlassIntensity(value);
+        });
+
+        // Text size slider
+        const textSizeSlider = document.getElementById('textSizeSlider');
+        textSizeSlider.addEventListener('input', (e) => {
+            const value = parseInt(e.target.value);
+            updateTextSizeDisplay(value);
+            settings.textSize = value;
+            saveSettings();
+        });
+
+        // Apply text size button
+        document.getElementById('applyTextSizeBtn').addEventListener('click', () => {
+            applyTextSize(settings.textSize);
+        });
+
+        // Animation speed selection
+        document.getElementById('animationSpeedSelect').addEventListener('change', (e) => {
+            applyAnimationSpeed(e.target.value);
+        });
+
+        // Favicon update
+        document.getElementById('updateFaviconBtn').addEventListener('click', () => {
+            const url = document.getElementById('faviconInput').value;
+            if (url) {
+                applyFavicon(url);
+            }
+        });
+
+        // Title update
+        document.getElementById('updateTitleBtn').addEventListener('click', () => {
+            const title = document.getElementById('pageTitleInput').value;
+            if (title) {
+                document.title = title;
+                settings.pageTitle = title;
+                saveSettings();
+            }
+        });
+
+        // Reset settings
+        document.getElementById('resetSettingsBtn').addEventListener('click', () => {
+            localStorage.removeItem('tpLiquidSettings');
+            location.reload();
+        });
+
+        // About:Blank opener
+        document.getElementById('aboutBlankBtn').addEventListener('click', (e) => {
+            createRippleEffect(e.clientX, e.clientY);
+            
+            const newWindow = window.open('about:blank', '_blank');
+            const html = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>${settings.pageTitle} - Liquid Glass</title>
+                    <style>
+                        body { 
+                            margin: 0; 
+                            padding: 0; 
+                            overflow: hidden;
+                            background: #0a0a1a;
+                        }
+                        iframe { 
+                            width: 100vw; 
+                            height: 100vh; 
+                            border: none;
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                        }
+                        .loading {
+                            position: fixed;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            color: white;
+                            font-family: Arial, sans-serif;
+                            font-size: 24px;
+                            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="loading">Loading Liquid Glass Interface...</div>
+                    <iframe src="${window.location.href}" allowfullscreen onload="document.querySelector('.loading').style.display='none'"></iframe>
+                </body>
+                </html>
+            `;
+            newWindow.document.write(html);
+            newWindow.document.close();
+        });
+
+        // ========== FIXED CAROUSEL ==========
+        const track = document.querySelector('.track');
+        const slides = document.querySelectorAll('.slide');
+        const left = document.querySelector('.left');
+        const right = document.querySelector('.right');
+        const dotsWrap = document.querySelector('.liquid-dots');
+
+        let current = parseInt(localStorage.getItem("liquidCarouselIndex")) || 0;
+        let width = 720;
+
+        // Clear existing dots and create new ones
+        dotsWrap.innerHTML = '';
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.className = 'liquid-dot';
+            if(i === current) dot.classList.add('active');
+            dotsWrap.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.liquid-dot');
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${current * width}px)`;
+            slides.forEach(s => s.classList.remove("active"));
+            slides[current].classList.add("active");
+            dots.forEach(d => d.classList.remove("active"));
+            dots[current].classList.add("active");
+            localStorage.setItem("liquidCarouselIndex", current);
         }
 
-        function applyTextColor(color) {
-            document.querySelectorAll('.title, .randomText, .slide h2, .os-button').forEach(el => {
-                el.style.color = (color === "default") ? "" : color;
+        function nextSlide() {
+            current = (current + 1) % slides.length;
+            createRippleEffect(window.innerWidth/2, window.innerHeight/2);
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            current = (current - 1 + slides.length) % slides.length;
+            createRippleEffect(window.innerWidth/2, window.innerHeight/2);
+            updateCarousel();
+        }
+
+        right.addEventListener('click', (e) => {
+            createRippleEffect(e.clientX, e.clientY);
+            nextSlide();
+        });
+
+        left.addEventListener('click', (e) => {
+            createRippleEffect(e.clientX, e.clientY);
+            prevSlide();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if(e.key === "ArrowRight") nextSlide();
+            if(e.key === "ArrowLeft") prevSlide();
+        });
+
+        // Swipe support
+        let startX;
+        track.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+        track.addEventListener("touchend", e => {
+            let endX = e.changedTouches[0].clientX;
+            if(endX < startX - 40) nextSlide();
+            if(endX > startX + 40) prevSlide();
+        });
+
+        // Dot navigation
+        dots.forEach((dot, i) => {
+            dot.addEventListener("click", (e) => {
+                createRippleEffect(e.clientX, e.clientY);
+                current = i;
+                updateCarousel();
             });
+        });
+
+        // ========== RANDOM TEXT ==========
+        const randomTextElement = document.getElementById("randomText");
+        const texts = [
+            "Welcome to Liquid Glass! 💧",
+            "Powered by Advanced Liquid Effects",
+            "Stay A Hater 😎",
+            "Loading Liquid Interface...",
+            "Generating Liquid Effects",
+            "wow ooze is still alive! 🎮",
+            "Typical Productions forever",
+            "Liquid Glass Technology Active",
+            "Enhanced Text Styles Activated ✨",
+            "Make sure to visit Ooze Reborn!",
+            "Arcadium Is DEAD 💀",
+            "oooh wow chicken! 🐔",
+            "Me And Ooze Are Friends 👫",
+            "Professional Cursors Activated 🎯",
+            "10 Color Themes Available 🎨",
+            "5 Text Styles to Choose From 🔤",
+            "11 Cursor Styles! 🖱️",
+            "ooooozeeeeeee 🌊",
+            "Typical? 🔥",
+            "Visit Unblocked Chicken! 🎯",
+            "Liquid Coding in Progress 💻",
+            "Arcadium In The Big 25 🥀",
+            "ooze in the big 25 ❤️‍🩹🔋",
+            "WE are done ✅",
+            "i dont think im making a big comeback",
+            "real eyes realize real lies 👁️",
+            "gamble all you want 🎰",
+            "OK BRO THAT WAS NOT THE WIND 🌪️",
+            "HOLY LAG 💀",
+            "Liquid Effects Maximum 🚀",
+            "officially liquid 💧",
+            "certified glass 🔮",
+            "frogies arcade 🐸",
+            "liquid coding activated 💾",
+            "shut up and suck it-B 😂",
+            "HEEELELLPPLPLPLPLPLPELPELPELPELPELPLEPLEPLEPLPELPLEPLEPLEPELP",
+            "67 🔥",
+            "😍 Liquid Love"
+        ];
+
+        function changeText() {
+            randomTextElement.textContent = texts[Math.floor(Math.random() * texts.length)];
+            createRippleEffect(
+                randomTextElement.getBoundingClientRect().left + randomTextElement.offsetWidth/2,
+                randomTextElement.getBoundingClientRect().top + randomTextElement.offsetHeight/2
+            );
         }
+        changeText();
+        setInterval(changeText, 5000);
 
-        // --- LOAD SETTINGS ---
-        function loadSettings() {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            const savedFont = localStorage.getItem('font') || 'Fredoka One';
-            const savedFavicon = localStorage.getItem('favicon') || './download.png';
-            const savedTextColor = localStorage.getItem('textColor') || 'default';
-
-            themeSelect.value = savedTheme;
-            fontSelect.value = savedFont;
-            faviconInput.value = savedFavicon;
-            textColorSelect.value = savedTextColor;
-
-            applyTheme(savedTheme);
-            applyFont(savedFont);
-            applyFavicon(savedFavicon);
-            applyTextColor(savedTextColor);
-        }
-
-        // --- EVENT LISTENERS ---
-        themeSelect.addEventListener('change', () => {
-            const theme = themeSelect.value;
-            applyTheme(theme);
-            localStorage.setItem('theme', theme);
-        });
-
-        faviconInput.addEventListener('change', () => {
-            const url = faviconInput.value;
-            applyFavicon(url);
-            localStorage.setItem('favicon', url);
-        });
-
-        fontSelect.addEventListener('change', () => {
-            const font = fontSelect.value;
-            applyFont(font);
-            localStorage.setItem('font', font);
-        });
-
-        textColorSelect.addEventListener('change', () => {
-            const color = textColorSelect.value;
-            applyTextColor(color);
-            localStorage.setItem('textColor', color);
-        });
-
-        openBlankBtn.addEventListener('click', () => {
-            window.open(window.location.href, "_blank");
-        });
-
-        // Ensure text color stays applied even for dynamically added elements
-        const observer = new MutationObserver(() => {
-            applyTextColor(textColorSelect.value);
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-
-        // Load saved settings on page load
-        loadSettings();
-
-        /*** title dragable code DONT TOCUH!!! ***/
+        // ========== DRAGGABLE TITLE ==========
         const drag = document.getElementById("dragTitle");
         let isDrag = false;
         let offsetX, offsetY;
@@ -729,9 +1985,14 @@
             isDrag = true;
             offsetX = e.clientX - drag.offsetLeft;
             offsetY = e.clientY - drag.offsetTop;
+            cursor.style.transform = 'scale(2)';
+            createRippleEffect(e.clientX, e.clientY);
         });
 
-        document.addEventListener("mouseup", () => isDrag = false);
+        document.addEventListener("mouseup", () => {
+            isDrag = false;
+            cursor.style.transform = 'scale(1)';
+        });
 
         document.addEventListener("mousemove", (e) => {
             if(isDrag) {
@@ -740,133 +2001,44 @@
             }
         });
 
-        /*** text genertor or something***/
-        const randomText = document.getElementById("randomText");
+        // ========== INITIALIZE ==========
+        loadSettings();
+        updateCarousel();
+        updateClock();
+        updateBattery();
+        
+        // Update clock every second
+        setInterval(updateClock, 1000);
+        
+        // Update battery every 30 seconds
+        setInterval(updateBattery, 30000);
+        
+        // Auto-rotate carousel
+        setInterval(() => {
+            nextSlide();
+        }, 8000);
 
-        const texts = [
-            "Welcome back :)",
-            "Powered by omee",
-            "Stay A Hater",
-            "Loading...",
-            "Generating cool stuff",
-            "wow ooze is still alive!",
-            "Typical Productions forever",
-            "Ooze may look better for now but i got the good stuff",
-            "let me live my life",
-            "coded by a dumb dude",
-            "what is this diddy blud doing the the calculator",
-            "wow cool liquid glass system",
-            "Make sure to visit Ooze Reborn!",
-            "Arcadium Is DEAD",
-            "oooh wow chicken!",
-            "Me And Ooze Are Friends",
-            "👀",
-            "Lifes hard.. But im Harder-J",
-            "Einstein",
-            "ooooozeeeeeee",
-            "Typical?",
-            "Vissit Unblocked Chicken!",
-            "i suck at coding",
-            "Arcadium In The Big 25 🥀",
-            "ooze in the big 25 ❤️‍🩹🔋",
-            "WE are done",
-            "i dont think im making a big comeback",
-            "im adding random shyt",
-            "real eyes relize real lies",
-            "gamble all you want",
-            "OK BRO THAT WAS NOT THE WIND",
-            "HOLY LAG 💀",
-            "i have a long dih who am i?",
-            "officaily gay",
-            "certified peto",
-            "frogies arcade",
-            "endkefnekrfjnerkfjnrekjfnerkjfn",
-            "shut up and suck it-B",
-            "HEEELELLPPLPLPLPLPLPELPELPELPELPELPLEPLEPLEPLPELPLEPLEPLEPELP",
-            "67",
-            "😍"
-            
-            
-        ];
-
-        function changeText() {
-            randomText.textContent = texts[Math.floor(Math.random()*texts.length)];
-        }
-
-        changeText();
-        setInterval(changeText, 5000);
-
-        /*** CAROUSEL (unchanged) ***/
-        const track = document.querySelector('.track');
-        const slides = document.querySelectorAll('.slide');
-        const left = document.querySelector('.left');
-        const right = document.querySelector('.right');
-        const dotsWrap = document.querySelector('.dots');
-
-        let current = parseInt(localStorage.getItem("carouselIndex")) || 0;
-        let width = 520;
-
-        slides.forEach((_, i) => {
-            const d = document.createElement('div');
-            d.classList.add('dot');
-            if(i === current) d.classList.add('active');
-            dotsWrap.appendChild(d);
-        });
-
-        const dots = document.querySelectorAll('.dot');
-
-        function update() {
-            track.style.transform = `translateX(-${current * width}px)`;
-            slides.forEach(s => s.classList.remove("active"));
-            slides[current].classList.add("active");
-
-            dots.forEach(d => d.classList.remove("active"));
-            dots[current].classList.add("active");
-
-            localStorage.setItem("carouselIndex", current);
-        }
-
-        function next() {
-            current = (current + 1) % slides.length;
-            update();
-        }
-        function prev() {
-            current = (current - 1 + slides.length) % slides.length;
-            update();
-        }
-
-        right.addEventListener('click', next);
-        left.addEventListener('click', prev);
-
-        document.addEventListener('keydown', (e) => {
-            if(e.key === "ArrowRight") next();
-            if(e.key === "ArrowLeft") prev();
-        });
-
-        window.addEventListener("wheel", (e) => {
-            if(Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-                if(e.deltaX > 0) next();
-                else prev();
+        // Initialize particles
+        function createParticles() {
+            const container = document.getElementById('liquidParticles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'liquid-particle';
+                
+                const size = Math.random() * 40 + 20;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 20 + 30) + 's';
+                particle.style.opacity = Math.random() * 0.3 + 0.2;
+                
+                container.appendChild(particle);
             }
-        });
-
-        let startX;
-        track.addEventListener("touchstart", e => startX = e.touches[0].clientX);
-        track.addEventListener("touchend", e => {
-            let endX = e.changedTouches[0].clientX;
-            if(endX < startX - 40) next();
-            if(endX > startX + 40) prev();
-        });
-
-        dots.forEach((dot, i) => {
-            dot.addEventListener("click", () => {
-                current = i;
-                update();
-            });
-        });
-
-        setInterval(next,9999999999999);
-        update();
+        }
+        
+        createParticles();
     </script>
 </body>
 </html>
