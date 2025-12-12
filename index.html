@@ -6,539 +6,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Typical Productions OS</title>
     
-    <!-- Enhanced Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600;800;900&family=Nunito:wght@400;700;900&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Chewy&family=Luckiest+Guy&family=Baloo+2:wght@400;700;800&family=Modak&family=Rampart+One&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Optimized Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600;800&family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Rubik:wght@300;400;500;600&family=Quicksand:wght@300;400;500;600&family=Bebas+Neue&family=Righteous&family=Lobster&family=Dancing+Script:wght@400;500;600&family=Pacifico&family=Shadows+Into+Light&family=Indie+Flower&family=Amatic+SC:wght@400;700&family=Archivo+Black&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
-        /* LIQUID GLASS THEME */
+        /* OPTIMIZED LIQUID GLASS THEME */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             cursor: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --glass-opacity: 0.1;
+            --blur-amount: 25px;
+            --transition-speed: 0.4s;
+            --accent-color: #64c8ff;
         }
 
         body {
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, 
-                #0a0a1a 0%, 
-                #1a1a2e 25%, 
-                #16213e 50%, 
-                #0f3460 75%, 
-                #1e3d6f 100%);
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
             font-family: "Poppins", sans-serif;
-            overflow: hidden;
+            overflow-x: hidden;
             user-select: none;
             position: relative;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Liquid Glass Overlay */
+        /* Smooth Liquid Overlay */
         .liquid-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, 
-                rgba(255, 255, 255, 0.03) 0%,
-                rgba(255, 255, 255, 0.01) 50%,
-                rgba(255, 255, 255, 0.03) 100%);
+            background: 
+                linear-gradient(45deg, 
+                    transparent 25%, 
+                    rgba(255,255,255,0.03) 50%, 
+                    transparent 75%);
             pointer-events: none;
             z-index: 1;
-            animation: liquidFlow 20s infinite linear;
+            opacity: 0.4;
+            animation: liquidFlow 30s linear infinite;
+            will-change: background-position;
         }
 
         @keyframes liquidFlow {
-            0% { transform: translateY(0) translateX(0); }
-            25% { transform: translateY(-10px) translateX(10px); }
-            50% { transform: translateY(-20px) translateX(-10px); }
-            75% { transform: translateY(-10px) translateX(10px); }
-            100% { transform: translateY(0) translateX(0); }
+            0% { background-position: 0% 0%; }
+            100% { background-position: 400% 400%; }
         }
 
-        /* Professional Custom Cursor Effects */
+        /* Smooth Cursor */
         .cursor {
             position: fixed;
-            width: 32px;
-            height: 32px;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
             pointer-events: none;
             z-index: 999999;
-            mix-blend-mode: difference;
-            transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+            transition: 
+                transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1),
+                width 0.15s cubic-bezier(0.34, 1.56, 0.64, 1),
+                height 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 0 6px var(--accent-color));
+            transform: translate(-50%, -50%) scale(1);
+            will-change: transform;
         }
 
-        .cursor-follower {
-            position: fixed;
-            width: 64px;
-            height: 64px;
-            border: 2px solid rgba(100, 200, 255, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 999998;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            backdrop-filter: blur(4px);
-            box-shadow: 
-                inset 0 0 20px rgba(100, 200, 255, 0.1),
-                0 0 40px rgba(100, 200, 255, 0.2);
+        .cursor.hover {
+            width: 40px;
+            height: 40px;
+            background: rgba(100, 200, 255, 0.15);
+            border: 2px solid var(--accent-color);
+            transform: translate(-50%, -50%) scale(1.2);
         }
 
-        /* Enhanced Cursor Types */
-        .cursor-dot .cursor-inner {
-            width: 12px;
-            height: 12px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 
-                0 0 20px rgba(100, 200, 255, 0.8),
-                inset 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        .cursor-cross .cursor-inner {
-            width: 24px;
-            height: 24px;
-            position: relative;
-        }
-
-        .cursor-cross .cursor-inner:before,
-        .cursor-cross .cursor-inner:after {
-            content: '';
-            position: absolute;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 2px;
-            box-shadow: 0 0 15px rgba(100, 200, 255, 0.8);
-        }
-
-        .cursor-cross .cursor-inner:before {
-            width: 24px;
-            height: 2px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .cursor-cross .cursor-inner:after {
-            width: 2px;
-            height: 24px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .cursor-square .cursor-inner {
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 4px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg);
-            box-shadow: 
-                0 0 20px rgba(100, 200, 255, 0.8),
-                inset 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        .cursor-triangle .cursor-inner {
-            width: 0;
-            height: 0;
-            border-left: 12px solid transparent;
-            border-right: 12px solid transparent;
-            border-bottom: 20px solid rgba(255, 255, 255, 0.95);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            filter: drop-shadow(0 0 15px rgba(100, 200, 255, 0.8));
-        }
-
-        .cursor-heart .cursor-inner {
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg);
-            background: rgba(255, 100, 150, 0.95);
-            box-shadow: 0 0 20px rgba(255, 100, 150, 0.8);
-        }
-
-        .cursor-heart .cursor-inner:before,
-        .cursor-heart .cursor-inner:after {
-            content: '';
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: rgba(255, 100, 150, 0.95);
-            position: absolute;
-            box-shadow: 0 0 20px rgba(255, 100, 150, 0.8);
-        }
-
-        .cursor-heart .cursor-inner:before {
-            top: -10px;
-            left: 0;
-        }
-
-        .cursor-heart .cursor-inner:after {
-            top: 0;
-            left: -10px;
-        }
-
-        /* NEW Cursor Styles */
-        .cursor-ring .cursor-inner {
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(100, 200, 255, 0.95);
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 25px rgba(100, 200, 255, 0.8);
-            animation: ringPulse 2s infinite ease-in-out;
-        }
-
-        .cursor-ring .cursor-outer {
-            width: 30px;
-            height: 30px;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: ringRotate 4s infinite linear;
-        }
-
-        .cursor-diamond .cursor-inner {
-            width: 20px;
-            height: 20px;
-            background: rgba(100, 255, 200, 0.95);
-            transform: translate(-50%, -50%) rotate(45deg);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            box-shadow: 0 0 25px rgba(100, 255, 200, 0.8);
-        }
-
-        .cursor-star .cursor-inner {
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: gold;
-            font-size: 24px;
-            text-shadow: 0 0 20px gold;
-            line-height: 1;
-        }
-
-        .cursor-arrow .cursor-inner {
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 20px solid rgba(255, 200, 100, 0.95);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(0deg);
-            filter: drop-shadow(0 0 15px rgba(255, 200, 100, 0.8));
-            animation: arrowBob 1s infinite ease-in-out;
-        }
-
-        .cursor-spiral .cursor-inner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(200, 100, 255, 0.95);
-            border-radius: 50%;
-            border-top-color: transparent;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: spin 1s infinite linear;
-        }
-
-        .cursor-comet .cursor-inner {
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, 
-                rgba(100, 255, 255, 0.95) 0%,
-                rgba(100, 255, 255, 0.3) 50%,
-                transparent 100%);
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            filter: blur(2px);
-            animation: cometPulse 2s infinite ease-in-out;
-        }
-
-        @keyframes ringPulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
-        }
-
-        @keyframes ringRotate {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        @keyframes arrowBob {
-            0%, 100% { transform: translate(-50%, -50%) rotate(0deg) translateY(0); }
-            50% { transform: translate(-50%, -50%) rotate(0deg) translateY(-5px); }
-        }
-
-        @keyframes spin {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        @keyframes cometPulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
-            50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
-        }
-
-        .cursor-dot .cursor-outer {
-            width: 32px;
-            height: 32px;
-            border: 1px solid rgba(100, 200, 255, 0.5);
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: pulse 2s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
-        }
-
-        /* OPTIMIZED Liquid Particles */
-        .liquid-particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 2;
-            pointer-events: none;
-            transform: translate3d(0, 0, 0);
-        }
-
-        .liquid-particle {
-            position: absolute;
-            background: radial-gradient(circle, 
-                rgba(255, 255, 255, 0.15) 0%,
-                rgba(100, 200, 255, 0.08) 50%,
-                transparent 70%);
-            border-radius: 50%;
-            filter: blur(6px);
-            animation: float 30s infinite linear;
-            pointer-events: none;
-            will-change: transform, opacity;
-            transform: translate3d(0, 0, 0);
-            backface-visibility: hidden;
-            opacity: 0.4;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translate3d(0, 100vh, 0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translate3d(100px, -100px, 0) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* Liquid Glass Containers */
+        /* FIXED: Smooth Liquid Glass Containers */
         .liquid-glass {
-            font-family: "Poppins", sans-serif;
-            padding: 20px 40px;
-            border-radius: 24px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(40px) saturate(200%);
-            -webkit-backdrop-filter: blur(40px) saturate(200%);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 18px 35px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(var(--blur-amount));
+            -webkit-backdrop-filter: blur(var(--blur-amount));
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
             box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                0 0 0 1px rgba(255, 255, 255, 0.1),
-                0 0 40px rgba(100, 200, 255, 0.2);
-            letter-spacing: 1px;
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            animation: liquidFloat 6s infinite ease-in-out;
+                0 12px 40px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: absolute;
             cursor: none;
             z-index: 100;
             color: white;
+            transform: translateZ(0);
+            will-change: transform, opacity, background;
         }
 
-        @keyframes liquidFloat {
-            0%, 100% { 
-                transform: translateY(0px) rotate(0deg); 
-                border-radius: 24px;
-            }
-            25% { 
-                transform: translateY(-10px) rotate(0.5deg); 
-                border-radius: 26px 24px 24px 26px;
-            }
-            50% { 
-                transform: translateY(-5px) rotate(-0.5deg); 
-                border-radius: 24px 26px 26px 24px;
-            }
-            75% { 
-                transform: translateY(-8px) rotate(0.3deg); 
-                border-radius: 26px 24px 26px 24px;
-            }
-        }
-
-        /* FIXED: Title - Won't disappear with text styles */
+        /* FIXED: Title - Smooth Animation */
         .title {
-            font-size: 52px;
-            font-weight: 900;
-            cursor: grab;
-            top: 40px;
-            text-shadow: 
-                0 2px 20px rgba(0, 0, 0, 0.5),
-                0 0 40px rgba(100, 200, 255, 0.5),
-                0 0 60px rgba(100, 200, 255, 0.3);
-            background: linear-gradient(135deg, 
-                #ffffff 0%, 
-                #a8d0ff 25%, 
-                #64c8ff 50%, 
-                #a8d0ff 75%, 
-                #ffffff 100%);
+            font-size: 40px;
+            font-weight: 800;
+            top: 25px;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 50%, #ffffff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-            font-family: 'Chewy', cursive;
-            letter-spacing: 2px;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-family: 'Fredoka One', cursive;
+            letter-spacing: 1.2px;
             opacity: 1 !important;
             visibility: visible !important;
             white-space: nowrap;
             position: absolute;
+            padding: 15px 30px;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            animation: titleFloat 6s ease-in-out infinite;
+            transform-origin: center;
+            will-change: transform, box-shadow, border-color;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            }
+            50% { 
+                transform: translateY(-8px) rotate(0.5deg);
+                box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+            }
         }
 
         .title:hover {
-            transform: scale(1.05);
-            text-shadow: 
-                0 2px 30px rgba(0, 0, 0, 0.6),
-                0 0 60px rgba(100, 200, 255, 0.7),
-                0 0 80px rgba(100, 200, 255, 0.5);
-            background: linear-gradient(135deg, 
-                #ffffff 0%, 
-                #64c8ff 25%, 
-                #ffffff 50%, 
-                #64c8ff 75%, 
-                #ffffff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            transform: translateY(-5px) scale(1.03);
+            border-color: rgba(100, 200, 255, 0.25);
+            animation-play-state: paused;
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
 
         /* Random Text */
         .randomText {
-            font-size: 22px;
-            top: 120px;
-            font-family: 'Bubblegum Sans', cursive;
+            font-size: 20px;
+            top: 100px;
+            font-family: 'Poppins', sans-serif;
             font-weight: 400;
-            letter-spacing: 1.5px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #a8d0ff;
-            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--accent-color);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
             opacity: 1 !important;
             visibility: visible !important;
             white-space: nowrap;
             position: absolute;
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            animation: textFloat 8s ease-in-out infinite;
+            will-change: transform, opacity;
         }
 
-        /* Enhanced Text Style Classes - FIXED for title */
+        @keyframes textFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* 20 TEXT STYLES */
         .text-bubbly {
-            font-family: 'Chewy', cursive !important;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
-            letter-spacing: 1.5px !important;
-        }
-
-        .text-liquid {
-            font-family: 'Luckiest Guy', cursive !important;
-            animation: liquidFloat 4s infinite ease-in-out !important;
-            letter-spacing: 2px !important;
-        }
-
-        .text-glow {
-            font-family: 'Modak', cursive !important;
-            text-shadow: 
-                0 0 20px rgba(255, 255, 255, 0.8),
-                0 0 40px rgba(100, 200, 255, 0.6),
-                0 0 60px rgba(100, 200, 255, 0.4) !important;
-            font-weight: 400 !important;
+            font-family: 'Fredoka One', cursive !important;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4) !important;
             letter-spacing: 1px !important;
         }
 
-        .text-neon {
-            font-family: 'Rampart One', cursive !important;
-            text-shadow: 
-                0 0 10px #fff,
-                0 0 20px #fff,
-                0 0 30px #ff00de,
-                0 0 40px #ff00de,
-                0 0 50px #ff00de,
-                0 0 60px #ff00de,
-                0 0 70px #ff00de !important;
-            animation: neonPulse 1.5s infinite alternate !important;
+        .text-modern {
+            font-family: 'Montserrat', sans-serif !important;
+            font-weight: 700 !important;
+            letter-spacing: 1.5px !important;
         }
 
-        @keyframes neonPulse {
-            from {
-                text-shadow: 
-                    0 0 10px #fff,
-                    0 0 20px #fff,
-                    0 0 30px #ff00de,
-                    0 0 40px #ff00de;
-            }
-            to {
-                text-shadow: 
-                    0 0 5px #fff,
-                    0 0 10px #fff,
-                    0 0 15px #ff00de,
-                    0 0 20px #ff00de;
-            }
+        .text-glow {
+            text-shadow: 
+                0 0 12px rgba(255, 255, 255, 0.6),
+                0 0 24px var(--accent-color) !important;
+            animation: glowPulse 2s ease-in-out infinite !important;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { text-shadow: 0 0 12px rgba(255, 255, 255, 0.6), 0 0 24px var(--accent-color); }
+            50% { text-shadow: 0 0 18px rgba(255, 255, 255, 0.8), 0 0 36px var(--accent-color); }
         }
 
         .text-gradient {
-            background: linear-gradient(135deg, 
-                #ff6b6b, #feca57, #48dbfb, #ff9ff3,
-                #54a0ff, #5f27cd, #00d2d3) !important;
+            background: linear-gradient(135deg, var(--accent-color), #a8d0ff, #ff99ff) !important;
             -webkit-background-clip: text !important;
             -webkit-text-fill-color: transparent !important;
             background-clip: text !important;
-            background-size: 400% 400% !important;
-            animation: gradientShift 8s ease infinite !important;
-            font-family: 'Baloo 2', cursive !important;
-            font-weight: 800 !important;
+            background-size: 200% 200% !important;
+            animation: gradientShift 4s ease infinite !important;
         }
 
         @keyframes gradientShift {
@@ -547,36 +221,154 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* FIXED Liquid Carousel with better button layout */
+        .text-futuristic {
+            font-family: 'Orbitron', monospace !important;
+            font-weight: 700 !important;
+            letter-spacing: 2px !important;
+            text-shadow: 0 0 10px var(--accent-color) !important;
+        }
+
+        .text-elegant {
+            font-family: 'Dancing Script', cursive !important;
+            font-weight: 600 !important;
+            font-size: 1.2em !important;
+            transform: rotate(-0.5deg) !important;
+        }
+
+        .text-bold {
+            font-family: 'Bebas Neue', cursive !important;
+            letter-spacing: 2px !important;
+            text-shadow: 2px 2px 0 rgba(255, 100, 100, 0.3) !important;
+        }
+
+        .text-fun {
+            font-family: 'Comic Neue', cursive !important;
+            font-weight: 700 !important;
+            animation: bounce 2s infinite ease-in-out !important;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .text-tech {
+            font-family: 'Rubik', sans-serif !important;
+            font-weight: 600 !important;
+            letter-spacing: 1px !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        .text-minimal {
+            font-family: 'Quicksand', sans-serif !important;
+            font-weight: 600 !important;
+            letter-spacing: 1px !important;
+            opacity: 0.95 !important;
+        }
+
+        .text-artistic {
+            font-family: 'Indie Flower', cursive !important;
+            font-weight: 700 !important;
+            font-size: 1.3em !important;
+            transform: rotate(1deg) !important;
+        }
+
+        .text-dramatic {
+            font-family: 'Oswald', sans-serif !important;
+            font-weight: 600 !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+        }
+
+        .text-chill {
+            font-family: 'Pacifico', cursive !important;
+            font-size: 1.1em !important;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .text-magic {
+            font-family: 'Amatic SC', cursive !important;
+            font-weight: 700 !important;
+            font-size: 1.4em !important;
+            animation: magicGlow 3s infinite alternate !important;
+        }
+
+        @keyframes magicGlow {
+            0% { text-shadow: 0 0 10px rgba(255, 100, 255, 0.5); }
+            100% { text-shadow: 0 0 20px var(--accent-color); }
+        }
+
+        .text-neon {
+            font-family: 'Archivo Black', sans-serif !important;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 15px #ff00de,
+                0 0 20px #ff00de !important;
+            animation: neonPulse 1.5s infinite alternate !important;
+        }
+
+        @keyframes neonPulse {
+            from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de; }
+            to { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00de, 0 0 40px #ff00de; }
+        }
+
+        .text-handwritten {
+            font-family: 'Shadows Into Light', cursive !important;
+            font-weight: 700 !important;
+            font-size: 1.3em !important;
+        }
+
+        .text-space {
+            font-family: 'Orbitron', monospace !important;
+            letter-spacing: 3px !important;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.7) !important;
+        }
+
+        .text-luxury {
+            font-family: 'Cinzel', serif !important;
+            font-weight: 600 !important;
+            letter-spacing: 2px !important;
+            color: gold !important;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.4) !important;
+        }
+
+        .text-grunge {
+            font-family: 'Rock Salt', cursive !important;
+            font-size: 0.9em !important;
+            transform: rotate(-1deg) !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        /* Smooth Carousel */
         .liquid-carousel {
             position: relative;
-            width: 720px; /* Increased width for better button layout */
-            height: 380px; /* Increased height for better spacing */
+            width: 720px;
+            height: 380px;
             overflow: hidden;
-            border-radius: 32px;
-            backdrop-filter: blur(50px) saturate(200%);
-            background: rgba(255, 255, 255, 0.08);
+            border-radius: 26px;
+            backdrop-filter: blur(30px);
+            background: rgba(255, 255, 255, 0.06);
             box-shadow: 
-                0 40px 80px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                0 0 0 2px rgba(255, 255, 255, 0.1),
-                0 0 60px rgba(100, 200, 255, 0.3);
-            margin-top: 140px;
-            border: 3px solid rgba(255, 255, 255, 0.15);
+                0 25px 60px rgba(0, 0, 0, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            margin-top: 150px;
+            border: 1.5px solid rgba(255, 255, 255, 0.1);
             z-index: 200;
-            animation: carouselFloat 8s infinite ease-in-out;
+            animation: carouselFloat 8s ease-in-out infinite;
+            will-change: transform;
         }
 
         @keyframes carouselFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            33% { transform: translateY(-10px) rotate(0.3deg); }
-            66% { transform: translateY(-5px) rotate(-0.3deg); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         .track {
             display: flex;
             height: 100%;
             transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform;
         }
 
         .slide {
@@ -584,187 +376,134 @@
             height: 380px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Changed from center to flex-start */
+            justify-content: flex-start;
             align-items: center;
-            border-radius: 32px;
-            transform: scale(0.95);
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.05);
+            border-radius: 26px;
+            padding: 35px;
+            background: rgba(255, 255, 255, 0.04);
             color: white;
-            overflow: visible; /* Changed from hidden to visible */
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .slide.active {
+            background: rgba(255, 255, 255, 0.08);
             transform: scale(1);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 
-                inset 0 0 40px rgba(255, 255, 255, 0.1),
-                0 0 40px rgba(100, 200, 255, 0.2);
         }
 
         .slide h2 {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 42px;
-            font-weight: 400;
-            letter-spacing: 3px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 36px;
             margin-bottom: 30px;
             margin-top: 10px;
-            background: linear-gradient(135deg, 
-                #ffffff 0%, 
-                #a8d0ff 50%, 
-                #ffffff 100%);
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            transition: all 0.4s ease;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* FIXED: Liquid Navigation Arrows */
+        /* Smooth Arrows */
         .liquid-arrow {
             position: absolute;
             top: 50%;
-            font-size: 60px;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 45px;
+            color: rgba(255, 255, 255, 0.8);
             transform: translateY(-50%);
             cursor: none;
             user-select: none;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            background: rgba(255, 255, 255, 0.15);
-            padding: 20px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
             border-radius: 50%;
-            backdrop-filter: blur(25px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 
-                0 15px 50px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                0 0 30px rgba(100, 200, 255, 0.4);
+            backdrop-filter: blur(15px);
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
             z-index: 1000;
+            will-change: transform, background, color;
         }
 
         .liquid-arrow:hover {
             color: white;
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.6);
-            box-shadow: 
-                0 25px 70px rgba(0, 0, 0, 0.5),
-                0 0 60px rgba(100, 200, 255, 0.6),
-                inset 0 1px 0 rgba(255, 255, 255, 0.5);
-            transform: translateY(-50%) scale(1.2);
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%) scale(1.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .left { 
-            left: -70px;
-            transform: translateY(-50%) scale(1.1);
-        }
-        
-        .right { 
-            right: -70px;
-            transform: translateY(-50%) scale(1.1);
-        }
+        .left { left: -65px; }
+        .right { right: -65px; }
 
-        /* FIXED: Button Container with responsive grid */
+        /* Button Container */
         .button-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columns for better layout */
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-            margin-top: 10px;
+            margin-top: 15px;
             width: 100%;
-            max-width: 640px;
+            max-width: 650px;
             padding: 0 20px;
             justify-items: center;
-            align-items: center;
         }
 
-        /* FIXED: Liquid Glass Buttons - Better fitting */
+        /* Smooth Buttons */
         .liquid-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 20px; /* Reduced padding for better fit */
+            padding: 14px 20px;
             background: rgba(255, 255, 255, 0.08);
-            border: 2px solid rgba(255, 255, 255, 0.15);
-            border-radius: 16px;
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
             color: white;
             text-decoration: none;
-            font-family: 'Chewy', cursive;
-            font-weight: 400;
-            font-size: 14px; /* Reduced font size */
-            letter-spacing: 1px;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-family: 'Fredoka One', cursive;
+            font-size: 15px;
+            letter-spacing: 0.8px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: relative;
             overflow: hidden;
             cursor: none;
-            backdrop-filter: blur(20px);
-            box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                0 0 0 1px rgba(255, 255, 255, 0.1);
-            width: 180px; /* Fixed width */
-            height: 60px; /* Fixed height */
+            backdrop-filter: blur(15px);
+            width: 180px;
+            height: 55px;
             text-align: center;
             z-index: 100;
             white-space: nowrap;
-            overflow: hidden;
             text-overflow: ellipsis;
-        }
-
-        .liquid-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.2), 
-                transparent);
-            transition: left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform, background, box-shadow;
         }
 
         .liquid-btn:hover {
-            transform: translateY(-6px) scale(1.05);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-4px) scale(1.03);
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(255, 255, 255, 0.25);
             box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.5),
-                0 0 80px rgba(100, 200, 255, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+                0 15px 40px rgba(0, 0, 0, 0.3),
+                0 0 30px var(--accent-color);
         }
 
-        .liquid-btn:hover::before {
-            left: 100%;
-        }
-
-        .liquid-btn:active {
-            transform: translateY(0) scale(0.98);
-            box-shadow: 
-                0 4px 20px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        }
-
-        /* Enhanced Top Navigation Buttons */
+        /* Smooth Top Navigation */
         .top-nav-btn {
             position: fixed;
-            padding: 16px 32px;
-            font-size: 20px;
+            padding: 14px 28px;
+            font-size: 17px;
             font-weight: 600;
             cursor: none;
             z-index: 9999;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(25px);
-            border: 2px solid rgba(255, 255, 255, 0.25);
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
             color: white;
-            box-shadow: 
-                0 12px 45px rgba(0, 0, 0, 0.35),
-                inset 0 1px 0 rgba(255, 255, 255, 0.25),
-                0 0 30px rgba(100, 200, 255, 0.3);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             top: 25px;
-            font-family: 'Chewy', cursive;
-            letter-spacing: 1.5px;
+            font-family: 'Fredoka One', cursive;
+            letter-spacing: 1px;
+            will-change: transform, background;
+            animation: navFloat 10s ease-in-out infinite;
+        }
+
+        @keyframes navFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
         }
 
         #aboutBlankBtn {
@@ -776,390 +515,245 @@
         }
 
         .top-nav-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-            box-shadow: 
-                0 25px 70px rgba(0, 0, 0, 0.45),
-                0 0 50px rgba(100, 200, 255, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4);
-            transform: scale(1.12) translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            animation-play-state: paused;
         }
 
-/* ENHANCED Scrollable Liquid Settings Panel */
-#settingsPanel {
-    position: fixed;
-    top: 90px;
-    right: 25px;
-    width: 450px;
-    max-height: 70vh; /* Limit height to viewport */
-    padding: 35px 30px 30px 30px; /* Adjusted padding */
-    display: none;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 10000;
-    backdrop-filter: blur(50px) saturate(220%);
-    -webkit-backdrop-filter: blur(50px) saturate(220%);
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.12) 0%, 
-        rgba(255, 255, 255, 0.08) 100%);
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 
-        0 50px 100px rgba(0, 0, 0, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4),
-        0 0 0 2px rgba(255, 255, 255, 0.2),
-        0 0 80px rgba(100, 200, 255, 0.4);
-    border-radius: 28px;
-    color: white;
-    animation: settingsAppear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    overflow-y: auto; /* Enable vertical scrolling */
-    overflow-x: hidden; /* Hide horizontal scroll */
-}
+        /* Enhanced Settings Panel */
+        #settingsPanel {
+            position: fixed;
+            top: 85px;
+            right: 25px;
+            width: 420px;
+            max-height: 75vh;
+            padding: 25px;
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 10000;
+            backdrop-filter: blur(30px);
+            background: rgba(255, 255, 255, 0.09);
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            color: white;
+            overflow-y: auto;
+            transform: translateZ(0);
+            animation: panelAppear 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform, opacity;
+        }
 
-/* Custom scrollbar for settings panel */
-#settingsPanel::-webkit-scrollbar {
-    width: 8px;
-}
+        @keyframes panelAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
 
-#settingsPanel::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    margin: 10px 0;
-}
+        #settingsPanel h3 {
+            margin: 0 0 25px 0;
+            font-size: 28px;
+            text-align: center;
+            font-family: 'Fredoka One', cursive;
+            background: linear-gradient(135deg, #ffffff, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-bottom: 15px;
+            border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
+        }
 
-#settingsPanel::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, 
-        rgba(100, 200, 255, 0.5), 
-        rgba(100, 200, 255, 0.3));
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
+        .settings-group {
+            margin-bottom: 20px;
+        }
 
-#settingsPanel::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, 
-        rgba(100, 200, 255, 0.7), 
-        rgba(100, 200, 255, 0.5));
-}
+        .settings-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+        }
 
-/* Firefox scrollbar */
-#settingsPanel {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(100, 200, 255, 0.5) rgba(255, 255, 255, 0.05);
-}
+        .settings-group select,
+        .settings-group input {
+            width: 100%;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            color: white;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
 
-@keyframes settingsAppear {
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
+        .settings-group select:focus,
+        .settings-group input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 25px var(--accent-color);
+        }
 
-#settingsPanel h3 {
-    margin: 0 0 25px 0;
-    font-size: 28px;
-    color: white;
-    text-align: center;
-    font-family: 'Luckiest Guy', cursive;
-    letter-spacing: 2px;
-    background: linear-gradient(135deg, #ffffff, #a8d0ff, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding-bottom: 15px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    position: sticky;
-    top: 0;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    z-index: 10;
-    margin-top: -15px;
-    padding-top: 15px;
-    border-radius: 10px 10px 0 0;
-}
+        .settings-btn {
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.11);
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            color: white;
+            font-family: 'Fredoka One', cursive;
+            font-size: 15px;
+            cursor: none;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
 
-.settings-group {
-    margin-bottom: 20px;
-    position: relative;
-}
+        .settings-btn:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
 
-.settings-group label {
-    display: block;
-    margin-bottom: 10px;
-    color: #a8d0ff;
-    font-weight: 600;
-    font-family: 'Chewy', cursive;
-    font-size: 18px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    letter-spacing: 1.2px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+        .settings-btn-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
 
-.settings-group label i {
-    font-size: 20px;
-}
-
-.settings-group select,
-.settings-group input {
-    width: 100%;
-    padding: 14px 20px;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    backdrop-filter: blur(10px);
-    box-shadow: 
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-.settings-group select:focus,
-.settings-group input:focus {
-    outline: none;
-    border-color: rgba(100, 200, 255, 0.8);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 
-        0 0 40px rgba(100, 200, 255, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.settings-group-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.settings-btn {
-    padding: 14px 24px;
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.15), 
-        rgba(255, 255,255, 0.08));
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    border-radius: 14px;
-    color: white;
-    font-family: 'Chewy', cursive;
-    font-size: 16px;
-    cursor: none;
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    text-align: center;
-    margin-top: 5px;
-    backdrop-filter: blur(15px);
-    letter-spacing: 1.5px;
-    box-shadow: 
-        0 8px 30px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.settings-btn:hover {
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.25), 
-        rgba(255, 255, 255, 0.15));
-    border-color: rgba(100, 200, 255, 0.8);
-    transform: translateY(-3px);
-    box-shadow: 
-        0 15px 50px rgba(0, 0, 0, 0.5),
-        0 0 40px rgba(100, 200, 255, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.settings-btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: 10px;
-}
-
-/* Color Preview Grid */
-.color-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.color-option {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    cursor: none;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.color-option:hover {
-    transform: scale(1.15);
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
-}
-
-.color-option.active {
-    transform: scale(1.1);
-    border-color: white;
-    box-shadow: 
-        0 0 30px rgba(255, 255, 255, 0.8),
-        inset 0 0 15px rgba(255, 255, 255, 0.3);
-}
-
-/* Close button at the bottom should be sticky */
-#closeSettingsBtn {
-    position: sticky;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    margin-top: 10px;
-    z-index: 10;
-}
-
-/* Also adjust the position of the settings button to ensure it's always visible */
-#settingsBtn {
-    z-index: 10001; /* Higher than settings panel */
-}
-        /* Color Preview Grid */
+        /* Color Grid - 50 Colors */
         .color-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            margin-top: 10px;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 8px;
+            margin-top: 15px;
+            max-height: 180px;
+            overflow-y: auto;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .color-option {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
             cursor: none;
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            will-change: transform, border-color, box-shadow;
         }
 
         .color-option:hover {
-            transform: scale(1.15);
-            border-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+            transform: scale(1.2);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
         }
 
         .color-option.active {
-            transform: scale(1.1);
+            transform: scale(1.15);
             border-color: white;
             box-shadow: 
-                0 0 30px rgba(255, 255, 255, 0.8),
-                inset 0 0 15px rgba(255, 255, 255, 0.3);
+                0 0 20px rgba(255, 255, 255, 0.6),
+                inset 0 0 10px rgba(255, 255, 255, 0.2);
+            animation: colorPulse 2s infinite alternate;
         }
 
-        /* FIXED: Liquid Dots */
+        @keyframes colorPulse {
+            from { box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), inset 0 0 8px rgba(255, 255, 255, 0.2); }
+            to { box-shadow: 0 0 25px rgba(255, 255, 255, 0.7), inset 0 0 12px rgba(255, 255, 255, 0.3); }
+        }
+
+        /* Smooth Dots */
         .liquid-dots {
             position: absolute;
             bottom: 20px;
             display: flex;
             width: 100%;
             justify-content: center;
-            gap: 20px;
+            gap: 18px;
             z-index: 300;
         }
 
         .liquid-dot {
-            width: 22px;
-            height: 22px;
-            background: rgba(255, 255, 255, 0.25);
+            width: 16px;
+            height: 16px;
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             cursor: none;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 
-                0 6px 20px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        }
-
-        .liquid-dot.active {
-            background: rgba(100, 200, 255, 0.9);
-            transform: scale(1.6);
-            border-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 
-                0 0 40px rgba(100, 200, 255, 0.8),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            will-change: transform, background;
         }
 
         .liquid-dot:hover {
-            background: rgba(100, 200, 255, 0.6);
-            transform: scale(1.4);
-            box-shadow: 
-                0 0 35px rgba(100, 200, 255, 0.6),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transform: scale(1.3);
+            background: rgba(100, 200, 255, 0.4);
         }
 
-        /* 12-HOUR CLOCK & Battery Display */
-        .system-info {
+        .liquid-dot.active {
+            background: var(--accent-color);
+            transform: scale(1.4);
+            box-shadow: 0 0 25px var(--accent-color);
+        }
+
+        /* NEW: Battery Status Bar */
+        .battery-status-bar {
             position: fixed;
             bottom: 25px;
-            left: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            z-index: 999;
-        }
-
-        .clock-display {
-            padding: 15px 25px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(25px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 18px;
-            color: white;
-            font-family: 'Orbitron', monospace;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            box-shadow: 
-                0 10px 40px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                0 0 30px rgba(100, 200, 255, 0.3);
-            text-align: center;
-            min-width: 200px;
-        }
-
-        .battery-display {
-            padding: 15px 25px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(25px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 18px;
-            color: white;
-            font-family: 'Orbitron', monospace;
-            font-size: 18px;
-            font-weight: 600;
-            box-shadow: 
-                0 10px 40px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                0 0 30px rgba(100, 200, 255, 0.3);
+            right: 25px;
             display: flex;
             align-items: center;
-            gap: 15px;
-            min-width: 180px;
+            gap: 12px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            color: white;
+            font-family: 'Orbitron', monospace;
+            font-size: 16px;
+            font-weight: 600;
+            z-index: 9999;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform;
+            animation: batteryFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes batteryFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .battery-status-bar:hover {
+            background: rgba(255, 255, 255, 0.16);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            animation-play-state: paused;
         }
 
         .battery-icon {
-            font-size: 24px;
             position: relative;
             width: 40px;
             height: 20px;
             border: 2px solid rgba(255, 255, 255, 0.6);
             border-radius: 4px;
             padding: 2px;
+            background: rgba(0, 0, 0, 0.2);
         }
 
         .battery-fill {
             height: 100%;
-            background: linear-gradient(90deg, #00ff00, #a8ff00, #ffff00, #ffaa00, #ff5500, #ff0000);
             border-radius: 2px;
-            transition: width 0.5s ease;
+            transition: width 0.5s ease, background 0.5s ease;
+            will-change: width, background;
         }
 
         .battery-tip {
@@ -1173,195 +767,247 @@
         }
 
         .battery-percentage {
-            flex: 1;
-            text-align: center;
-            font-size: 20px;
+            font-family: 'Orbitron', monospace;
             font-weight: 700;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            min-width: 50px;
+            text-align: center;
+            text-shadow: 0 0 10px var(--accent-color);
         }
 
-        /* Liquid Ripple Effect */
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, 
-                rgba(255, 255, 255, 0.4) 0%, 
-                rgba(100, 200, 255, 0.2) 50%, 
-                transparent 70%);
-            transform: scale(0);
-            animation: ripple 0.6s ease-out;
-            pointer-events: none;
-            z-index: 9999;
+        .battery-charging {
+            animation: chargingPulse 2s infinite;
         }
 
-        @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
+        @keyframes chargingPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* System Info */
+        .system-info {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 999;
+        }
+
+        .clock-display {
+            padding: 14px 24px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            color: white;
+            font-family: 'Orbitron', monospace;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-align: center;
+            min-width: 190px;
+            transition: all 0.3s ease;
+        }
+
+        .clock-display:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        /* Performance Mode */
+        .performance-mode .title,
+        .performance-mode .randomText,
+        .performance-mode .liquid-carousel,
+        .performance-mode .top-nav-btn,
+        .performance-mode .battery-status-bar {
+            animation: none !important;
+        }
+
+        .performance-mode .cursor {
+            transition: transform 0.1s linear !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .liquid-carousel {
+                width: 650px;
+                height: 350px;
+            }
+            
+            .slide {
+                min-width: 650px;
+                height: 350px;
+                padding: 30px;
+            }
+            
+            .slide h2 {
+                font-size: 32px;
             }
         }
 
-        /* Liquid Glow Effects */
-        .liquid-glow {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, 
-                rgba(100, 200, 255, 0.2) 0%, 
-                rgba(100, 200, 255, 0.1) 50%, 
-                transparent 70%);
-            filter: blur(20px);
-            animation: glowPulse 3s infinite ease-in-out;
-            pointer-events: none;
-            will-change: transform, opacity;
-            transform: translate3d(0, 0, 0);
+        @media (max-width: 768px) {
+            .liquid-carousel {
+                width: 90%;
+                height: 320px;
+                margin-top: 130px;
+            }
+            
+            .slide {
+                min-width: 100%;
+                height: 320px;
+                padding: 25px 20px;
+            }
+            
+            .slide h2 {
+                font-size: 28px;
+            }
+            
+            .button-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .liquid-btn {
+                width: 100%;
+                max-width: 170px;
+                font-size: 14px;
+            }
+            
+            .title {
+                font-size: 32px;
+                padding: 12px 24px;
+            }
+            
+            .randomText {
+                font-size: 18px;
+                top: 90px;
+            }
+            
+            #settingsPanel {
+                width: 90%;
+                right: 5%;
+            }
+            
+            .color-grid {
+                grid-template-columns: repeat(8, 1fr);
+            }
+            
+            .battery-status-bar {
+                padding: 10px 16px;
+                font-size: 14px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .battery-icon {
+                width: 35px;
+                height: 18px;
+            }
         }
 
-        @keyframes glowPulse {
-            0%, 100% { transform: scale(1); opacity: 0.4; }
-            50% { transform: scale(1.15); opacity: 0.6; }
+        @media (max-width: 480px) {
+            .button-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .liquid-btn {
+                max-width: 220px;
+            }
+            
+            .title {
+                font-size: 26px;
+            }
+            
+            .top-nav-btn {
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+            
+            .liquid-arrow {
+                font-size: 35px;
+                padding: 12px;
+            }
+            
+            .left { left: -55px; }
+            .right { right: -55px; }
+            
+            .battery-status-bar {
+                flex-direction: column;
+                gap: 8px;
+                padding: 8px 12px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Liquid Glass Overlay -->
+    <!-- Liquid Overlay -->
     <div class="liquid-overlay"></div>
 
-    <!-- Professional Cursor System -->
-    <div class="cursor cursor-dot" id="mainCursor">
-        <div class="cursor-outer"></div>
-        <div class="cursor-inner"></div>
-    </div>
-    <div class="cursor-follower" id="cursorFollower"></div>
+    <!-- Smooth Cursor -->
+    <div class="cursor" id="mainCursor"></div>
 
-    <!-- OPTIMIZED Liquid Particles -->
-    <div class="liquid-particles" id="liquidParticles"></div>
-
-    <!-- FIXED: Title - Won't disappear -->
+    <!-- Title with Smooth Animation -->
     <div class="liquid-glass title" id="dragTitle">Typical Productions OS</div>
 
     <!-- Random Text -->
     <div class="liquid-glass randomText" id="randomText"></div>
 
     <!-- Top Navigation -->
-    <button class="top-nav-btn" id="aboutBlankBtn">🌐 Open in Blank</button>
+    <button class="top-nav-btn" id="aboutBlankBtn">🌐 Blank Tab</button>
     <button class="top-nav-btn" id="settingsBtn">⚙️ Settings</button>
 
-    <!-- System Info (12-Hour Clock & Battery) -->
+    <!-- System Info -->
     <div class="system-info">
         <div class="clock-display" id="clockDisplay">00:00:00 AM</div>
-        <div class="battery-display">
-            <div class="battery-icon">
-                <div class="battery-fill" id="batteryFill"></div>
-                <div class="battery-tip"></div>
-            </div>
-            <div class="battery-percentage" id="batteryPercentage">100%</div>
-        </div>
     </div>
 
-    <!-- Enhanced Liquid Settings Panel -->
+    <!-- NEW: Battery Status Bar -->
+    <div class="battery-status-bar" id="batteryStatusBar">
+        <div class="battery-icon">
+            <div class="battery-fill" id="batteryFill"></div>
+            <div class="battery-tip"></div>
+        </div>
+        <div class="battery-percentage" id="batteryPercentage">100%</div>
+        <div id="batteryStatus">⚡ Charging</div>
+    </div>
+
+    <!-- Settings Panel -->
     <div id="settingsPanel">
-  
+        <h3>OS Settings</h3>
         
         <div class="settings-group">
-            <label><span>🎨</span> Theme Color:</label>
-            <select id="themeSelect">
-                <option value="blue">Deep Ocean Blue</option>
-                <option value="purple">Mystic Purple</option>
-                <option value="green">Emerald Green</option>
-                <option value="red">Crimson Red</option>
-                <option value="cyan">Arctic Cyan</option>
-                <option value="pink">Neon Pink</option>
-                <option value="orange">Sunset Orange</option>
-                <option value="gold">Royal Gold</option>
-                <option value="midnight">Midnight Black</option>
-                <option value="aurora">Aurora Borealis</option>
-            </select>
-            
-            <div class="color-grid" id="colorGrid">
-                <!-- Color options will be generated here -->
-            </div>
-        </div>
-
-        <div class="settings-group-grid">
-            <div class="settings-group">
-                <label><span>🔤</span> Text Style:</label>
-                <select id="textStyleSelect">
-                    <option value="bubbly">Bubbly</option>
-                    <option value="liquid">Liquid</option>
-                    <option value="glow">Glowing</option>
-                    <option value="neon">Neon</option>
-                    <option value="gradient">Rainbow Gradient</option>
-                </select>
-            </div>
-
-            <div class="settings-group">
-                <label><span>🎯</span> Cursor Style:</label>
-                <select id="cursorSelect">
-                    <option value="dot">Liquid Dot</option>
-                    <option value="ring">Animated Ring</option>
-                    <option value="cross">Elegant Cross</option>
-                    <option value="square">Crystal Square</option>
-                    <option value="triangle">Glass Triangle</option>
-                    <option value="heart">Liquid Heart</option>
-                    <option value="diamond">Emerald Diamond</option>
-                    <option value="star">Golden Star</option>
-                    <option value="arrow">Floating Arrow</option>
-                    <option value="spiral">Spinning Spiral</option>
-                    <option value="comet">Pulsing Comet</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="settings-group-grid">
-            <div class="settings-group">
-                <label><span>💎</span> Glass Intensity:</label>
-                <input type="range" id="glassIntensitySlider" min="1" max="10" value="5">
-                <div id="glassIntensityDisplay" style="text-align: center; margin-top: 5px; font-size: 14px;">Medium</div>
-            </div>
-
-            <div class="settings-group">
-                <label><span>📏</span> Text Size:</label>
-                <input type="range" id="textSizeSlider" min="14" max="32" value="22">
-                <div id="textSizeDisplay" style="text-align: center; margin-top: 5px; font-size: 14px;">Medium</div>
-            </div>
+            <label>🎨 Theme Color (50+):</label>
+            <select id="themeSelect"></select>
+            <div class="color-grid" id="colorGrid"></div>
         </div>
 
         <div class="settings-group">
-            <label><span>⚡</span> Animation Speed:</label>
-            <select id="animationSpeedSelect">
-                <option value="slow">Slow & Smooth</option>
-                <option value="normal">Normal</option>
-                <option value="fast">Fast & Energetic</option>
-            </select>
+            <label>🔤 Text Style (20+):</label>
+            <select id="textStyleSelect"></select>
         </div>
 
-        <div class="settings-group-grid">
-            <div class="settings-group">
-                <label><span>🖼️</span> Favicon URL:</label>
-                <input type="text" id="faviconInput" placeholder="Enter favicon URL">
-            </div>
-
-            <div class="settings-group">
-                <label><span>📝</span> Page Title:</label>
-                <input type="text" id="pageTitleInput" placeholder="Typical Productions OS">
-            </div>
+        <div class="settings-group">
+            <label>⚡ Performance:</label>
+            <select id="performanceSelect">
+                <option value="smooth">Smooth Animations</option>
+                <option value="performance">Performance Mode</option>
+            </select>
         </div>
 
         <div class="settings-btn-grid">
-            <button class="settings-btn" id="updateFaviconBtn">Update Favicon</button>
-            <button class="settings-btn" id="updateTitleBtn">Update Title</button>
-            <button class="settings-btn" id="applyTextSizeBtn">Apply Size</button>
-            <button class="settings-btn" id="resetSettingsBtn">Reset All</button>
+            <button class="settings-btn" id="saveSettingsBtn">💾 Save Settings</button>
+            <button class="settings-btn" id="resetBtn">🔄 Reset</button>
         </div>
 
-        <button class="settings-btn" id="closeSettingsBtn" style="margin-top: 10px;">Close Settings</button>
+        <button class="settings-btn" id="closeSettingsBtn">Close</button>
     </div>
 
-    <!-- FIXED: Liquid Carousel with better button layout -->
+    <!-- Carousel -->
     <div class="liquid-carousel">
-        <div class="liquid-arrow left">⟵</div>
-        <div class="liquid-arrow right">⟶</div>
+        <div class="liquid-arrow left">←</div>
+        <div class="liquid-arrow right">→</div>
 
         <div class="track">
             <div class="slide active">
@@ -1432,330 +1078,360 @@
                     <a href="chatgpt.html" class="liquid-btn">ChatGPT</a>
                     <a href="abt.html" class="liquid-btn">About:Blank</a>
                     <a href="streaming.html" class="liquid-btn">Streaming(BETA)</a>
+                    <a href="staff.html" class="liquid-btn">Staff</a>
 
-                </div>
+                 </div>
             </div>
         </div>
         <div class="liquid-dots"></div>
     </div>
 
     <script>
-        // ========== ENHANCED LIQUID GLASS SETTINGS ==========
-        let settings = {
-            theme: 'blue',
+        // ========== PERSISTENT SETTINGS SYSTEM ==========
+        const DEFAULT_SETTINGS = {
+            theme: 'deep-ocean',
             textStyle: 'bubbly',
-            cursorStyle: 'dot',
-            favicon: './download.png',
-            pageTitle: 'Typical Productions OS',
-            glassIntensity: 5,
-            textSize: 22,
-            animationSpeed: 'normal'
+            performance: 'smooth',
+            accentColor: '#64c8ff',
+            lastSave: Date.now()
         };
 
-        // Color themes with improved gradients
-        const colorThemes = {
-            'blue': 'linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #1e3d6f 100%)',
-            'purple': 'linear-gradient(135deg, #1a0a2e 0%, #2e1a3e 25%, #3e1650 50%, #500f60 75%, #6f1e7f 100%)',
-            'green': 'linear-gradient(135deg, #0a1a1a 0%, #1a2e2e 25%, #163e32 50%, #0f6044 75%, #1e6f5e 100%)',
-            'red': 'linear-gradient(135deg, #1a0a0a 0%, #2e1a1a 25%, #3e1616 50%, #600f0f 75%, #6f1e1e 100%)',
-            'cyan': 'linear-gradient(135deg, #0a1a2e 0%, #1a2e3e 25%, #163e50 50%, #0f6075 75%, #1e6f8f 100%)',
-            'pink': 'linear-gradient(135deg, #2e0a1a 0%, #3e1a2e 25%, #50163e 50%, #750f60 75%, #8f1e6f 100%)',
-            'orange': 'linear-gradient(135deg, #2e1a0a 0%, #3e2e1a 25%, #503e16 50%, #75600f 75%, #8f6f1e 100%)',
-            'gold': 'linear-gradient(135deg, #2e2e0a 0%, #3e3e1a 25%, #505016 50%, #75750f 75%, #8f8f1e 100%)',
-            'midnight': 'linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #1a1a1a 50%, #2a2a2a 75%, #3a3a3a 100%)',
-            'aurora': 'linear-gradient(135deg, #0a1a2e 0%, #1a3e5a 25%, #2a5a7a 50%, #3a7a9a 75%, #4a9aba 100%)'
-        };
+        let settings = {...DEFAULT_SETTINGS};
 
-        // Color preview data
-        const colorOptions = [
-            {value: 'blue', color: '#1e3d6f'},
-            {value: 'purple', color: '#6f1e7f'},
-            {value: 'green', color: '#1e6f5e'},
-            {value: 'red', color: '#6f1e1e'},
-            {value: 'cyan', color: '#1e6f8f'},
-            {value: 'pink', color: '#8f1e6f'},
-            {value: 'orange', color: '#8f6f1e'},
-            {value: 'gold', color: '#8f8f1e'},
-            {value: 'midnight', color: '#1a1a1a'},
-            {value: 'aurora', color: '#2a5a7a'}
-        ];
-
-        // Load saved settings
+        // Initialize settings from localStorage
         function loadSettings() {
-            const saved = localStorage.getItem('tpLiquidSettings');
-            if (saved) {
-                settings = JSON.parse(saved);
-                applyTheme(settings.theme);
-                applyTextStyle(settings.textStyle);
-                applyCursor(settings.cursorStyle);
-                applyFavicon(settings.favicon);
-                applyGlassIntensity(settings.glassIntensity);
-                applyTextSize(settings.textSize);
-                applyAnimationSpeed(settings.animationSpeed);
-                document.title = settings.pageTitle;
+            try {
+                const saved = localStorage.getItem('liquidGlassOSSettings');
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    // Validate and merge with defaults
+                    settings = {
+                        ...DEFAULT_SETTINGS,
+                        ...parsed,
+                        lastSave: Date.now()
+                    };
+                    console.log('✅ Settings loaded:', settings);
+                } else {
+                    console.log('🆕 Using default settings');
+                }
+            } catch (error) {
+                console.error('❌ Error loading settings:', error);
+                settings = {...DEFAULT_SETTINGS};
+            }
+            
+            // Apply loaded settings
+            applyAllSettings();
+            updateCSSVariables();
+        }
+
+        // Save settings to localStorage
+        function saveSettings() {
+            try {
+                settings.lastSave = Date.now();
+                localStorage.setItem('liquidGlassOSSettings', JSON.stringify(settings));
+                console.log('💾 Settings saved:', settings);
                 
-                // Update UI elements
-                document.getElementById('themeSelect').value = settings.theme;
-                document.getElementById('textStyleSelect').value = settings.textStyle;
-                document.getElementById('cursorSelect').value = settings.cursorStyle;
-                document.getElementById('glassIntensitySlider').value = settings.glassIntensity;
-                document.getElementById('textSizeSlider').value = settings.textSize;
-                document.getElementById('animationSpeedSelect').value = settings.animationSpeed;
-                document.getElementById('pageTitleInput').value = settings.pageTitle;
-                document.getElementById('faviconInput').value = settings.favicon;
+                // Show save confirmation
+                showNotification('Settings saved!');
                 
-                updateIntensityDisplay(settings.glassIntensity);
-                updateTextSizeDisplay(settings.textSize);
-                
-                // Generate color grid
-                generateColorGrid();
+                // Auto-save every 30 seconds
+                clearTimeout(window.autoSaveTimeout);
+                window.autoSaveTimeout = setTimeout(saveSettings, 30000);
+            } catch (error) {
+                console.error('❌ Error saving settings:', error);
+                showNotification('Error saving settings', 'error');
             }
         }
 
-        // Generate color preview grid
+        // Show notification
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 80px;
+                right: 25px;
+                background: ${type === 'error' ? 'rgba(255, 100, 100, 0.9)' : 'rgba(100, 200, 255, 0.9)'};
+                color: white;
+                padding: 12px 20px;
+                border-radius: 14px;
+                backdrop-filter: blur(20px);
+                border: 1.5px solid rgba(255, 255, 255, 0.2);
+                z-index: 100000;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+                animation: slideIn 0.3s ease;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+
+        // Apply all settings
+        function applyAllSettings() {
+            applyTheme(settings.theme);
+            applyTextStyle(settings.textStyle);
+            applyPerformanceMode(settings.performance);
+            updateAccentColor();
+            updateUIFromSettings();
+        }
+
+        // Update CSS variables
+        function updateCSSVariables() {
+            document.documentElement.style.setProperty('--accent-color', settings.accentColor);
+        }
+
+        // Update accent color based on theme
+        function updateAccentColor() {
+            const themeColors = {
+                'deep-ocean': '#64c8ff',
+                'midnight-blue': '#4a4ac5',
+                'arctic-blue': '#4a9ae6',
+                'royal-purple': '#9d4edd',
+                'amethyst': '#a855f7',
+                'emerald': '#52b569',
+                'forest': '#00ffaa',
+                'crimson': '#ff0000',
+                'ruby': '#ff006f',
+                'sunset': '#ff8000',
+                'amber': '#ffaa00',
+                'arctic-cyan': '#00ffff',
+                'turquoise': '#00d4d4',
+                'cotton-candy': '#ff00bb',
+                'bubblegum': '#ff00ff',
+                'gold': '#ffd700',
+                'honey': '#ffc800',
+                'midnight': '#888888',
+                'aurora': '#4a9aba',
+                'galaxy': '#8a3df2'
+            };
+            
+            settings.accentColor = themeColors[settings.theme] || '#64c8ff';
+            updateCSSVariables();
+        }
+
+        // 50+ Color Themes (same as before, but with persistent storage)
+        const colorThemes = {
+            // Blues
+            'deep-ocean': 'linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #1e3d6f 100%)',
+            'midnight-blue': 'linear-gradient(135deg, #0c0c2c 0%, #1a1a4d 25%, #2d2d7a 50%, #3a3a9e 75%, #4a4ac5 100%)',
+            'arctic-blue': 'linear-gradient(135deg, #001f3f 0%, #003f7f 25%, #005fbf 50%, #007fff 75%, #009fff 100%)',
+            'crystal-blue': 'linear-gradient(135deg, #0a1a2e 0%, #1a3a5c 25%, #2a5a8a 50%, #3a7ab8 75%, #4a9ae6 100%)',
+            'sapphire': 'linear-gradient(135deg, #0d1b2a 0%, #1b263b 25%, #415a77 50%, #778da9 75%, #e0e1dd 100%)',
+            
+            // Purples
+            'royal-purple': 'linear-gradient(135deg, #1a0a2e 0%, #2e1a3e 25%, #3e1650 50%, #500f60 75%, #6f1e7f 100%)',
+            'amethyst': 'linear-gradient(135deg, #2d0b59 0%, #4a1b8c 25%, #6a2cbf 50%, #8a3df2 75%, #9d4edd 100%)',
+            'lavender-dream': 'linear-gradient(135deg, #2b0e44 0%, #4b1e7a 25%, #6b2eb0 50%, #8b3ee6 75%, #a855f7 100%)',
+            'violet-night': 'linear-gradient(135deg, #1a0033 0%, #330066 25%, #4d0099 50%, #6600cc 75%, #8000ff 100%)',
+            'plum': 'linear-gradient(135deg, #3d0b4d 0%, #5d1a7a 25%, #7d29a7 50%, #9d38d4 75%, #bd47ff 100%)',
+            
+            // Greens
+            'emerald': 'linear-gradient(135deg, #0a1a1a 0%, #1a2e2e 25%, #163e32 50%, #0f6044 75%, #1e6f5e 100%)',
+            'forest': 'linear-gradient(135deg, #0d2818 0%, #1a472a 25%, #2e6b3c 50%, #419152 75%, #52b569 100%)',
+            'jade': 'linear-gradient(135deg, #003322 0%, #006644 25%, #009966 50%, #00cc88 75%, #00ffaa 100%)',
+            'mint': 'linear-gradient(135deg, #002b1a 0%, #005533 25%, #00804d 50%, #00aa66 75%, #00d580 100%)',
+            'olive': 'linear-gradient(135deg, #2b331a 0%, #4d5a2e 25%, #708141 50%, #92a855 75%, #b5cf69 100%)',
+            
+            // Reds & Oranges
+            'crimson': 'linear-gradient(135deg, #1a0a0a 0%, #2e1a1a 25%, #3e1616 50%, #600f0f 75%, #6f1e1e 100%)',
+            'ruby': 'linear-gradient(135deg, #330000 0%, #660000 25%, #990000 50%, #cc0000 75%, #ff0000 100%)',
+            'scarlet': 'linear-gradient(135deg, #4a001f 0%, #7a0033 25%, #aa0047 50%, #da005b 75%, #ff006f 100%)',
+            'sunset': 'linear-gradient(135deg, #331a00 0%, #663300 25%, #994d00 50%, #cc6600 75%, #ff8000 100%)',
+            'amber': 'linear-gradient(135deg, #332200 0%, #664400 25%, #996600 50%, #cc8800 75%, #ffaa00 100%)',
+            
+            // Cyans & Teals
+            'arctic-cyan': 'linear-gradient(135deg, #003333 0%, #006666 25%, #009999 50%, #00cccc 75%, #00ffff 100%)',
+            'turquoise': 'linear-gradient(135deg, #002b2b 0%, #005555 25%, #008080 50%, #00aaaa 75%, #00d4d4 100%)',
+            'marine': 'linear-gradient(135deg, #002233 0%, #004466 25%, #006699 50%, #0088cc 75%, #00aaff 100%)',
+            'teal': 'linear-gradient(135deg, #003344 0%, #006688 25%, #0099cc 50%, #00ccff 75%, #00ffff 100%)',
+            'aqua': 'linear-gradient(135deg, #001f3f 0%, #003f7f 25%, #005fbf 50%, #007fff 75%, #009fff 100%)',
+            
+            // Pinks & Magentas
+            'cotton-candy': 'linear-gradient(135deg, #4a0033 0%, #7a0055 25%, #aa0077 50%, #da0099 75%, #ff00bb 100%)',
+            'bubblegum': 'linear-gradient(135deg, #330033 0%, #660066 25%, #990099 50%, #cc00cc 75%, #ff00ff 100%)',
+            'rose-gold': 'linear-gradient(135deg, #4a1a33 0%, #7a3355 25%, #aa4d77 50%, #da6699 75%, #ff80bb 100%)',
+            'blush': 'linear-gradient(135deg, #4a0022 0%, #7a0033 25%, #aa0044 50%, #da0055 75%, #ff0066 100%)',
+            'fuchsia': 'linear-gradient(135deg, #33001a 0%, #660033 25%, #99004d 50%, #cc0066 75%, #ff0080 100%)',
+            
+            // Gold & Yellow
+            'gold': 'linear-gradient(135deg, #332b00 0%, #665600 25%, #998100 50%, #ccac00 75%, #ffd700 100%)',
+            'honey': 'linear-gradient(135deg, #332800 0%, #665000 25%, #997800 50%, #cca000 75%, #ffc800 100%)',
+            'citrus': 'linear-gradient(135deg, #333300 0%, #666600 25%, #999900 50%, #cccc00 75%, #ffff00 100%)',
+            'sunflower': 'linear-gradient(135deg, #332100 0%, #664200 25%, #996300 50%, #cc8400 75%, #ffa500 100%)',
+            'amber-glow': 'linear-gradient(135deg, #332000 0%, #664000 25%, #996000 50%, #cc8000 75%, #ffa000 100%)',
+            
+            // Grays & Blacks
+            'midnight': 'linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #1a1a1a 50%, #2a2a2a 75%, #3a3a3a 100%)',
+            'charcoal': 'linear-gradient(135deg, #111111 0%, #222222 25%, #333333 50%, #444444 75%, #555555 100%)',
+            'slate': 'linear-gradient(135deg, #1a1a2e 0%, #2a2a3e 25%, #3a3a4e 50%, #4a4a5e 75%, #5a5a6e 100%)',
+            'steel': 'linear-gradient(135deg, #2d2d3d 0%, #3d3d5d 25%, #4d4d7d 50%, #5d5d9d 75%, #6d6dbd 100%)',
+            'obsidian': 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 50%, #3a3a3a 75%, #4a4a4a 100%)',
+            
+            // Special Themes
+            'aurora': 'linear-gradient(135deg, #0a1a2e 0%, #1a3e5a 25%, #2a5a7a 50%, #3a7a9a 75%, #4a9aba 100%)',
+            'galaxy': 'linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 25%, #2a2a5e 50%, #3a3a7e 75%, #4a4a9e 100%)',
+            'nebula': 'linear-gradient(135deg, #1a0033 0%, #330066 25%, #4d0099 50%, #6600cc 75%, #8000ff 100%)',
+            'sunrise': 'linear-gradient(135deg, #33001a 0%, #660033 25%, #99004d 50%, #cc0066 75%, #ff0080 100%)',
+            'ocean-depth': 'linear-gradient(135deg, #001f3f 0%, #003f7f 25%, #005fbf 50%, #007fff 75%, #009fff 100%)',
+            
+            // More Specials
+            'forest-deep': 'linear-gradient(135deg, #002200 0%, #004400 25%, #006600 50%, #008800 75%, #00aa00 100%)',
+            'fire': 'linear-gradient(135deg, #330000 0%, #660000 25%, #990000 50%, #cc0000 75%, #ff0000 100%)',
+            'ice': 'linear-gradient(135deg, #001133 0%, #002266 25%, #003399 50%, #0044cc 75%, #0055ff 100%)',
+            'earth': 'linear-gradient(135deg, #332100 0%, #664200 25%, #996300 50%, #cc8400 75%, #ffa500 100%)',
+            'sky': 'linear-gradient(135deg, #003366 0%, #0066cc 25%, #0099ff 50%, #00ccff 75%, #00ffff 100%)',
+            
+            // Gradient Mixes
+            'sunset-blaze': 'linear-gradient(135deg, #330033 0%, #660066 25%, #990099 50%, #cc00cc 75%, #ff00ff 100%)',
+            'mystic': 'linear-gradient(135deg, #2d004d 0%, #5a0099 25%, #8700e6 50%, #b400ff 75%, #e100ff 100%)',
+            'cosmic': 'linear-gradient(135deg, #000033 0%, #000066 25%, #000099 50%, #0000cc 75%, #0000ff 100%)',
+            'volcano': 'linear-gradient(135deg, #4a0000 0%, #7a0000 25%, #aa0000 50%, #da0000 75%, #ff0000 100%)',
+            'glacier': 'linear-gradient(135deg, #003344 0%, #006688 25%, #0099cc 50%, #00ccff 75%, #00ffff 100%)'
+        };
+
+        // 20+ Text Styles
+        const textStyles = [
+            {value: 'bubbly', name: 'Fredoka Bubbly'},
+            {value: 'modern', name: 'Modern Clean'},
+            {value: 'glow', name: 'Glowing'},
+            {value: 'gradient', name: 'Rainbow Gradient'},
+            {value: 'futuristic', name: 'Futuristic'},
+            {value: 'elegant', name: 'Elegant Script'},
+            {value: 'bold', name: 'Bold Impact'},
+            {value: 'fun', name: 'Fun Bounce'},
+            {value: 'tech', name: 'Tech Style'},
+            {value: 'minimal', name: 'Minimal'},
+            {value: 'artistic', name: 'Artistic'},
+            {value: 'dramatic', name: 'Dramatic'},
+            {value: 'chill', name: 'Chill Script'},
+            {value: 'magic', name: 'Magic Glow'},
+            {value: 'neon', name: 'Neon'},
+            {value: 'handwritten', name: 'Handwritten'},
+            {value: 'space', name: 'Space Age'},
+            {value: 'luxury', name: 'Luxury Gold'},
+            {value: 'grunge', name: 'Grunge'},
+            {value: 'bold', name: 'Bold Display'}
+        ];
+
+        // Apply theme
+        function applyTheme(theme) {
+            document.body.style.background = colorThemes[theme] || colorThemes['deep-ocean'];
+            settings.theme = theme;
+            updateAccentColor();
+        }
+
+        // Apply text style
+        function applyTextStyle(style) {
+            const elements = document.querySelectorAll('.slide h2, .liquid-btn, .top-nav-btn, .title, .randomText, .settings-btn');
+            elements.forEach(el => {
+                el.className = el.className.replace(/\btext-\w+\b/g, '').trim();
+                el.classList.add('text-' + style);
+            });
+            settings.textStyle = style;
+        }
+
+        // Apply performance mode
+        function applyPerformanceMode(mode) {
+            if (mode === 'performance') {
+                document.body.classList.add('performance-mode');
+            } else {
+                document.body.classList.remove('performance-mode');
+            }
+            settings.performance = mode;
+        }
+
+        // Update UI from settings
+        function updateUIFromSettings() {
+            // Populate theme select
+            const themeSelect = document.getElementById('themeSelect');
+            themeSelect.innerHTML = '';
+            Object.keys(colorThemes).forEach(theme => {
+                const option = document.createElement('option');
+                option.value = theme;
+                option.textContent = theme.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                themeSelect.appendChild(option);
+            });
+            themeSelect.value = settings.theme;
+
+            // Populate text style select
+            const textStyleSelect = document.getElementById('textStyleSelect');
+            textStyleSelect.innerHTML = '';
+            textStyles.forEach(style => {
+                const option = document.createElement('option');
+                option.value = style.value;
+                option.textContent = style.name;
+                textStyleSelect.appendChild(option);
+            });
+            textStyleSelect.value = settings.textStyle;
+
+            // Performance select
+            document.getElementById('performanceSelect').value = settings.performance;
+            generateColorGrid();
+        }
+
+        // Generate color grid
         function generateColorGrid() {
             const grid = document.getElementById('colorGrid');
             grid.innerHTML = '';
             
-            colorOptions.forEach(color => {
+            Object.keys(colorThemes).forEach((theme, index) => {
+                if (index >= 50) return;
+                
                 const colorEl = document.createElement('div');
                 colorEl.className = 'color-option';
-                colorEl.style.background = colorThemes[color.value].split('gradient')[0] || color.color;
-                colorEl.dataset.theme = color.value;
                 
-                if (color.value === settings.theme) {
+                const gradient = colorThemes[theme];
+                const colors = gradient.match(/#[0-9a-fA-F]{3,6}/g);
+                colorEl.style.background = colors ? colors[0] : '#1e3d6f';
+                colorEl.dataset.theme = theme;
+                colorEl.title = theme.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                
+                if (theme === settings.theme) {
                     colorEl.classList.add('active');
                 }
                 
                 colorEl.addEventListener('click', () => {
                     document.querySelectorAll('.color-option').forEach(c => c.classList.remove('active'));
                     colorEl.classList.add('active');
-                    applyTheme(color.value);
-                    document.getElementById('themeSelect').value = color.value;
+                    applyTheme(theme);
+                    document.getElementById('themeSelect').value = theme;
+                    settings.theme = theme;
+                    updateAccentColor();
                 });
                 
                 grid.appendChild(colorEl);
             });
         }
 
-        // Save settings
-        function saveSettings() {
-            localStorage.setItem('tpLiquidSettings', JSON.stringify(settings));
-        }
-
-        // Apply theme
-        function applyTheme(theme) {
-            document.body.style.background = colorThemes[theme] || colorThemes['blue'];
-            settings.theme = theme;
-            saveSettings();
-        }
-
-        // FIXED: Apply text style - won't make title disappear
-        function applyTextStyle(style) {
-            // Apply to all elements except title and randomText
-            const elements = document.querySelectorAll('.slide h2, .liquid-btn, .top-nav-btn, .settings-btn, #settingsPanel h3');
-            
-            // Remove all text style classes
-            elements.forEach(el => {
-                el.classList.remove('text-bubbly', 'text-liquid', 'text-glow', 'text-neon', 'text-gradient');
-            });
-            
-            // Apply new style class
-            const styleClass = 'text-' + style;
-            elements.forEach(el => {
-                el.classList.add(styleClass);
-            });
-            
-            // Apply to title and randomText separately to avoid issues
-            const title = document.querySelector('.title');
-            const randomText = document.querySelector('.randomText');
-            
-            // Reset and reapply with proper handling
-            title.classList.remove('text-bubbly', 'text-liquid', 'text-glow', 'text-neon', 'text-gradient');
-            randomText.classList.remove('text-bubbly', 'text-liquid', 'text-glow', 'text-neon', 'text-gradient');
-            
-            title.classList.add(styleClass);
-            randomText.classList.add(styleClass);
-            
-            // Ensure visibility
-            title.style.opacity = '1';
-            title.style.visibility = 'visible';
-            randomText.style.opacity = '1';
-            randomText.style.visibility = 'visible';
-            
-            settings.textStyle = style;
-            saveSettings();
-        }
-
-        // Apply cursor effect
-        function applyCursor(type) {
-            const cursor = document.getElementById('mainCursor');
-            cursor.className = 'cursor';
-            
-            // Remove any existing cursor-outer elements first
-            const existingOuter = cursor.querySelector('.cursor-outer');
-            if (existingOuter) {
-                cursor.removeChild(existingOuter);
-            }
-            
-            // Remove any existing cursor-inner elements
-            const existingInner = cursor.querySelector('.cursor-inner');
-            if (existingInner) {
-                cursor.removeChild(existingInner);
-            }
-            
-            // Create new cursor-inner
-            const inner = document.createElement('div');
-            inner.className = 'cursor-inner';
-            
-            // Add star emoji for star cursor
-            if (type === 'star') {
-                inner.innerHTML = '★';
-            }
-            
-            cursor.appendChild(inner);
-            
-            // Add new cursor-outer for styles that need it
-            if (type === 'dot' || type === 'ring') {
-                const outer = document.createElement('div');
-                outer.className = 'cursor-outer';
-                cursor.appendChild(outer);
-            }
-            
-            // Apply the specific cursor class
-            cursor.classList.add('cursor-' + type);
-            
-            settings.cursorStyle = type;
-            saveSettings();
-        }
-
-        // Apply glass intensity
-        function applyGlassIntensity(intensity) {
-            const glassElements = document.querySelectorAll('.liquid-glass, .liquid-carousel, .top-nav-btn, #settingsPanel, .clock-display, .battery-display');
-            
-            glassElements.forEach(el => {
-                const baseOpacity = 0.1;
-                const intensityFactor = intensity / 10;
-                const newOpacity = baseOpacity + (intensityFactor * 0.15);
-                
-                el.style.background = `rgba(255, 255, 255, ${newOpacity})`;
-                el.style.boxShadow = el.style.boxShadow.replace(/rgba\(100, 200, 255, [^)]+\)/g, `rgba(100, 200, 255, ${0.2 + intensityFactor * 0.3})`);
-            });
-            
-            settings.glassIntensity = intensity;
-            saveSettings();
-        }
-
-        // Apply text size
-        function applyTextSize(size) {
-            const textElements = document.querySelectorAll('.randomText, .liquid-btn, .settings-btn, .top-nav-btn');
-            
-            textElements.forEach(el => {
-                el.style.fontSize = `${size}px`;
-            });
-            
-            settings.textSize = size;
-            saveSettings();
-        }
-
-        // Apply animation speed
-        function applyAnimationSpeed(speed) {
-            const animations = document.querySelectorAll('.liquid-glass, .liquid-carousel, .liquid-particle');
-            let speedMultiplier = 1;
-            
-            switch(speed) {
-                case 'slow':
-                    speedMultiplier = 1.5;
-                    break;
-                case 'fast':
-                    speedMultiplier = 0.5;
-                    break;
-            }
-            
-            animations.forEach(el => {
-                const style = getComputedStyle(el);
-                if (style.animationDuration) {
-                    const currentDuration = parseFloat(style.animationDuration);
-                    el.style.animationDuration = `${currentDuration * speedMultiplier}s`;
-                }
-            });
-            
-            settings.animationSpeed = speed;
-            saveSettings();
-        }
-
-        // Apply favicon
-        function applyFavicon(url) {
-            const favicon = document.getElementById('favicon');
-            favicon.href = url;
-            settings.favicon = url;
-            saveSettings();
-        }
-
-        // Update intensity display
-        function updateIntensityDisplay(value) {
-            const display = document.getElementById('glassIntensityDisplay');
-            const intensityLabels = ['Very Low', 'Low', 'Medium Low', 'Medium', 'Medium High', 'High', 'Very High', 'Extreme', 'Ultra', 'Maximum'];
-            display.textContent = intensityLabels[value - 1] || 'Medium';
-        }
-
-        // Update text size display
-        function updateTextSizeDisplay(value) {
-            const display = document.getElementById('textSizeDisplay');
-            if (value <= 18) display.textContent = 'Small';
-            else if (value <= 24) display.textContent = 'Medium';
-            else if (value <= 28) display.textContent = 'Large';
-            else display.textContent = 'Extra Large';
-        }
-
-        // ========== 12-HOUR CLOCK ==========
-        function updateClock() {
-            const now = new Date();
-            let hours = now.getHours();
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-            
-            // Convert to 12-hour format
-            hours = hours % 12;
-            hours = hours ? hours : 12; // Convert 0 to 12
-            
-            document.getElementById('clockDisplay').textContent = 
-                `${hours.toString().padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
-        }
-
-        // ========== BATTERY DISPLAY ==========
-        function updateBattery() {
+        // ========== BATTERY STATUS BAR ==========
+        function initBattery() {
             if (navigator.getBattery) {
                 navigator.getBattery().then(battery => {
-                    updateBatteryInfo(battery);
+                    updateBatteryDisplay(battery);
                     
-                    battery.addEventListener('levelchange', () => {
-                        updateBatteryInfo(battery);
-                    });
-                    
-                    battery.addEventListener('chargingchange', () => {
-                        updateBatteryInfo(battery);
-                    });
+                    battery.addEventListener('levelchange', () => updateBatteryDisplay(battery));
+                    battery.addEventListener('chargingchange', () => updateBatteryDisplay(battery));
                 });
             } else {
-                // Fallback for browsers that don't support Battery API
-                const level = Math.floor(Math.random() * 30) + 70; // Random between 70-100%
-                updateBatteryDisplay(level, false);
+                // Fallback for browsers without Battery API
+                updateBatteryDisplay({
+                    level: 0.85,
+                    charging: false
+                });
             }
         }
 
-        function updateBatteryInfo(battery) {
+        function updateBatteryDisplay(battery) {
             const level = Math.round(battery.level * 100);
             const isCharging = battery.charging;
-            updateBatteryDisplay(level, isCharging);
-        }
-
-        function updateBatteryDisplay(level, isCharging) {
-            const batteryFill = document.getElementById('batteryFill');
-            const batteryPercentage = document.getElementById('batteryPercentage');
             
-            // Update fill width
+            // Update battery fill
+            const batteryFill = document.getElementById('batteryFill');
             batteryFill.style.width = `${level}%`;
             
             // Update color based on level
@@ -1766,78 +1442,211 @@
             
             batteryFill.style.background = fillColor;
             
-            // Update percentage text
-            batteryPercentage.textContent = `${level}%`;
+            // Update percentage
+            document.getElementById('batteryPercentage').textContent = `${level}%`;
             
-            // Add charging indicator
+            // Update status
+            const statusElement = document.getElementById('batteryStatus');
             if (isCharging) {
-                batteryPercentage.textContent += ' ⚡';
+                statusElement.textContent = '⚡ Charging';
+                statusElement.classList.add('battery-charging');
+            } else {
+                statusElement.textContent = '🔋 Battery';
+                statusElement.classList.remove('battery-charging');
             }
         }
 
-        // ========== PROFESSIONAL CURSOR SYSTEM ==========
+        // ========== SMOOTH CURSOR ==========
         const cursor = document.getElementById('mainCursor');
-        const follower = document.getElementById('cursorFollower');
-        let mouseX = 0;
-        let mouseY = 0;
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
 
-        // Smooth mouse tracking
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            
-            cursor.style.left = mouseX + 'px';
-            cursor.style.top = mouseY + 'px';
-            
-            const followerX = parseFloat(follower.style.left || mouseX);
-            const followerY = parseFloat(follower.style.top || mouseY);
-            
-            follower.style.left = followerX + (mouseX - followerX) * 0.1 + 'px';
-            follower.style.top = followerY + (mouseY - followerY) * 0.1 + 'px';
         });
 
-        // Interactive elements hover effect
-        const interactiveElements = document.querySelectorAll('a, button, .liquid-arrow, .liquid-dot, .top-nav-btn, .liquid-btn, .title, .randomText, .settings-btn, .color-option');
-
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(1.5)';
-                follower.style.transform = 'scale(1.3)';
-                follower.style.background = 'rgba(100, 200, 255, 0.2)';
-                follower.style.borderColor = 'rgba(100, 200, 255, 0.5)';
-            });
-
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
-                follower.style.transform = 'scale(1)';
-                follower.style.background = 'rgba(100, 200, 255, 0.1)';
-                follower.style.borderColor = 'rgba(100, 200, 255, 0.3)';
-            });
-        });
-
-        // Ripple effect on click
-        function createRippleEffect(x, y) {
-            const ripple = document.createElement('div');
-            ripple.className = 'ripple';
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
-            document.body.appendChild(ripple);
+        function updateCursor() {
+            const speed = 0.15;
+            cursorX += (mouseX - cursorX) * speed;
+            cursorY += (mouseY - cursorY) * speed;
             
-            setTimeout(() => ripple.remove(), 600);
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            requestAnimationFrame(updateCursor);
         }
 
-        document.addEventListener('click', (e) => {
-            createRippleEffect(e.clientX, e.clientY);
+        // Start cursor animation
+        updateCursor();
+
+        const interactiveElements = document.querySelectorAll('a, button, .liquid-arrow, .liquid-dot, .color-option, .battery-status-bar');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
         });
+
+        // ========== FIXED DRAGGABLE TITLE ==========
+        const title = document.getElementById("dragTitle");
+        let isDragging = false;
+        let dragOffset = { x: 0, y: 0 };
+
+        title.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            const rect = title.getBoundingClientRect();
+            dragOffset.x = e.clientX - rect.left;
+            dragOffset.y = e.clientY - rect.top;
+            title.style.cursor = 'grabbing';
+            cursor.classList.add('hover');
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+            
+            requestAnimationFrame(() => {
+                title.style.left = (e.clientX - dragOffset.x) + "px";
+                title.style.top = (e.clientY - dragOffset.y) + "px";
+            });
+        });
+
+        document.addEventListener("mouseup", () => {
+            isDragging = false;
+            title.style.cursor = '';
+            cursor.classList.remove('hover');
+        });
+
+        // ========== CLOCK ==========
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            
+            document.getElementById('clockDisplay').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
+        }
+
+        // ========== CAROUSEL ==========
+        const track = document.querySelector('.track');
+        const slides = document.querySelectorAll('.slide');
+        const left = document.querySelector('.left');
+        const right = document.querySelector('.right');
+        const dotsWrap = document.querySelector('.liquid-dots');
+
+        let currentSlide = 0;
+        let carouselWidth = 720;
+
+        // Create dots
+        dotsWrap.innerHTML = '';
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.className = 'liquid-dot';
+            if(i === currentSlide) dot.classList.add('active');
+            dotsWrap.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.liquid-dot');
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * carouselWidth}px)`;
+            slides.forEach(s => s.classList.remove("active"));
+            slides[currentSlide].classList.add("active");
+            dots.forEach(d => d.classList.remove("active"));
+            dots[currentSlide].classList.add("active");
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+
+        right.addEventListener('click', nextSlide);
+        left.addEventListener('click', prevSlide);
+
+        document.addEventListener('keydown', (e) => {
+            if(e.key === "ArrowRight") nextSlide();
+            if(e.key === "ArrowLeft") prevSlide();
+        });
+
+        // ========== RANDOM TEXT ==========
+        const randomTextElement = document.getElementById("randomText");
+        const texts = [
+            "bro what",
+            "Nononononononnonononono!",
+            "Stay A Hater 😎",
+            "50+ Color Themes 🎨",
+            "20+ Text Styles 🔤",
+            "wow ooze is still alive! 🎮",
+            "Typical Productions forever",
+            "Battery status in bottom right",
+            "Make sure to visit Ooze!",
+            "Arcadium Is Alive?",
+            "oooh wow chicken! 🐔",
+            "Smooth Performance Mode",
+            "ooooozeeeeeee 🌊",
+            "Typical? 🔥",
+            "Visit Unblocked Chicken! 🎯",
+            "Arcadium In The Big 25 ❤️",
+            "Optimized for Chromebooks",
+            "Liquid Effects Active 💧",
+            "certified peto",
+            "frogies arcade 🐸",
+            "Lets support Arcadium!",
+            "Arcadium is the goat",
+            "OG typical productions was peak",
+            "Grown ahh man btw ✌️",
+            "ndefknefrnfkrnfkernfkernfernvknktegrger",
+            "67",
+            "stop SPAMMING SOUND BOARDS",
+            "im funna crash out",
+            "lowkey i should eat dih rn",
+            "Anything but doing your work",
+            "UWU - O",
+            "Shut up and suck it - B",
+            "I NEED MY WIFUS - J",
+            "ima add some streaming platforms in the future",
+            "STOP TOUCHING KIDS!",
+            "vruh",
+            "Using chatGPT to cheat is wild",
+            "stop dih riding me",
+            "Ok",
+            "Fnaf 2 movi3 was insane",
+            "who still plays roblox 😭",
+            "Tung tung tung sahur",
+            "bro i swear if u say 67 one more time",
+            "jforjfvervnoenrwvoevreverfrvee",
+            "Does anyone even read these?",
+            "jst give me my money",
+            "i have slaves that dont get paied",
+            "WHAT",
+            "Discord kitten",
+            "oh wow"
+
+        ];
+
+        function changeText() {
+            randomTextElement.textContent = texts[Math.floor(Math.random() * texts.length)];
+        }
 
         // ========== SETTINGS PANEL ==========
         const settingsBtn = document.getElementById('settingsBtn');
         const settingsPanel = document.getElementById('settingsPanel');
         const closeSettingsBtn = document.getElementById('closeSettingsBtn');
 
-        settingsBtn.addEventListener('click', (e) => {
+        settingsBtn.addEventListener('click', () => {
             settingsPanel.style.display = settingsPanel.style.display === 'flex' ? 'none' : 'flex';
-            createRippleEffect(e.clientX, e.clientY);
             generateColorGrid();
         });
 
@@ -1848,113 +1657,48 @@
         // Theme selection
         document.getElementById('themeSelect').addEventListener('change', (e) => {
             applyTheme(e.target.value);
-            // Update active color in grid
-            document.querySelectorAll('.color-option').forEach(c => {
-                c.classList.toggle('active', c.dataset.theme === e.target.value);
-            });
+            settings.theme = e.target.value;
+            updateAccentColor();
         });
 
         // Text style selection
         document.getElementById('textStyleSelect').addEventListener('change', (e) => {
             applyTextStyle(e.target.value);
+            settings.textStyle = e.target.value;
         });
 
-        // Cursor selection
-        document.getElementById('cursorSelect').addEventListener('change', (e) => {
-            applyCursor(e.target.value);
+        // Performance mode
+        document.getElementById('performanceSelect').addEventListener('change', (e) => {
+            applyPerformanceMode(e.target.value);
+            settings.performance = e.target.value;
         });
 
-        // Glass intensity slider
-        const glassIntensitySlider = document.getElementById('glassIntensitySlider');
-        glassIntensitySlider.addEventListener('input', (e) => {
-            const value = parseInt(e.target.value);
-            updateIntensityDisplay(value);
-            applyGlassIntensity(value);
-        });
-
-        // Text size slider
-        const textSizeSlider = document.getElementById('textSizeSlider');
-        textSizeSlider.addEventListener('input', (e) => {
-            const value = parseInt(e.target.value);
-            updateTextSizeDisplay(value);
-            settings.textSize = value;
+        // Save settings button
+        document.getElementById('saveSettingsBtn').addEventListener('click', () => {
             saveSettings();
-        });
-
-        // Apply text size button
-        document.getElementById('applyTextSizeBtn').addEventListener('click', () => {
-            applyTextSize(settings.textSize);
-        });
-
-        // Animation speed selection
-        document.getElementById('animationSpeedSelect').addEventListener('change', (e) => {
-            applyAnimationSpeed(e.target.value);
-        });
-
-        // Favicon update
-        document.getElementById('updateFaviconBtn').addEventListener('click', () => {
-            const url = document.getElementById('faviconInput').value;
-            if (url) {
-                applyFavicon(url);
-            }
-        });
-
-        // Title update
-        document.getElementById('updateTitleBtn').addEventListener('click', () => {
-            const title = document.getElementById('pageTitleInput').value;
-            if (title) {
-                document.title = title;
-                settings.pageTitle = title;
-                saveSettings();
-            }
+            settingsPanel.style.display = 'none';
         });
 
         // Reset settings
-        document.getElementById('resetSettingsBtn').addEventListener('click', () => {
-            localStorage.removeItem('tpLiquidSettings');
-            location.reload();
+        document.getElementById('resetBtn').addEventListener('click', () => {
+            if (confirm('Reset all settings to defaults?')) {
+                localStorage.removeItem('liquidGlassOSSettings');
+                location.reload();
+            }
         });
 
-        // About:Blank opener
-        document.getElementById('aboutBlankBtn').addEventListener('click', (e) => {
-            createRippleEffect(e.clientX, e.clientY);
-            
+        // About:Blank
+        document.getElementById('aboutBlankBtn').addEventListener('click', () => {
             const newWindow = window.open('about:blank', '_blank');
             const html = `
                 <!DOCTYPE html>
                 <html>
                 <head>
-                    <title>${settings.pageTitle} - About Blank</title>
-                    <style>
-                        body { 
-                            margin: 0; 
-                            padding: 0; 
-                            overflow: hidden;
-                            background: #0a0a1a;
-                        }
-                        iframe { 
-                            width: 100vw; 
-                            height: 100vh; 
-                            border: none;
-                            position: fixed;
-                            top: 0;
-                            left: 0;
-                        }
-                        .loading {
-                            position: fixed;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            color: white;
-                            font-family: Arial, sans-serif;
-                            font-size: 24px;
-                            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-                        }
-                    </style>
+                    <title>Typical Productions OS - About Blank</title>
+                    <style>body{margin:0;padding:0;overflow:hidden;background:#0a0a1a;}</style>
                 </head>
                 <body>
-                    <div class="loading">Loading Page In About:Blank...</div>
-                    <iframe src="${window.location.href}" allowfullscreen onload="document.querySelector('.loading').style.display='none'"></iframe>
+                    <iframe src="${window.location.href}" style="width:100vw;height:100vh;border:none;"></iframe>
                 </body>
                 </html>
             `;
@@ -1962,212 +1706,46 @@
             newWindow.document.close();
         });
 
-        // ========== FIXED CAROUSEL ==========
-        const track = document.querySelector('.track');
-        const slides = document.querySelectorAll('.slide');
-        const left = document.querySelector('.left');
-        const right = document.querySelector('.right');
-        const dotsWrap = document.querySelector('.liquid-dots');
-
-        let current = parseInt(localStorage.getItem("liquidCarouselIndex")) || 0;
-        let width = 720;
-
-        // Clear existing dots and create new ones
-        dotsWrap.innerHTML = '';
-        slides.forEach((_, i) => {
-            const dot = document.createElement('div');
-            dot.className = 'liquid-dot';
-            if(i === current) dot.classList.add('active');
-            dotsWrap.appendChild(dot);
-        });
-
-        const dots = document.querySelectorAll('.liquid-dot');
-
-        function updateCarousel() {
-            track.style.transform = `translateX(-${current * width}px)`;
-            slides.forEach(s => s.classList.remove("active"));
-            slides[current].classList.add("active");
-            dots.forEach(d => d.classList.remove("active"));
-            dots[current].classList.add("active");
-            localStorage.setItem("liquidCarouselIndex", current);
-        }
-
-        function nextSlide() {
-            current = (current + 1) % slides.length;
-            createRippleEffect(window.innerWidth/2, window.innerHeight/2);
+        // ========== INITIALIZE EVERYTHING ==========
+        function init() {
+            console.log('🚀 Initializing Typical Productions OS...');
+            
+            // Load saved settings
+            loadSettings();
+            
+            // Initialize components
+            updateClock();
+            initBattery();
+            changeText();
             updateCarousel();
-        }
-
-        function prevSlide() {
-            current = (current - 1 + slides.length) % slides.length;
-            createRippleEffect(window.innerWidth/2, window.innerHeight/2);
-            updateCarousel();
-        }
-
-        right.addEventListener('click', (e) => {
-            createRippleEffect(e.clientX, e.clientY);
-            nextSlide();
-        });
-
-        left.addEventListener('click', (e) => {
-            createRippleEffect(e.clientX, e.clientY);
-            prevSlide();
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if(e.key === "ArrowRight") nextSlide();
-            if(e.key === "ArrowLeft") prevSlide();
-        });
-
-        // Swipe support
-        let startX;
-        track.addEventListener("touchstart", e => startX = e.touches[0].clientX);
-        track.addEventListener("touchend", e => {
-            let endX = e.changedTouches[0].clientX;
-            if(endX < startX - 40) nextSlide();
-            if(endX > startX + 40) prevSlide();
-        });
-
-        // Dot navigation
-        dots.forEach((dot, i) => {
-            dot.addEventListener("click", (e) => {
-                createRippleEffect(e.clientX, e.clientY);
-                current = i;
+            
+            // Start intervals
+            setInterval(updateClock, 1000);
+            setInterval(changeText, 5000);
+            setInterval(() => {
+                // Auto-save every 2 minutes
+                const timeSinceLastSave = Date.now() - settings.lastSave;
+                if (timeSinceLastSave > 120000) { // 2 minutes
+                    saveSettings();
+                }
+            }, 30000);
+            
+            // Handle resize
+            window.addEventListener('resize', () => {
+                carouselWidth = document.querySelector('.liquid-carousel').offsetWidth;
                 updateCarousel();
             });
-        });
-
-        // ========== RANDOM TEXT ==========
-        const randomTextElement = document.getElementById("randomText");
-        const texts = [
-            "Welcome to Liquid Glass! 💧",
-            "Powered by Advanced Liquid Effects",
-            "Stay A Hater 😎",
-            "Loading Liquid Interface...",
-            "Generating Liquid Effects",
-            "wow ooze is still alive! 🎮",
-            "Typical Productions forever",
-            "Liquid Glass Technology Active",
-            "Enhanced Text Styles Activated ✨",
-            "Make sure to visit Ooze Reborn!",
-            "Arcadium Is Alive?",
-            "oooh wow chicken! 🐔",
-            "Me And Ooze Are Friends 👫",
-            "Professional Cursors Activated 🎯",
-            "10 Color Themes Available 🎨",
-            "5 Text Styles to Choose From 🔤",
-            "11 Cursor Styles! 🖱️",
-            "ooooozeeeeeee 🌊",
-            "Typical? 🔥",
-            "Visit Unblocked Chicken! 🎯",
-            "Liquid Coding in Progress 💻",
-            "Arcadium In The Big 25 ❤️",
-            "ooze in the big 25 ❤️‍🩹🔋",
-            "WE are done ✅",
-            "i dont think im making a big comeback",
-            "real eyes realize real lies 👁️",
-            "gamble all you want 🎰",
-            "OK BRO THAT WAS NOT THE WIND 🌪️",
-            "HOLY LAG 💀",
-            "Liquid Effects Maximum 🚀",
-            "officially liquid 💧",
-            "certified glass 🔮",
-            "frogies arcade 🐸",
-            "liquid coding activated 💾",
-            "shut up and suck it-B 😂",
-            "HEEELELLPPLPLPLPLPLPELPELPELPELPELPLEPLEPLEPLPELPLEPLEPLEPELP",
-            "67 🔥",
-            "Lets support Arcadium!",
-            "Arcadium is the goat",
-            "this was made in two days",
-            "BRO IM WASTING TIME MAKING TS",
-            "Anything but doing work-O",
-            "Wrap it up gng",
-            "im sucking on a lolipop",
-            "OG typical productions was peak",
-            "Yeah im not fixing those games",
-            "WHO REMEMBERS OMES TYPICAL SITE!",
-            "rice boy 300",
-            "I NEED MY WIFUS-J",
-            "I made Arcadium",
-            "Grown ahh man btw ✌️",
             
-        ];
-
-        function changeText() {
-            randomTextElement.textContent = texts[Math.floor(Math.random() * texts.length)];
-            createRippleEffect(
-                randomTextElement.getBoundingClientRect().left + randomTextElement.offsetWidth/2,
-                randomTextElement.getBoundingClientRect().top + randomTextElement.offsetHeight/2
-            );
+            // Auto-save on page unload
+            window.addEventListener('beforeunload', () => {
+                saveSettings();
+            });
+            
+            console.log('✅ Typical Production OS initialized successfully!');
         }
-        changeText();
-        setInterval(changeText, 5000);
 
-        // ========== DRAGGABLE TITLE ==========
-        const drag = document.getElementById("dragTitle");
-        let isDrag = false;
-        let offsetX, offsetY;
-
-        drag.addEventListener("mousedown", (e) => {
-            isDrag = true;
-            offsetX = e.clientX - drag.offsetLeft;
-            offsetY = e.clientY - drag.offsetTop;
-            cursor.style.transform = 'scale(2)';
-            createRippleEffect(e.clientX, e.clientY);
-        });
-
-        document.addEventListener("mouseup", () => {
-            isDrag = false;
-            cursor.style.transform = 'scale(1)';
-        });
-
-        document.addEventListener("mousemove", (e) => {
-            if(isDrag) {
-                drag.style.left = (e.clientX - offsetX) + "px";
-                drag.style.top = (e.clientY - offsetY) + "px";
-            }
-        });
-
-        // ========== INITIALIZE ==========
-        loadSettings();
-        updateCarousel();
-        updateClock();
-        updateBattery();
-        
-        // Update clock every second
-        setInterval(updateClock, 1000);
-        
-        // Update battery every 30 seconds
-        setInterval(updateBattery, 30000);
-        
-        // Auto-rotate carousel
-        setInterval(() => {
-            nextSlide();
-        }, 999999);
-
-        // Initialize particles
-        function createParticles() {
-            const container = document.getElementById('liquidParticles');
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'liquid-particle';
-                
-                const size = Math.random() * 40 + 20;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.animationDuration = (Math.random() * 20 + 30) + 's';
-                particle.style.opacity = Math.random() * 0.3 + 0.2;
-                
-                container.appendChild(particle);
-            }
-        }
-        
-        createParticles();
+        // Start everything when page loads
+        window.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
