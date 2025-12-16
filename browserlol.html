@@ -1,0 +1,45 @@
+  <!-- Favicon code below -->
+    <link rel="icon" href="download.png" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browser Lol</title>
+
+<iframe src="https://browserlol.global.ssl.fastly.net/create" 
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 1;">
+</iframe>
+<style>
+    .glass-home-btn {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        width: 70px;
+        height: 70px;
+        border-radius: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        text-decoration: none;
+        color: white;
+
+        /* Liquid glass */
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.22);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+        transition: 0.25s;
+
+        /* Make sure it appears above iframe */
+        z-index: 9999;
+    }
+
+    .glass-home-btn:hover {
+        background: rgba(255,255,255,0.28);
+        box-shadow: 0 10px 36px rgba(61, 61, 61, 0.5);
+        transform: scale(1.05);
+    }
+</style>
+
+
+<a href="index.html" class="glass-home-btn">🏠</a>
