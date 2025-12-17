@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="./download.png" type="image/x-icon" id="favicon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modded Games</title>
+    
+    <!-- Optimized Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* OPTIMIZED LIQUID GLASS THEME - EXACT COPY FROM MAIN SITE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --glass-opacity: 0.1;
+            --blur-amount: 25px;
+            --transition-speed: 0.4s;
+            --accent-color: #64c8ff;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+            font-family: "Poppins", sans-serif;
+            overflow-x: hidden;
+            user-select: none;
+            position: relative;
+            transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 20px;
+        }
+
+        /* Smooth Liquid Overlay */
+        .liquid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, 
+                    transparent 25%, 
+                    rgba(255,255,255,0.03) 50%, 
+                    transparent 75%);
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.4;
+            animation: liquidFlow 30s linear infinite;
+            will-change: background-position;
+        }
+
+        @keyframes liquidFlow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 400% 400%; }
+        }
+
+        /* Smooth Cursor */
+        .cursor {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999999;
+            transition: 
+                transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1),
+                width 0.15s cubic-bezier(0.34, 1.56, 0.64, 1),
+                height 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 0 6px var(--accent-color));
+            transform: translate(-50%, -50%) scale(1);
+            will-change: transform;
+        }
+
+        .cursor.hover {
+            width: 40px;
+            height: 40px;
+            background: rgba(100, 200, 255, 0.15);
+            border: 2px solid var(--accent-color);
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        /* Back button */
+        .back-btn {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            padding: 14px 28px;
+            background: rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            color: white;
+            text-decoration: none;
+            font-family: 'Fredoka One', cursive;
+            font-size: 17px;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 9999;
+            animation: navFloat 10s ease-in-out infinite;
+        }
+
+        @keyframes navFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            animation-play-state: paused;
+        }
+
+        /* Page title */
+        .page-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-top: 100px;
+            margin-bottom: 40px;
+            text-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #ffffff 0%, #ff6b6b 25%, #4ecdc4 50%, #45b7d1 75%, #96ceb4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 300% 300%;
+            animation: rainbowShift 8s ease infinite;
+            font-family: 'Fredoka One', cursive;
+            letter-spacing: 2px;
+            text-align: center;
+            position: relative;
+            z-index: 200;
+        }
+
+        @keyframes rainbowShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Games Grid - Compact Layout */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1400px;
+            margin-top: 20px;
+            padding: 30px;
+            z-index: 200;
+        }
+
+        /* Compact Game Boxes */
+        .game-box {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: none;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            animation: boxFloat 6s ease-in-out infinite;
+            will-change: transform, box-shadow;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none !important;
+        }
+
+        @keyframes boxFloat {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg);
+            }
+            50% { 
+                transform: translateY(-5px) rotate(0.1deg);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
+                           inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        .game-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                45deg,
+                transparent 40%,
+                rgba(100, 200, 255, 0.05) 50%,
+                transparent 60%
+            );
+            animation: shine 4s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .game-box:hover {
+            transform: translateY(-8px) scale(1.05);
+            border-color: rgba(100, 200, 255, 0.4);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 0 40px var(--accent-color);
+            animation-play-state: paused;
+        }
+
+        /* Game Icon/Image */
+        .game-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .game-box:hover .game-icon {
+            transform: scale(1.1) rotate(5deg);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+
+        /* Game Title */
+        .game-title {
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            font-family: 'Fredoka One', cursive;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+            line-height: 1.2;
+        }
+
+        .game-box:hover .game-title {
+            transform: scale(1.05);
+            text-shadow: 0 0 15px var(--accent-color);
+        }
+
+        /* Game Category Tag */
+        .game-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 4px 10px;
+            background: rgba(100, 200, 255, 0.15);
+            border-radius: 10px;
+            font-size: 11px;
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            border: 1px solid rgba(100, 200, 255, 0.2);
+            z-index: 2;
+            opacity: 0.8;
+        }
+
+        /* Click Ripple Effect */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(100, 200, 255, 0.3);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 15px;
+            }
+            
+            .game-box {
+                height: 170px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 12px;
+                padding: 15px;
+                margin-top: 10px;
+            }
+            
+            .page-title {
+                font-size: 36px;
+                margin-top: 80px;
+                margin-bottom: 30px;
+            }
+            
+            .game-box {
+                height: 160px;
+                padding: 12px;
+            }
+            
+            .game-title {
+                font-size: 16px;
+            }
+            
+            .game-icon {
+                width: 45px;
+                height: 45px;
+                margin-bottom: 12px;
+            }
+            
+            .back-btn {
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                gap: 10px;
+            }
+            
+            .page-title {
+                font-size: 28px;
+            }
+            
+            .game-box {
+                height: 150px;
+            }
+            
+            .game-title {
+                font-size: 14px;
+            }
+            
+            .game-icon {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* About Blank Loader */
+        .about-blank-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100000;
+            backdrop-filter: blur(10px);
+        }
+
+        .loader-content {
+            text-align: center;
+            color: white;
+            font-family: 'Fredoka One', cursive;
+            font-size: 24px;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Liquid Overlay -->
+    <div class="liquid-overlay"></div>
+
+    <!-- Smooth Cursor -->
+    <div class="cursor" id="mainCursor"></div>
+
+    <!-- About Blank Loader -->
+    <div class="about-blank-loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p>Opening in about:blank...</p>
+        </div>
+    </div>
+
+    <!-- Page Title -->
+    <h1 class="page-title">Modded Games</h1>
+
+    <!-- Games Grid -->
+    <div class="games-grid">
+        <!-- Game 1 -->
+        <a href="https://global.global.ssl.fastly.net/" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <span class="game-tag">BEST</span>
+            <img src="data:image/png;base64,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" alt="Slope" class="game-icon">
+            <h3 class="game-title">Frogies Arcade</h3>
+        </a>
+
+        <!-- Game 2 -->
+        <a href="https://basketball-stars.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/basketball.png" alt="Basketball" class="game-icon">
+            <h3 class="game-title">Basketball Stars</h3>
+        </a>
+
+        <!-- Game 3 -->
+        <a href="https://krunker.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/armored-helmet.png" alt="Krunker" class="game-icon">
+            <h3 class="game-title">Krunker.io</h3>
+        </a>
+
+        <!-- Game 4 -->
+        <a href="https://drift-hunters.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/car.png" alt="Drift" class="game-icon">
+            <h3 class="game-title">Drift Hunters</h3>
+        </a>
+
+        <!-- Game 5 -->
+        <a href="https://1v1.lol" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/battle.png" alt="1v1" class="game-icon">
+            <h3 class="game-title">1v1.LOL</h3>
+        </a>
+
+        <!-- Game 6 -->
+        <a href="https://shellshockers.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/egg.png" alt="Shell" class="game-icon">
+            <h3 class="game-title">Shell Shockers</h3>
+        </a>
+
+        <!-- Game 7 -->
+        <a href="https://surviv.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/target.png" alt="Surviv" class="game-icon">
+            <h3 class="game-title">Surviv.io</h3>
+        </a>
+
+        <!-- Game 8 -->
+        <a href="https://play2048.co" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/number-pad.png" alt="2048" class="game-icon">
+            <h3 class="game-title">2048</h3>
+        </a>
+
+        <!-- Game 9 -->
+        <a href="https://supermario64.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/super-mario.png" alt="Mario" class="game-icon">
+            <h3 class="game-title">Super Mario 64</h3>
+        </a>
+
+        <!-- Game 10 -->
+        <a href="https://geometrydash.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/rhombus.png" alt="Geometry" class="game-icon">
+            <h3 class="game-title">Geometry Dash</h3>
+        </a>
+
+        <!-- Game 11 -->
+        <a href="https://zombsroyale.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/crown.png" alt="Zombs" class="game-icon">
+            <h3 class="game-title">Zombs Royale</h3>
+        </a>
+
+        <!-- Game 12 -->
+        <a href="https://tanktrouble.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/tank.png" alt="Tank" class="game-icon">
+            <h3 class="game-title">Tank Trouble</h3>
+        </a>
+
+        <!-- Game 13 -->
+        <a href="https://paper-io.com" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/paper.png" alt="Paper" class="game-icon">
+            <h3 class="game-title">Paper.io</h3>
+        </a>
+
+        <!-- Game 14 -->
+        <a href="https://diep.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/tank-commander.png" alt="Diep" class="game-icon">
+            <h3 class="game-title">Diep.io</h3>
+        </a>
+
+        <!-- Game 15 -->
+        <a href="https://agar.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/cell.png" alt="Agar" class="game-icon">
+            <h3 class="game-title">Agar.io</h3>
+        </a>
+
+        <!-- Game 16 -->
+        <a href="https://motox3m.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/dirt-bike.png" alt="Moto" class="game-icon">
+            <h3 class="game-title">Moto X3M</h3>
+        </a>
+
+        <!-- Game 17 -->
+        <a href="https://cookieclicker.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/cookie.png" alt="Cookie" class="game-icon">
+            <h3 class="game-title">Cookie Clicker</h3>
+        </a>
+
+        <!-- Game 18 -->
+        <a href="https://vex4.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/stick-figure-running.png" alt="Vex" class="game-icon">
+            <h3 class="game-title">Vex 4</h3>
+        </a>
+
+        <!-- Game 19 -->
+        <a href="https://retrobowl.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/american-football.png" alt="Retro" class="game-icon">
+            <h3 class="game-title">Retro Bowl</h3>
+        </a>
+
+        <!-- Game 20 -->
+        <a href="https://flappybird.io" class="game-box" onclick="openAboutBlank(event, this.href)">
+            <img src="https://img.icons8.com/color/96/000000/bird.png" alt="Flappy" class="game-icon">
+            <h3 class="game-title">Flappy Bird</h3>
+        </a>
+    </div>
+
+    <script>
+        // ========== SMOOTH CURSOR ==========
+        const cursor = document.getElementById('mainCursor');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function updateCursor() {
+            const speed = 0.15;
+            cursorX += (mouseX - cursorX) * speed;
+            cursorY += (mouseY - cursorY) * speed;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            requestAnimationFrame(updateCursor);
+        }
+
+        // Start cursor animation
+        updateCursor();
+
+        const interactiveElements = document.querySelectorAll('.game-box, .back-btn');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+
+        // ========== ABOUT:BLANK OPENER ==========
+        function openAboutBlank(event, url) {
+            event.preventDefault();
+            
+            // Show loader
+            const loader = document.getElementById('loader');
+            loader.style.display = 'flex';
+            
+            // Create about:blank page
+            setTimeout(() => {
+                const newWindow = window.open('about:blank', '_blank');
+                
+                // Create HTML for about:blank page
+                const html = `
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>Typical Productions - About Blank</title>
+                        <style>
+                            * {
+                                margin: 0;
+                                padding: 0;
+                                box-sizing: border-box;
+                            }
+                            body {
+                                background: #0a0a1a;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                min-height: 100vh;
+                                font-family: 'Fredoka One', cursive;
+                                color: white;
+                                overflow: hidden;
+                            }
+                            .container {
+                                text-align: center;
+                                padding: 30px;
+                            }
+                            .loader {
+                                width: 60px;
+                                height: 60px;
+                                border: 4px solid rgba(255, 255, 255, 0.1);
+                                border-top: 4px solid #64c8ff;
+                                border-radius: 50%;
+                                animation: spin 1s linear infinite;
+                                margin: 0 auto 20px;
+                            }
+                            @keyframes spin {
+                                0% { transform: rotate(0deg); }
+                                100% { transform: rotate(360deg); }
+                            }
+                            h2 {
+                                margin-bottom: 20px;
+                                background: linear-gradient(135deg, #ffffff, #64c8ff);
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                            }
+                            .iframe-container {
+                                width: 95vw;
+                                height: 90vh;
+                                border-radius: 20px;
+                                overflow: hidden;
+                                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+                                border: 2px solid rgba(100, 200, 255, 0.3);
+                                display: none;
+                            }
+                            iframe {
+                                width: 100%;
+                                height: 100%;
+                                border: none;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="container" id="loadingScreen">
+                            <div class="loader"></div>
+                            <h2>Loading Page...</h2>
+                            <p>Opening ${new URL(url).hostname}</p>
+                        </div>
+                        <div class="iframe-container" id="gameFrame">
+                            <iframe src="${url}" allow="fullscreen"></iframe>
+                        </div>
+                        <script>
+                            // Wait 2 seconds then show iframe
+                            setTimeout(() => {
+                                document.getElementById('loadingScreen').style.display = 'none';
+                                document.getElementById('gameFrame').style.display = 'block';
+                            }, 2000);
+                            
+                            // Focus iframe after load
+                            window.addEventListener('message', (e) => {
+                                if (e.data === 'iframeLoaded') {
+                                    document.querySelector('iframe').focus();
+                                }
+                            });
+                        <\/script>
+                    </body>
+                    </html>
+                `;
+                
+                newWindow.document.write(html);
+                newWindow.document.close();
+                
+                // Hide loader
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 1000);
+                
+            }, 500);
+            
+            return false;
+        }
+
+        // ========== CLICK EFFECTS ==========
+        document.querySelectorAll('.game-box').forEach(box => {
+            box.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('div');
+                ripple.className = 'ripple';
+                
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${x - size/2}px`;
+                ripple.style.top = `${y - size/2}px`;
+                
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+                
+                // Add click animation
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 100);
+            });
+        });
+
+        // ========== KEYBOARD SHORTCUTS ==========
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                window.location.href = 'index.html';
+            }
+            if (e.key === 'r' || e.key === 'R') {
+                document.getElementById('loader').style.display = 'none';
+            }
+        });
+
+        // ========== HOVER SOUND EFFECT (Optional) ==========
+        const gameBoxes = document.querySelectorAll('.game-box');
+        gameBoxes.forEach(box => {
+            box.addEventListener('mouseenter', function() {
+                // Create subtle hover sound effect (visual)
+                const hoverEffect = document.createElement('div');
+                hoverEffect.style.cssText = `
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(circle at center, rgba(100, 200, 255, 0.1), transparent 70%);
+                    border-radius: 20px;
+                    pointer-events: none;
+                    z-index: 1;
+                    animation: hoverGlow 0.5s ease-out;
+                `;
+                
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes hoverGlow {
+                        0% { opacity: 0; transform: scale(0.8); }
+                        50% { opacity: 1; transform: scale(1); }
+                        100% { opacity: 0; transform: scale(1.2); }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                this.appendChild(hoverEffect);
+                setTimeout(() => hoverEffect.remove(), 500);
+            });
+        });
+
+        // ========== PAGE LOAD ANIMATION ==========
+        window.addEventListener('load', () => {
+            // Animate boxes in
+            const boxes = document.querySelectorAll('.game-box');
+            boxes.forEach((box, index) => {
+                box.style.opacity = '0';
+                box.style.transform = 'translateY(20px) scale(0.9)';
+                
+                setTimeout(() => {
+                    box.style.transition = 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                    box.style.opacity = '1';
+                    box.style.transform = 'translateY(0) scale(1)';
+                }, index * 50);
+            });
+            
+            // Add welcome effect
+            setTimeout(() => {
+                const welcome = document.createElement('div');
+                welcome.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(circle at center, rgba(100, 200, 255, 0.1), transparent);
+                    pointer-events: none;
+                    z-index: 1000;
+                    animation: welcomeFade 1s ease-out;
+                `;
+                
+                const welcomeStyle = document.createElement('style');
+                welcomeStyle.textContent = `
+                    @keyframes welcomeFade {
+                        0% { opacity: 1; }
+                        100% { opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(welcomeStyle);
+                
+                document.body.appendChild(welcome);
+                setTimeout(() => welcome.remove(), 1000);
+            }, 300);
+        });
+
+        console.log('🎮 Games Directory loaded!');
+    </script>
+</body>
+</html>
+<style>
+    .glass-home-btn {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        width: 70px;
+        height: 70px;
+        border-radius: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        text-decoration: none;
+        color: white;
+
+        /* Liquid glass */
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.22);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+        transition: 0.25s;
+
+        /* Make sure it appears above iframe */
+        z-index: 9999;
+    }
+
+    .glass-home-btn:hover {
+        background: rgba(255,255,255,0.28);
+        box-shadow: 0 10px 36px rgba(61, 61, 61, 0.5);
+        transform: scale(1.05);
+    }
+</style>
+
+
+<a href="index.html" class="glass-home-btn">🏠</a>
