@@ -289,6 +289,57 @@
             opacity: 0.8;
         }
 
+        /* Click Menu */
+        .game-menu {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 8px 0;
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 100;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .game-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .game-menu-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 16px;
+            color: white;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .game-menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .game-menu-item:hover {
+            background: rgba(100, 200, 255, 0.15);
+            padding-left: 20px;
+        }
+
+        .game-menu-icon {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
         /* Click Ripple Effect */
         .ripple {
             position: absolute;
@@ -305,6 +356,84 @@
                 transform: scale(4);
                 opacity: 0;
             }
+        }
+
+        /* Open Mode Selector */
+        .open-mode-selector {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 9999;
+        }
+
+        .mode-btn {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            color: white;
+            font-family: 'Fredoka One', cursive;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mode-btn:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .mode-btn.active {
+            background: rgba(100, 200, 255, 0.25);
+            border-color: rgba(100, 200, 255, 0.4);
+            box-shadow: 0 0 20px rgba(100, 200, 255, 0.2);
+        }
+
+        .mode-icon {
+            font-size: 18px;
+        }
+
+        /* About Blank Loader */
+        .about-blank-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100000;
+            backdrop-filter: blur(10px);
+        }
+
+        .loader-content {
+            text-align: center;
+            color: white;
+            font-family: 'Fredoka One', cursive;
+            font-size: 24px;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         /* Responsive */
@@ -353,6 +482,16 @@
                 padding: 12px 20px;
                 font-size: 15px;
             }
+            
+            .open-mode-selector {
+                top: 15px;
+                right: 15px;
+            }
+            
+            .mode-btn {
+                padding: 10px 18px;
+                font-size: 13px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -378,43 +517,6 @@
                 height: 40px;
             }
         }
-
-        /* About Blank Loader */
-        .about-blank-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 100000;
-            backdrop-filter: blur(10px);
-        }
-
-        .loader-content {
-            text-align: center;
-            color: white;
-            font-family: 'Fredoka One', cursive;
-            font-size: 24px;
-        }
-
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            border-top: 3px solid var(--accent-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 
@@ -433,72 +535,63 @@
         </div>
     </div>
 
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">← Back</a>
+
+    <!-- Open Mode Selector -->
+    <div class="open-mode-selector">
+        <button class="mode-btn" id="modeToggle">
+            <span class="mode-icon" id="modeIcon">🌐</span>
+            <span id="modeText">Normal Tab</span>
+        </button>
+    </div>
+
     <!-- Page Title -->
     <h1 class="page-title">Modded Games</h1>
 
     <!-- Games Grid -->
-    <div class="games-grid">
-        <!-- Game 2 -->
-        <a href="https://typicalovo.global.ssl.fastly.net/ovo/1.4.5/" class="game-box" onclick="openAboutBlank(event, this.href)">
-            <img src="https://blumgirocket.org/wp-content/uploads/2025/09/OvO-online-game.webp" alt="Basketball" class="game-icon">
+    <div class="games-grid" id="gamesGrid">
+        <!-- Game 1 -->
+        <div class="game-box" data-url="https://typicalovo.global.ssl.fastly.net/ovo/1.4.5/" data-name="OvO 1.4.5 Mods">
+            <img src="https://blumgirocket.org/wp-content/uploads/2025/09/OvO-online-game.webp" alt="OvO" class="game-icon">
             <h3 class="game-title">OvO 1.4.5 Mods</h3>
-        </a>
+            <div class="game-menu">
+                <a href="#" class="game-menu-item" data-mode="normal">
+                    <span class="game-menu-icon">🌐</span> Open in Normal Tab
+                </a>
+                <a href="#" class="game-menu-item" data-mode="aboutblank">
+                    <span class="game-menu-icon">🪟</span> Open in about:blank
+                </a>
+            </div>
+        </div>
+
+        <!-- Game 2 -->
+        <div class="game-box" data-url="https://googlesnake.global.ssl.fastly.net/" data-name="Google Snake Mods">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG6JX-84e5BrL0QgijdUJx9aVkxsFPf5s1hQ&s" alt="Google Snake" class="game-icon">
+            <h3 class="game-title">Google Snake Mods</h3>
+            <div class="game-menu">
+                <a href="#" class="game-menu-item" data-mode="normal">
+                    <span class="game-menu-icon">🌐</span> Open in Normal Tab
+                </a>
+                <a href="#" class="game-menu-item" data-mode="aboutblank">
+                    <span class="game-menu-icon">🪟</span> Open in about:blank
+                </a>
+            </div>
+        </div>
 
         <!-- Game 3 -->
-        <a href="https://googlesnake.global.ssl.fastly.net/" class="game-box" onclick="openAboutBlank(event, this.href)">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG6JX-84e5BrL0QgijdUJx9aVkxsFPf5s1hQ&s" alt="Krunker" class="game-icon">
-            <h3 class="game-title">Google Snake Mods</h3>
-        </a>
-
-        <!-- Game 4 -->
-        <a href="https://ooooooooozzeeeemadethisshyt.global.ssl.fastly.net/" class="game-box" onclick="openAboutBlank(event, this.href)">
-            <img src="data:image/jpeg;base64,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" alt="Drift" class="game-icon">
+        <div class="game-box" data-url="https://ooooooooozzeeeemadethisshyt.global.ssl.fastly.net/" data-name="Retro Bowl Modded">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMPDxUODhATEA8QEBIQEA8OEBAPEA4NFRIYFhUSFRUYHyggGBolHRMVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGhAQGi0dHSUtLi0tLSsvLi0rLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tN//AABEIAOEA4QMBEQACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAAAwYEBQcCAQj/xABHEAACAQICAwcQCQMEAwAAAAAAAQIDEQQSBTFRBhMhYZGy0QcUIjIzNEFSU1RxcnOSk9IVFhcjQnSBobFiwcIkNUNkgqLx/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAEEAgMFBgf/xAAvEQEAAQMBBQcFAQADAQAAAAAAAQIDEQQFEiExURMUMjNSYXEVIjRBgZEGI0Ik/9oADAMBAAIRAxEAPwDBPOuaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACx7gsBTxGKlTrwVSCoylllqzKUVf8AdlrSUU114qjPBtsxEzxdB+qeD82h+/SdDu1r0rPZU9D6p4PzaH/t0k92tek7KnofVPB+bQ/fpHdrXpOyp6INIbl8JGjUlHDQTjTm0+Hgai2nrMK9PbimZwiq3Tjk5CjjzzUn0AAAAAAAAAAAAAAAAAAAAAAAABCyaM3F4jEUYV6cqShUV4qUpJ2vbh4OItUaWuuMw3U2aqoy22idFz0PUeLxTjKnKLopUW5SzyaeppcFosziO6/fXy9l3R6O5cubtOG4+v8AhvEq+7HpMvqln3dT6Rf9lpo1M8VJapRUlfY1c6VPGMuZMYnCQlCDG0nOlOC1yhKKvqu4tIxrpzTMImMxhzRdT3FePR9+fynMnRV5/Sr2FTQ6b0TPB1d5quLk4KfYNtZW2lrS8Vla7am3OJaq6N3mwDWxAAAAAAAAAAAAAAAAAAAAAAAHZNxf+30PUfOZ29P5cL1uPthruqT3nH20ObIp7U8n+uxsjz/5LmUnwHnsvTY9ncdH9xp+zhzUext+GHh6/FPyyDNiAfAOWdUvv5fl6fPqHI13jU78/cqhUaQAAAAAAAAAAAAAAAAAAAAAAQOybiv9voeo+czuaby4X7fhht61CM1acYyWu0oqSv8AqbaqYq5tkVTE5hD9H0vJU/hw6DHs6ekMu0r9UqNXxE1OSU5JKUkkpSSSvqRyKq6oqni6dNFO7GYR9cz8pP35dJHaVdWW5T0eK+KqZJfeT7WX45bPSR2lXVru0U7k8P0qa0hW8vV+LU6TDfq6vNzVKGrWlN3nKU3a15ycnbZdmMzM8+LGZmebwAAAAAAAAAAAAAAAAAAAAAAAEDsm4r/b6HqPnM7mm8uF+34Ybs3s3xkSKbW0ReUnn1yb7Xj9JpnZu9x3liNdjhFLBx+D3q3ZZs1/Ba1v/pT1Wl7CY45WrF/tc8GBiO0l6sv4KTbd8E/CoGLywAAAAAAAAAAAAAAAAAAAAAAIzDZRZuVxmmmZLEb0dWfdr3on/Cw3o6ndb3on/HXdx+NpRwFGMqsIyUHdSnFNdk/Bc7Onu0RbjjC7bs3N2Ptn/G7pYynN5YVISdr2jKMnbbwFim5TVylNVFVPOJhMZMFeqVo5n2Udb/Etpbi7REc4aZt1dGq0x2WXJ2Vs18vZW1bDm7R+/G7x+F/R/bne4NVXoyyS7CXay/C9hzOxuemVu7cp3J4/pU1gqvkqnw59Bh2Nz0z/AI81icoqlOUXacXF67STi7ehmE0zHCYwh5IAAAAAAAAAAAAAAAAAAAAhJS1fqU7/AInsdhxE2J+Xs0O3iAGILBOIWnqbr/WS9hPnROnsrzv45O2I/wCmPl01HoXm4c5xPdJevLnM4lczvS7FEfbH8bLQX4//AB/udXZn/pQ2hziW1Otj2c3IRiBQt3PfS9jDnTPP7Tn/ALf403OavHPYAAAAAAAAAAAAAAAAABNg6SnVhB6p1IQdtdpSSduUmmImYiU083Sfs8wvlK/v0/kOr3K2t9jS9R6n+GX463v0/lNdezrVUuhpdZc01G7Q126LchQw2FqV6c6rnBRspyg48M0uG0VtK2p2fat2qqo5ujpdpXrt6mirGJ9lGOE74BnaG0rUwlR1aKi5OLh94nJZW0/A1sLGnv1Wat6lX1Ompv07tTd/XzFeLQ+HP5y59Vveyj9Gs9ZUXEbtcTnl2NHt5f8AHU2v+suRapq+6WvsqaeDb7nN2OIee8aP4dUJ8f8AUYXNVXpPL/aY0Fq/4st9hN1VedSEHGlaVSEXaM72cknbsuMi1ti9VXETEcZY3tkWaaJqiZ4Q6OtHw2y5V0Hei9U87uRlqNLbjaGJqKrUnVUlFQ7CUErJt+GL2sq3rNN2c1MZtUy0G6TcZQwuEqV6c6rnBRspyg4u81HhtHjKl7TUU0TVDCuzTFOVDOcqgAAAAAAAAAAAAAAADI0dJKvSb4Eq1Nt7EppsyonFUT7sqPFDsn07h/Kr3Z9B2I1Nvq6kWa+h9O4fyq92fQO82/Uy7C50afddpajUwNWEKl5NRssslfs47UVtbeomzVELOitVxfpnDmR5t6sIElGjKbtBXdr2ulwfqZU0zPJjXXTRGak30dV8R8sek2RZrau82+qrVtzWLcpNUHZybXZ0tV/WO3Rcpini501xlkYHDywd+uo71vlsl2pZsuvtb7UVNXRVdxuLOnuUxlstHaVo7/S+8Xdqfgl464ita01ymuJmOGW29dpm3VEdJdq+ncP5Ve7PoPQxqLeObynY19H36dw/lV7s+gnvFvqdhc6NJuy0tRqYCtCFS8moWWWSv95F+FGjUXqKrcxDVetVxROYctOW5gEgAAAAAAAAAAAAAAEmH7ePrR/kQ2WfHHyt5m9RHIAxdKdxl6Fzkab3hWNN5kK6c52AkbDQndX6j/lFjTeJU1nlt4XnKAlTOqJro+ip/iWLHJstqrgO7U/a0+ejdVyZzydeZRV3wDD0v3CfoXOREqut8mVYMXnQAAAAAAAAAAAAAAABJh+3j60f5DZZ8cfK3szeojkAeakFJZZK6etETETGJZU1TTOYQfR9LxF+5r7Gjo294udT6PpeIv3HZUdDvFzq90cLCDvCKTta6vqMqbdNM5hjXdqrjEymM2oCVM6omuj6Kn+JYsftstqrgO7U/a0+ejdVybJ5OvMoqz4Bh6X7hP0LnIiVXW+TKsGLzoAAAAAAAAAAAAAAAA9UpWkm9Skn+iYZUVbtUS3/ANN09k+RdJll2vqNqOHFmYTFKrHNG9r24dd7LpC1ZvU3ad6lMS3ASAAgAr1Xdjh4ycXGpeMnF2jHWnbabYs1M9yVb3WaZp4ve96Ulkz3zpLXa1rPiN1uiaWdFOGmwUrVab2VIPkkjOucUzLZjPB096Xp7Jci6Tkzqacsu5V+zy9NU14Jci6TbRciqODm6u/Tpq9yvn7MbH6VhUpShFSu7Wulbgae3iJmXP1Gtt125phpiHJAAAAAAAAAAAAAAAAAAQLDuf7i/Xf8Iyh3Nm57JszJ0AJfAPoBAcgx3dantZ89l6J4N8ckJkngkwz+8j68ecjXcn7Z+GVPOF0PPVc5dThCKprLen8Lx23PyI+Hk3uLPMAAAAAAAAAAAAAAAAAAAD1Go1qbXobQTFVURiJeoVZX7aXvM13ZnddLZdU1aqmJlNvsvGlyso709Xt9ynob7Lxnysb09U7lPQ32XjPlY3p6o3KehvsvGl7zJ3quqdynpCkYjt5evL+Weio8EfDlzzbfc3FNTuk+11pPac/X1VRjErOliJy3TpR8VciOfTcqzHFs1MRFqqY6SjuXcQ8DVfu58U/6Ew1VVTVOZnISxAkAAAAAAAAAAAAAAAAAAAIfYazVd8LpbJ/KpTFB7v8AS4aG3E9c4eFff8m+Rvl3tO3C1rvxHWsbNi7bivexlxtRtSbVyaN3OGb9nf8A2X8JfMbvpEepp+s1ek+zv/sv4S+Yn6RHqPrM+lpZ9RxNt9evhbfcF4X6x0adPERjKrO0JmfCzNG9StUM3+rcs1v+FK1r/wBXGVtRoO1/eG21tSbeftZOL3AKFOc+uG8kJStvS4bJu3bFWdlRTG9vck3drTXRNO7zhz9GjGHlpnMvoAAAAAAAAAAAAAAAAAAAAAAIfYazVd8LpbJ/KpTFF7t17cd3hQ9R85nqtD5FPw8hr/yK/lui2qAAABjaTV6FVLhbpTslwtvKzC54ZRVylxFaPreQq/CqdBxJtV55Sobk9EVWjKDtOMoO17Ti4u22z9BhNMxzYzExzeCAAAAAAAAAAAAAAAAAAAAAB9hrNV3wujsn8qlMUXu3Xtx3eFD1Hzmeq0PkU/DyGv8AyK/lui2qAAAAA82IwOW9Uvv5fl6fPqHK1vmfxTv+JVCk0hIAAAAAAAAAAAAAAAAAAAATMZpiqMS3ae/VYuRciOMdXrfGauwh1I27qOXBZNG7scTQowo01SyQVlmhJu178LzcZtjX3LUblOMQ61jRU6uiL1c8ZWTchunr4vEOlWVPKqcp9hGUXdNLwt7S9oddXeubtXRX12gosW96mf2uiOq5LmOK3e4qFScFGjaM5xV6c72Umlfs+I5dWsriqYhVm/OVl3D7oKuN33f1Bb24Zd7jKPbZr3u3sLWlvzdzlstXN5ai23AHK+qZ38vy9Pn1Dk63zP4p6jmqhTaQAAAAAAAAAAAAAAAAAAAAAhASlLDUULvil7zZf4tHwtnU378l7CfOiX9k+dPw07Y8mPl009E824RpDu1T2tTns8/X4p+Zc6rmvPUq1V/TS/yL+g/9LGn/AGv50VkA5X1TO/l+Xp8+Zydb5n8VL/NVCm0AAAAAAAAAAAAAAAAAAAAAAAgSw1FG74pe82X+LR8LZ1OO/Jewnzol7ZXnfxp2x5MfLph6J5twnSHdqntanPZwK/FPzLnVc156lWrEeml/Ei/oOUrGn/a/HRWeIByzql9/L8vT58zk63zP4p3/ABfxVCm0ASAAAAAAAAAAAAAAAAAAAAAECWGoo3fFL3my/wAWj4ZWBx1TDyz0ZunNpxzJJvK/Bw+gi3dqtzmmcSt3bNF2nFcZhsPrTjPOZ8lPoLHf9R6lf6fpvS0VSblJybu2229rbu2b870Zl4S9G7cqx1lm6K0rWw+beKrp5rZsqi72vbWuNmuu/cteCcO5sTT27u9vxlsPrRjPOZ8lPoNffr/qd/6dp/SfWjGecz5KfQO/X/UfTtP6Wr0njqmInvlabnNRUczSTyptpcC42bqL1dyM1Tl5bbNmi1fxRGODEMnJCQAAAAAAAAAAAAAAAAAAEVSuouzv+hMU5MPPXcePkRO5KcPnXcePkQ3JMMyjK8U14TnXuFUvebL/ABafh7NS+EksGWKjfw69iOnTTOHzm/H/AGVfMp8LVUr2vwW1lbU04w9D/wAf5Vpyo9KAY2JrqMrO+q/AX9PTM05eO27H/wBH8Rddx4+RG/clxcHXcePkRO5JhLCV1deEwlD0AAAAAAAAAAAAAAAAAYWN7b9P7s2UMoY5mkBltsI+wj6P7nKv+OXutmfjUpbmpfLjBM8Gmnrfpf8AJ2KONMPnd/zavmWZo19t+hT1fOHoP+P8q2bcpvSZLgy1ukZLPr/Cv5Z0NLwoeQ25+RHwxVJbS04r6IGxw3aL0GmrmwlIQAAAAAAAAAAAAAAPM9T9DEENbme03YZDYS+EgB3DcLh4PRuHbhFt03duMW32bOnZop3I4L1uurdjEt71pT8nD3Im3cp6M9+rqdaU/Jw9yI3KekHaVdZfnvSXd6vtqvPZyKvFPyoVc1/6kNGMliM0Yys6VsyTtwT2lvSUxOcw32KpjOJdF60p+Th7kS5uU9Fjfq6nWlPycPcj0Dcp6G/V1fOs6fk4e5EmKaY5QxmZmcyrvVAw0I6MruNOCaVPhUYpr72BpvxG5LXXEbripzFR9zPaMIT4N9l+j/lGFUcCWaaoYhIAAAAAAAAAAAD5JXVhAxus/wCr9jPfTlBWp5Xa9+C5lE5TCMySEC86C6obwmGp4ZYZT3qOXPvuXNwt6svGW6NTu0xGG6m7iMM/7VH5mvjP5TPvfsy7c+1R+Zr4z+Ud89jt3PMTVz1J1LWzzlO2u2aTdv3KUzmcq88ZysG4/dW9G74lR33fXDXPJly34n4xvs3uzy2UXN1Y/tUfma+M/lN3e/Zs7c+1R+Zr4z+Ud79jtz7VH5mvjP5R3v2O3a7dB1QHjMNUw3Wyhviis++5rWmpasq2GFzU78Ywxqu5jCkFWGlk08NmSd9fEYTXhEylo0Mrve/BbUYzVlGU5ggJAAAAAAAAAAAAAAQw8Ynm1PV/dmyieDOEGV7HyMzykyvY+RjIZXsfIxkMr2PkYyGV7HyMZDK9j5GMhlex8jGQyvY+RjIZXsfIxkMr2PkYyGV7HyMZDK9j5GMoZ+HXYo01c2MpCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH//Z" alt="Google Snake" class="game-icon">
             <h3 class="game-title">Retro Bowl Modded</h3>
-        </a>
-
-        <!-- Game 5 -->
-        <a href="https://1v1.lol" class="game-box" onclick="openAboutBlank(event, this.href)">
-            <img src="https://img.icons8.com/color/96/000000/battle.png" alt="1v1" class="game-icon">
-            <h3 class="game-title">1v1.LOL</h3>
-        </a>
-
-        <!-- Game 6 -->
-        <a href="https://shellshockers.io" class="game-box" onclick="openAboutBlank(event, this.href)">
-            <img src="https://img.icons8.com/color/96/000000/egg.png" alt="Shell" class="game-icon">
-            <h3 class="game-title">Shell Shockers</h3>
-        </a>
-
-        <!-- Game 7 -->
-        <a href="https://surviv.io" class="game-box" onclick="openAboutBlank(event, this.href)">
-            <img src="https://img.icons8.com/color/96/000000/target.png" alt="Surviv" class="game-icon">
-            <h3 class="game-title">Surviv.io</h3>
-        </a>
-
-        <!-- Game 8 -->
-        <a href="https://play2048.co" class="game-box" onclick="openAboutBlank(event, this.href)">
-            <img src="https://img.icons8.com/color/96/000000/number-pad.png" alt="2048" class="game-icon">
-            <h3 class="game-title">2048</h3>
-        </a>
-
-        <!-- Game 9 -->
-        <a href="https://supermario64.io" class="game-box" onclick="openAboutBlank(event, this.href)">
-            <img src="https://img.icons8.com/color/96/000000/super-mario.png" alt="Mario" class="game-icon">
-            <h3 class="game-title">Super Mario 64</h3>
-        </a>
-
-        <!-- Game 10 -->
-        <a href="https://geometrydash.io" class="game-box" onclick="openAboutBlank(event, this.href)">
-            <img src="https://img.icons8.com/color/96/000000/rhombus.png" alt="Geometry" class="game-icon">
-            <h3 class="game-title">Geometry Dash</h3>
-        </a>
-
-        <!-- Game 11 -->
-        <a href="https://zombsroyale.io" class="game-box" onclick="openAboutBlank(event, this.href)">
-            <img src="https://img.icons8.com/color/96/000000/crown.png" alt="Zombs" class="game-icon">
-            <h3 class="game-title">Zombs Royale</h3>
-        </a>
-
-
+            <div class="game-menu">
+                <a href="#" class="game-menu-item" data-mode="normal">
+                    <span class="game-menu-icon">🌐</span> Open in Normal Tab
+                </a>
+                <a href="#" class="game-menu-item" data-mode="aboutblank">
+                    <span class="game-menu-icon">🪟</span> Open in about:blank
+                </a>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -525,20 +618,136 @@
         // Start cursor animation
         updateCursor();
 
-        const interactiveElements = document.querySelectorAll('.game-box, .back-btn');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
+        // ========== OPEN MODE SETTINGS ==========
+        let openMode = localStorage.getItem('gameOpenMode') || 'normal'; // 'normal' or 'aboutblank'
+        
+        // Update mode button
+        const modeToggle = document.getElementById('modeToggle');
+        const modeIcon = document.getElementById('modeIcon');
+        const modeText = document.getElementById('modeText');
+        
+        function updateModeUI() {
+            if (openMode === 'normal') {
+                modeIcon.textContent = '🌐';
+                modeText.textContent = 'Normal Tab';
+                modeToggle.classList.remove('active');
+            } else {
+                modeIcon.textContent = '🪟';
+                modeText.textContent = 'about:blank';
+                modeToggle.classList.add('active');
+            }
+        }
+        
+        modeToggle.addEventListener('click', () => {
+            openMode = openMode === 'normal' ? 'aboutblank' : 'normal';
+            localStorage.setItem('gameOpenMode', openMode);
+            updateModeUI();
+            closeAllMenus();
+        });
+        
+        updateModeUI();
+
+        // ========== GAME MENU MANAGEMENT ==========
+        let activeMenu = null;
+        
+        document.querySelectorAll('.game-box').forEach(box => {
+            // Right click or long press to show menu
+            box.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                toggleMenu(this);
+            });
+            
+            // Click to open based on mode
+            box.addEventListener('click', function(e) {
+                if (!e.target.closest('.game-menu-item')) {
+                    // If not clicking menu item, open based on mode
+                    const url = this.dataset.url;
+                    const name = this.dataset.name;
+                    
+                    if (openMode === 'normal') {
+                        window.open(url, '_blank');
+                    } else {
+                        openAboutBlank(url, name);
+                    }
+                    
+                    // Create ripple effect
+                    createRipple(e, this);
+                }
+            });
+            
+            // Hover effects
+            box.addEventListener('mouseenter', () => {
                 cursor.classList.add('hover');
             });
-            el.addEventListener('mouseleave', () => {
+            
+            box.addEventListener('mouseleave', () => {
                 cursor.classList.remove('hover');
+                // Close menu when leaving box
+                if (activeMenu && !activeMenu.contains(document.elementFromPoint(mouseX, mouseY))) {
+                    closeAllMenus();
+                }
             });
+        });
+        
+        // Menu item click handlers
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.game-menu-item')) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const menuItem = e.target.closest('.game-menu-item');
+                const gameBox = menuItem.closest('.game-box');
+                const url = gameBox.dataset.url;
+                const name = gameBox.dataset.name;
+                const mode = menuItem.dataset.mode;
+                
+                if (mode === 'normal') {
+                    window.open(url, '_blank');
+                } else if (mode === 'aboutblank') {
+                    openAboutBlank(url, name);
+                }
+                
+                closeAllMenus();
+            }
+            
+            // Close menus when clicking elsewhere
+            if (!e.target.closest('.game-box') && !e.target.closest('.game-menu')) {
+                closeAllMenus();
+            }
+        });
+        
+        function toggleMenu(gameBox) {
+            const menu = gameBox.querySelector('.game-menu');
+            
+            if (activeMenu === menu) {
+                closeAllMenus();
+                return;
+            }
+            
+            // Close any open menu
+            closeAllMenus();
+            
+            // Show this menu
+            menu.classList.add('show');
+            activeMenu = menu;
+        }
+        
+        function closeAllMenus() {
+            document.querySelectorAll('.game-menu.show').forEach(menu => {
+                menu.classList.remove('show');
+            });
+            activeMenu = null;
+        }
+        
+        // Close menu with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeAllMenus();
+            }
         });
 
         // ========== ABOUT:BLANK OPENER ==========
-        function openAboutBlank(event, url) {
-            event.preventDefault();
-            
+        function openAboutBlank(url, name) {
             // Show loader
             const loader = document.getElementById('loader');
             loader.style.display = 'flex';
@@ -552,7 +761,7 @@
                     <!DOCTYPE html>
                     <html>
                     <head>
-                        <title>Typical Productions - About Blank</title>
+                        <title>${name} - Modded Games</title>
                         <style>
                             * {
                                 margin: 0;
@@ -611,8 +820,8 @@
                     <body>
                         <div class="container" id="loadingScreen">
                             <div class="loader"></div>
-                            <h2>Loading Page...</h2>
-                            <p>Opening ${new URL(url).hostname}</p>
+                            <h2>Loading ${name}...</h2>
+                            <p>Opening in about:blank</p>
                         </div>
                         <div class="iframe-container" id="gameFrame">
                             <iframe src="${url}" allow="fullscreen"></iframe>
@@ -644,80 +853,31 @@
                 }, 1000);
                 
             }, 500);
-            
-            return false;
         }
 
         // ========== CLICK EFFECTS ==========
-        document.querySelectorAll('.game-box').forEach(box => {
-            box.addEventListener('click', function(e) {
-                // Create ripple effect
-                const ripple = document.createElement('div');
-                ripple.className = 'ripple';
-                
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                ripple.style.width = ripple.style.height = `${size}px`;
-                ripple.style.left = `${x - size/2}px`;
-                ripple.style.top = `${y - size/2}px`;
-                
-                this.appendChild(ripple);
-                setTimeout(() => ripple.remove(), 600);
-                
-                // Add click animation
-                this.style.animation = 'none';
-                setTimeout(() => {
-                    this.style.animation = '';
-                }, 100);
-            });
-        });
-
-        // ========== KEYBOARD SHORTCUTS ==========
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                window.location.href = 'index.html';
-            }
-            if (e.key === 'r' || e.key === 'R') {
-                document.getElementById('loader').style.display = 'none';
-            }
-        });
-
-        // ========== HOVER SOUND EFFECT (Optional) ==========
-        const gameBoxes = document.querySelectorAll('.game-box');
-        gameBoxes.forEach(box => {
-            box.addEventListener('mouseenter', function() {
-                // Create subtle hover sound effect (visual)
-                const hoverEffect = document.createElement('div');
-                hoverEffect.style.cssText = `
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: radial-gradient(circle at center, rgba(100, 200, 255, 0.1), transparent 70%);
-                    border-radius: 20px;
-                    pointer-events: none;
-                    z-index: 1;
-                    animation: hoverGlow 0.5s ease-out;
-                `;
-                
-                const style = document.createElement('style');
-                style.textContent = `
-                    @keyframes hoverGlow {
-                        0% { opacity: 0; transform: scale(0.8); }
-                        50% { opacity: 1; transform: scale(1); }
-                        100% { opacity: 0; transform: scale(1.2); }
-                    }
-                `;
-                document.head.appendChild(style);
-                
-                this.appendChild(hoverEffect);
-                setTimeout(() => hoverEffect.remove(), 500);
-            });
-        });
+        function createRipple(e, element) {
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            
+            const rect = element.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${x - size/2}px`;
+            ripple.style.top = `${y - size/2}px`;
+            
+            element.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+            
+            // Add click animation
+            element.style.animation = 'none';
+            setTimeout(() => {
+                element.style.animation = '';
+            }, 100);
+        }
 
         // ========== PAGE LOAD ANIMATION ==========
         window.addEventListener('load', () => {
@@ -763,43 +923,7 @@
             }, 300);
         });
 
-        console.log('🎮 Games Directory loaded!');
+        console.log('🎮 Modded Games Directory loaded! Mode:', openMode);
     </script>
 </body>
 </html>
-<style>
-    .glass-home-btn {
-        position: fixed;
-        bottom: 30px;
-        left: 30px;
-        width: 70px;
-        height: 70px;
-        border-radius: 22px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 30px;
-        text-decoration: none;
-        color: white;
-
-        /* Liquid glass */
-        background: rgba(255,255,255,0.15);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255,255,255,0.22);
-        box-shadow: 0 8px 28px rgba(0,0,0,0.35);
-        transition: 0.25s;
-
-        /* Make sure it appears above iframe */
-        z-index: 9999;
-    }
-
-    .glass-home-btn:hover {
-        background: rgba(255,255,255,0.28);
-        box-shadow: 0 10px 36px rgba(61, 61, 61, 0.5);
-        transform: scale(1.05);
-    }
-</style>
-
-
-<a href="index.html" class="glass-home-btn">🏠</a>
